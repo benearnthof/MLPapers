@@ -40,6 +40,7 @@ Connection of DDPMs to:
 * Discrete Diffusion Models
 * Adjoint Sampling
 	* https://arxiv.org/pdf/2504.11713
+	* https://ai.meta.com/blog/meta-fair-science-new-open-source-releases/?utm_source=twitter&utm_medium=organic+social&utm_content=video&utm_campaign=fair
 
 Math of Diffusion Models:
 	https://www-eng.lbl.gov/~shuman/NEXT/MATERIALS&COMPONENTS/Xe_damage/Crank-The-Mathematics-of-Diffusion.pdf
