@@ -38,6 +38,8 @@ Connection of DDPMs to:
 * Consistencs Models/ consistent diffusion Models
 * Fokker Planck Diffusion
 * Discrete Diffusion Models
+* Adjoint Sampling
+	* https://arxiv.org/pdf/2504.11713
 
 Math of Diffusion Models:
 	https://www-eng.lbl.gov/~shuman/NEXT/MATERIALS&COMPONENTS/Xe_damage/Crank-The-Mathematics-of-Diffusion.pdf
@@ -77,3 +79,6 @@ Generative Modelling in Latent Space:
 			https://arxiv.org/pdf/2012.09841
 
 
+https://scholar.google.com/citations?view_op=view_citation&hl=de&user=UU3N6-UAAAAJ&sortby=pubdate&citation_for_view=UU3N6-UAAAAJ:yIkSIh5mphAC
+https://scholar.google.com/citations?view_op=view_citation&hl=de&user=UU3N6-UAAAAJ&sortby=pubdate&citation_for_view=UU3N6-UAAAAJ:-pSblevFsSkC
+https://scholar.google.com/citations?view_op=view_citation&hl=de&user=UU3N6-UAAAAJ&sortby=pubdate&citation_for_view=UU3N6-UAAAAJ:yifHVNw3tWEC

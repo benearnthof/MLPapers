@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Nonequilibrium Thermodynamics.md",
+                "file": "DiffusionMath.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nonequilibrium Thermodynamics"
+              "title": "DiffusionMath"
             }
           }
         ],
@@ -185,9 +185,9 @@
   },
   "active": "287d6a6f71dca78f",
   "lastOpenFiles": [
+    "Nonequilibrium Thermodynamics.md",
     "Typicality.md",
     "DiffusionMath.md",
-    "Nonequilibrium Thermodynamics.md",
     "Score Matching.md",
     "DDPM.md",
     "CodeRepos/FMBoosting.md",
