@@ -101,3 +101,14 @@ Related Ideas:
 	In the time limit the forward and backward processes are identical, this corresponds to the case of a quasi-static process  in statistical physics.
 
 2.4 Training
+	Training amounts to maximizing the model log likelihood: 
+	$\begin{aligned} L= & \int d \mathbf{x}^{(0)} q\left(\mathbf{x}^{(0)}\right) \log p\left(\mathbf{x}^{(0)}\right) \\ = & \int d \mathbf{x}^{(0)} q\left(\mathbf{x}^{(0)}\right) . \\ & \quad \log \left[\begin{array}{c}\int d \mathbf{x}^{(1 \cdots T)} q\left(\mathbf{x}^{(1 \cdots T)} \mid \mathbf{x}^{(0)}\right) . \\ p\left(\mathbf{x}^{(T)}\right) \prod_{t=1}^T \frac{p\left(\mathbf{x}^{(t-1)} \mid \mathbf{x}^{(t)}\right)}{q\left(\mathbf{x}^{(t)} \mid \mathbf{x}^{(t-1)}\right)}\end{array}\right]\end{aligned}$
+	Which can be approximated with a lower bound we can derive using [[Jensens Inequality]]
+	Further, this can be reduced to a sum of: 
+		KL Divergence of Source and Target
+		And Entropies: $H_q\left(\mathbf{X}^{(T)} \mid \mathbf{X}^{(0)}\right)-H_q\left(\mathbf{X}^{(1)} \mid \mathbf{X}^{(0)}\right)-H_p\left(\mathbf{X}^{(T)}\right)$
+		This is a direct analogue of how the log likelihood bounds in Variational Bayesian Methods are derived.
+	Thus we can reduce the estimation of a probability distribution to regression on functions that modifiy the mean and covariance of a sequence of Gaussians.
+	Noise Scheduling Considerations: 
+	The authors claim here that setting the correct diffusion rate $\beta_t$ is crucial for the performance of the model, making connections to [[Annealed Importance Sampling]] and [[Jarzynski Thermo]]. Later analysis further analyzes these claims, from the perspective of [[Flow Matching]] and [[Typicality]] This makes intuitive sense since one does not want to waste interpolation steps near the noise distribution. It is much more sensible to decrease step size near the target distribution for example. Direct connection to typicality: [[Geometric Perspective on Diffusion Models]]
+	
