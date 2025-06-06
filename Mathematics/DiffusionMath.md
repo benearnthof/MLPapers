@@ -16,7 +16,7 @@ Connection of DDPMs to:
 * Likelihood-based Models
 * Score-based Models
 	* https://arxiv.org/pdf/2011.13456
-	* Langevin Dynamics
+	* [[Langevin Dynamics]]
 	* https://yang-song.net/blog/2021/score/
 	* https://lilianweng.github.io/posts/2021-07-11-diffusion-models/
 	* https://arxiv.org/pdf/2102.09672
@@ -83,3 +83,7 @@ Generative Modelling in Latent Space:
 https://scholar.google.com/citations?view_op=view_citation&hl=de&user=UU3N6-UAAAAJ&sortby=pubdate&citation_for_view=UU3N6-UAAAAJ:yIkSIh5mphAC
 https://scholar.google.com/citations?view_op=view_citation&hl=de&user=UU3N6-UAAAAJ&sortby=pubdate&citation_for_view=UU3N6-UAAAAJ:-pSblevFsSkC
 https://scholar.google.com/citations?view_op=view_citation&hl=de&user=UU3N6-UAAAAJ&sortby=pubdate&citation_for_view=UU3N6-UAAAAJ:yifHVNw3tWEC
+
+[[Stochastic Processes and Applications]]
+
+[[On the Theory of Stochastic Processes, With Particular Reference to Applications]]

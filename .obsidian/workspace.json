@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics & Statistics/Typicality.md",
+                "file": "Mathematics/Typicality.md",
                 "mode": "source",
                 "source": false
               },
@@ -22,49 +22,35 @@
             }
           },
           {
-            "id": "e556ee8539c72172",
+            "id": "bb4fc4236fbf4304",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics & Statistics/Geometric Perspective on Diffusion Models.md",
+                "file": "Mathematics/DiffusionMath.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Geometric Perspective on Diffusion Models"
+              "title": "DiffusionMath"
             }
           },
           {
-            "id": "10afb4e4e014700f",
+            "id": "304e134996456252",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Consistency Models.md",
+                "file": "Langevin Dynamics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Consistency Models"
-            }
-          },
-          {
-            "id": "d4cb8e74707c91b2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Mathematics & Statistics/Typicality.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Typicality"
+              "title": "Langevin Dynamics"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -137,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics & Statistics/Geometric Perspective on Diffusion Models.md",
+                "file": "Langevin Dynamics.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -147,7 +133,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Geometric Perspective on Diffusion Models"
+              "title": "Backlinks for Langevin Dynamics"
             }
           },
           {
@@ -185,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics & Statistics/Geometric Perspective on Diffusion Models.md",
+                "file": "Langevin Dynamics.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Geometric Perspective on Diffusion Models"
+              "title": "Outline of Langevin Dynamics"
             }
           }
         ],
@@ -212,36 +198,38 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e556ee8539c72172",
+  "active": "304e134996456252",
   "lastOpenFiles": [
-    "Consistency Models.md",
-    "Mathematics & Statistics/Geometric Perspective on Diffusion Models.md",
+    "Langevin Dynamics.md",
+    "Mathematics/DiffusionMath.md",
+    "On the Theory of Stochastic Processes, With Particular Reference to Applications.md",
+    "Mathematics/Typicality.md",
+    "Generative Models/Consistency Models.md",
+    "Stochastic Processes and Applications.md",
+    "Mathematics/Théorie analytique de la chaleur.md",
+    "Mathematics/Über Diffusion (Fick 1855).md",
+    "Mathematics/The Mathematics of Diffusion.md",
+    "Generative Models/Flow Matching.md",
+    "Mathematics/Geometric Perspective on Diffusion Models.md",
+    "Mathematics/Guidance.md",
+    "Mathematics/Jarzynski Thermo.md",
+    "Mathematics/Jensens Inequality.md",
+    "Generative Models/Karras Elucidating.md",
+    "Mathematics/Mean-Shift Algorithm.md",
+    "Mathematics/The Geometry of Generative Models.md",
+    "Generative Models/Nonequilibrium Thermodynamics.md",
+    "Generative Models/Rectified Flow.md",
+    "Differential Equations/Marginal Preserving ODEs.md",
+    "Generative Models/DDPM.md",
+    "Generative Models",
+    "Differential Equations/SDE.md",
+    "Differential Equations/ODE.md",
+    "Differential Equations",
     "Applications/Large Language Diffusion Models.md",
-    "Mean-Shift Algorithm.md",
-    "Rectified Flow.md",
-    "Guidance.md",
-    "Karras Elucidating.md",
-    "Mathematics & Statistics/Score-based generative modeling SDEs.md",
-    "Mathematics & Statistics/Generalized Denoising Auto-Encoders as Generative Models.md",
-    "Second Order Samplers.md",
-    "Marginal Preserving ODEs.md",
-    "CodeRepos/Diff Sampler.md",
-    "Applications/Proteina.md",
+    "Generative Models/Score-based generative modeling SDEs.md",
+    "Generative Models/Generalized Denoising Auto-Encoders as Generative Models.md",
     "Applications",
-    "Mathematics & Statistics/Jarzynski Thermo.md",
-    "Mathematics & Statistics/Flow Matching.md",
-    "Mathematics & Statistics/DiffusionMath.md",
-    "Mathematics & Statistics/DDPM.md",
-    "CodeRepos/FMBoosting.md",
-    "Mathematics & Statistics/Typicality.md",
-    "Mathematics & Statistics/Nonequilibrium Thermodynamics.md",
-    "README.md",
-    "Mathematics & Statistics/Annealed Importance Sampling.md",
-    "Mathematics & Statistics/Jensens Inequality.md",
-    "Mathematics & Statistics/Score Matching.md",
-    "create a link.md",
-    "Welcome.md",
     "CodeRepos",
-    "Mathematics & Statistics"
+    "Mathematics"
   ]
 }
