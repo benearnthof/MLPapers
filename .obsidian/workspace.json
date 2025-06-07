@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Generative Models/Flow Matching for Generative Modeling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Flow Matching for Generative Modeling"
             }
           }
         ]
@@ -169,8 +169,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3be1845d3f6f75df",
+  "active": "1fcff350edde9a71",
   "lastOpenFiles": [
+    "CodeRepos/torchdiffeq.md",
+    "Generative Models/Flow Matching for Generative Modeling.md",
+    "Generative Models/Continuous Normalizing Flows.md",
+    "Generative Models/Stochastic Interpolants.md",
+    "GeneralML/Neural ODE.md",
+    "README.md",
     "General Applications/Proteina.md",
     "Proteomics/AlphaFold3.md",
     "Proteomics/CATH.md",
@@ -192,12 +198,7 @@
     "Generative Models/SE(3) Flow Matching.md",
     "Generative Models/DDPM.md",
     "Proteomics/500 Million Years of Evolution.md",
-    "Proteomics/Protein Universe.md",
-    "Generative Models/Conditional Generative Models.md",
-    "Generative Models/Normalizing Flows.md",
-    "Generative Models/Riemannian Score-Based Generative Modelling.md",
     "Proteomics",
-    "Generative Models/Flow Matching on General Geometries.md",
     "Generative Models",
     "Differential Equations",
     "General Applications",
