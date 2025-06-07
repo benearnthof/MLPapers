@@ -186,6 +186,8 @@
   },
   "active": "bb4fc4236fbf4304",
   "lastOpenFiles": [
+    "Mathematics/Bessel Functions.md",
+    "Mathematics/The Mathematics of Diffusion.md",
     "Mathematics/DiffusionMath.md",
     "Mathematics/Langevin Dynamics.md",
     "Mathematics/On the Theory of Stochastic Processes, With Particular Reference to Applications.md",
@@ -194,7 +196,6 @@
     "Mathematics/Stochastic Processes and Applications.md",
     "Mathematics/Théorie analytique de la chaleur.md",
     "Mathematics/Über Diffusion (Fick 1855).md",
-    "Mathematics/The Mathematics of Diffusion.md",
     "Generative Models/Flow Matching.md",
     "Mathematics/Geometric Perspective on Diffusion Models.md",
     "Mathematics/Guidance.md",
@@ -213,7 +214,6 @@
     "Differential Equations",
     "Applications/Large Language Diffusion Models.md",
     "Generative Models/Score-based generative modeling SDEs.md",
-    "Generative Models/Generalized Denoising Auto-Encoders as Generative Models.md",
     "Applications",
     "CodeRepos",
     "Mathematics"

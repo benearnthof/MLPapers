@@ -56,3 +56,6 @@ Where $\theta$ is the temperature, $K$ is the heat conductivity of the medium, a
 Here, of course, the transported medium is not saline or iodine, but heat itself.
 
 #### 2. Methods of Solution When the Diffusion Coefficient is Constant
+
+Given a constant diffusion coefficient we can obtain a general solution to the diffusion equation which, in most cases, is either a series of error functions or related integrals or a series of trigonometrical functions. In the special case of diffusion on a cylinder, we obtain solutions in the form of a series of [[Bessel Functions]].
+
