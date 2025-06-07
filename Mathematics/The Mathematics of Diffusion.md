@@ -22,4 +22,10 @@ This appears at first removed from thermodynamics and statistical models but one
 
 1.1 The opening paragraph already skirts around the connection to information theory: "Simply because there are more iodine molecules in the lower element than in the upper one, there is a net transfer from the lower to the upper side of the section as a result of the molecular motions." While this is correct, the reason why this appears irreversible is an entropic one: The number of mixed states is simply orders of magnitude larger than the number of sorted, or near sorted, states. We observe this in the source distribution of diffusion probabilistic models where the Gaussian we sample from initially is the maximum entropy distribution (with specified mean and variance) among all real-valued distributions supported on the complete sampling space. [[DDPM]] [[Nonequilibrium Thermodynamics]] [[Geometric Perspective on Diffusion Models]]
 
-1.2 
+1.2 "The mathematical theory of diffusion in isotropic
+substances is therefore based on the hypothesis that the rate of transfer of
+diffusing substance through unit area of a section is proportional to the
+concentration gradient measured normal to the section, i.e."
+	$F=-D \partial C / \partial x$
+
+1.3 Differential equation of diffusion
