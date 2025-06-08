@@ -169,10 +169,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1fcff350edde9a71",
+  "active": "3be1845d3f6f75df",
   "lastOpenFiles": [
-    "CodeRepos/torchdiffeq.md",
+    "AlphaFlow.md",
     "Generative Models/Flow Matching for Generative Modeling.md",
+    "CodeRepos/torchdiffeq.md",
     "Generative Models/Continuous Normalizing Flows.md",
     "Generative Models/Stochastic Interpolants.md",
     "GeneralML/Neural ODE.md",
@@ -197,7 +198,6 @@
     "GeneralML/Attention Sinks.md",
     "Generative Models/SE(3) Flow Matching.md",
     "Generative Models/DDPM.md",
-    "Proteomics/500 Million Years of Evolution.md",
     "Proteomics",
     "Generative Models",
     "Differential Equations",
