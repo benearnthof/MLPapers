@@ -169,14 +169,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1fcff350edde9a71",
+  "active": "c64193588a3b7b45",
   "lastOpenFiles": [
     "Generative Models/Schrödinger Bridge Matching.md",
+    "Generative Models/Variational Diffusion Models.md",
     "Generative Models/Progressive Distillation.md",
     "Mathematics/Reverse-Time Diffusion Equation Models.md",
     "General Applications/Audiobox.md",
     "Generative Models/Flow Matching for Generative Modeling.md",
-    "Generative Models/Variational Diffusion Models.md",
     "Generative Models/Action Matching.md",
     "Generative Models/FFJORD.md",
     "Generative Models/Iterative alpha Blending.md",
