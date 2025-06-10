@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Generative Models/Schrödinger Bridge Matching.md",
+                "file": "Generative Models/Flow Matching for Generative Modeling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Schrödinger Bridge Matching"
+              "title": "Flow Matching for Generative Modeling"
             }
           }
         ]
@@ -171,12 +171,15 @@
   },
   "active": "c64193588a3b7b45",
   "lastOpenFiles": [
+    "CodeRepos/Diff Sampler.md",
+    "CodeRepos/FMBoosting.md",
+    "CodeRepos/torchdiffeq.md",
+    "Generative Models/Flow Matching for Generative Modeling.md",
+    "General Applications/Audiobox.md",
+    "Mathematics/Reverse-Time Diffusion Equation Models.md",
+    "Generative Models/Progressive Distillation.md",
     "Generative Models/Schrödinger Bridge Matching.md",
     "Generative Models/Variational Diffusion Models.md",
-    "Generative Models/Progressive Distillation.md",
-    "Mathematics/Reverse-Time Diffusion Equation Models.md",
-    "General Applications/Audiobox.md",
-    "Generative Models/Flow Matching for Generative Modeling.md",
     "Generative Models/Action Matching.md",
     "Generative Models/FFJORD.md",
     "Generative Models/Iterative alpha Blending.md",
@@ -194,10 +197,7 @@
     "Generative Models/Moser Flow.md",
     "Generative Models/Normalizing Flows on Manifolds.md",
     "$/Pi_00.md",
-    "$/Pi_0.md",
     "$",
-    "General Applications/Voicebox.md",
-    "Generative Models/SE(3) Flow Matching.md",
     "GeneralML",
     "Proteomics",
     "Generative Models",
