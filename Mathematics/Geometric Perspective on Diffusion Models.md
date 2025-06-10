@@ -3,7 +3,7 @@ https://arxiv.org/pdf/2305.19947
 Direct connection to Stochastic Differential Equations (SDEs) and other [[Marginal Preserving ODEs]]
 Neatly unifies generative models in a single, broader (in the sense of less informative inductive priors) framework.
 
-GPDM analyzes ODE-based sampling of [[Variance Exploding]] SDE formulation and highlights structures in their sampling dynamics.
+GPDM analyzes ODE-based sampling of Variance exploding [[Score-based generative modeling SDEs]] SDE formulation and highlights structures in their sampling dynamics.
 
 Source and Target distributions are smoothly connected with both
 	Quasi-Linear sampling trajectory and

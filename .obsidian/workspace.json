@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Generative Models/DDPM.md",
+                "file": "Generative Models/Flow Matching for Generative Modeling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DDPM"
+              "title": "Flow Matching for Generative Modeling"
             }
           }
         ]
@@ -171,7 +171,18 @@
   },
   "active": "c64193588a3b7b45",
   "lastOpenFiles": [
+    "Schrödinger Bridge Matching.md",
     "Generative Models/Flow Matching for Generative Modeling.md",
+    "Doob's h-transform.md",
+    "Diffusion Bridges.md",
+    "Progressive Distillation.md",
+    "Variational Diffusion Models.md",
+    "Mathematics/Geometric Perspective on Diffusion Models.md",
+    "Variance Exploding.md",
+    "Reverse-Time Diffusion Equation Models.md",
+    "Generative Models/Score Matching.md",
+    "Differential Equations/SDE.md",
+    "Generative Models/DDPM.md",
     "Generator Matching.md",
     "Discrete State Spaces.md",
     "Action Matching.md",
@@ -187,17 +198,6 @@
     "Voicebox.md",
     "Movie Gen.md",
     "Generative Models/SE(3) Flow Matching.md",
-    "AlphaFlow.md",
-    "CodeRepos/torchdiffeq.md",
-    "Generative Models/Continuous Normalizing Flows.md",
-    "Generative Models/Stochastic Interpolants.md",
-    "GeneralML/Neural ODE.md",
-    "README.md",
-    "General Applications/Proteina.md",
-    "Proteomics/AlphaFold3.md",
-    "Proteomics/CATH.md",
-    "GeneralML/Stable Diffusion 3.md",
-    "GeneralML/LoRA.md",
     "GeneralML",
     "Proteomics",
     "Generative Models",

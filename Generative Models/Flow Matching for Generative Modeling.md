@@ -29,10 +29,23 @@ A minimal Flow Matching implementation consists of two steps:
 
 The Flow Matching paradigm can easily be extended to accommodate discrete state spaces [[Discrete State Spaces]], inductive priors such as Riemannian Manifolds[[Flow Matching on General Geometries]], and Continuous Time Markov Processes [[Generator Matching]], where, up to differences in the neural architecture, the Flow Matching recipe stays the same. 
 
+Diffusion Models can be seen as a special case of Flow Matching, depending on the chosen formulation we arrive at several connections:
+	* [[Nonequilibrium Thermodynamics]] and [[DDPM]] introduce Diffusion Models as discrete time Gaussian Processes
+	* [[Score-based generative modeling SDEs]] introduce them as solutions to [[SDE]]s 
 
+Diffusion Models build the probability path $p_t$ by interpolating between target and source by a forward noising process, that can be modeled by specific [[SDE]]s. These SDEs are chosen to have marginal probabilities obtainable analytically as a closed form solution, and thus can be used to parametrize the generator of the diffusion process (drift and diffusion coefficients) via the score function [[Score Matching]]. This parametrization is based on a reversal of the forward process. [[Reverse-Time Diffusion Equation Models]]. 
 
-
+Diffusion models learn the score function of the marginal probabilities. It can be shown that this is, up to normalizing constants, equivalent to learning to predict the noise, denoising, and v-prediction. [[Variational Diffusion Models]] [[Progressive Distillation]] 
+[[Diffusion Bridges]] design $p_t$ by extending diffusion models to arbitrary source-target couplings, again leveraging [[SDE]]s with suitable marginals, a clever application of [[Doob's h-transform]].
+[[Schrödinger Bridge Matching]] shows that linear versions of Flow Matching arise as limiting cases of Bridge Matching. 
 ## Key Concepts
+
+
+
+
+
+
+
 
 ## Flow Models
 
