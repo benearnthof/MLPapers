@@ -140,9 +140,37 @@ which implies that states later than $t$ depend only on $X_t$.
 Much more interestingly, this dependence is *deterministic* for flow models. 
 (? Why is that the case?)
 
-3.41 Equivalence between flows and velocity fields
+#### Equivalence between flows and velocity fields
+We can define a flow $\psi$ in terms of a *velocity field* $u:[0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$
+Where $u:$$[0,1]$ parametrizes the time interval, implementing $u:(t, x) \mapsto u_t(x)$
+via the ODE:
+	$\frac{\mathrm{d}}{\mathrm{d} t} \psi_t(x)=u_t\left(\psi_t(x)\right)$ (flow ODE)
+	$\psi_0(x)=x$ (flow initial conditions)
+We see that the time derivative of our flow at time $t$ is equivalent to the velocity field evaluated at time $t$.
+Under the condition of local Lipschitzness a unique solution exists for this ODE locally. To guarantee the existence of flow almost everywhere and at least until time $t=1$ we will later utilize integrability. 
 
+We have thus shown that a velocity field defines a flow uniquely, but does the converse also hold? 
+For a given flow $\psi_t$ we want to extract its defining velocity field $u_t(x)$, as this would allow us to obtain a velocity field from any interpolating flow. Considering
+	$\frac{\mathrm{d}}{\mathrm{d} t} \psi_t\left(x^{\prime}\right)=u_t\left(\psi_t\left(x^{\prime}\right)\right)$
+we exploit the fact that $\psi_t$ is an invertible diffeomorphism for every $t \in[0,1]$. 
+Let $x^{\prime}=\psi_t^{-1}(x)$ and plug this into the case above we get:
+	$u_t(x)=\dot{\psi}_t\left(\psi_t^{-1}(x)\right)$,  $(*)$ 
+	where $\dot{\psi}_t:=\frac{\mathrm{d}}{\mathrm{d} t} \psi_t$.
+But $\frac{\mathrm{d}}{\mathrm{d} t} \psi_t(x)=u_t\left(\psi_t(x)\right)$ as defined in the flow ODE in the first place, thus, when plugging $(*)$ into our flow ODE we see that both flow $\psi_t$ and velocity field $u_t$ are equivalent. 
 
+#### Computing target samples from source targets
+
+Once we have trained a sufficiently capacious neural net to approximate the velocity field we can then obtain target samples by approximating the solution to the flow ODE via numerical methods for [[ODE]]s. Given some initial condition $X_0=x_0$ we could for example use the Euler method, with the update rule: 
+	$X_{t+h}=X_t+h u_t\left(X_t\right)$
+where $h$ is a step size hyper-parameter, usually defined by $h=n^{-1}>0$ with n defining the amount of sample steps we're willing to take. Here the Euler method coincides with the first-order Taylor expansion of $X_t$: 
+	$X_{t+h}=X_t+h \dot{X}_t+o(h)=X_t+h u_t\left(X_t\right)+o(h)$, 
+meaning that for smaller and smaller step sizes $h \rightarrow 0$, the approximation error we incur with the Euler method vanishes. Other solvers like the Second order Midpoint-, or Runge-Kutta-Method, are often better in practice as they have better error guarantees, allowing for a smaller number of total function evaluations.
+
+#### Probability Paths and the Continuity Equation
+
+#### Instantaneous Change of Variables
+
+#### Training Flow Models with Simulation
 
 
 ## Flow Matching

@@ -171,6 +171,7 @@
   },
   "active": "c64193588a3b7b45",
   "lastOpenFiles": [
+    "Differential Equations/ODE.md",
     "Generative Models/Flow Matching for Generative Modeling.md",
     "Measure Theoretic Probability.md",
     "Generative Models/Stochastic Interpolants.md",
@@ -197,7 +198,6 @@
     "Differential Equations/SDE.md",
     "Generative Models/DDPM.md",
     "Generative Models/Generator Matching.md",
-    "Generative Models/Discrete State Spaces.md",
     "$",
     "GeneralML",
     "Proteomics",
