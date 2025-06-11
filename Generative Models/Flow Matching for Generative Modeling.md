@@ -175,6 +175,29 @@ meaning that for smaller and smaller step sizes $h \rightarrow 0$, the approxima
 
 ## Flow Matching
 
+#### Data
+
+#### Probability Paths
+
+#### Generating Velocity Fields
+
+#### Conditioning and the Marginalization Trick
+
+#### Flow Matching Loss
+
+#### Conditional Generation
+
+#### Optimal Transport
+
+#### Affine Conditional Flows
+
+#### Data Couplings
+
+#### Guidance
+
+
+
+
 ## Non-Euclidean Flow Matching
 
 ## Continuous Time Markov Chain Models
