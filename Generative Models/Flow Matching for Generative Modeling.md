@@ -131,11 +131,11 @@ Which is in general shortened to the push-forward operator:
 	$\left[\psi_{\sharp} p_X\right](y):=p_X\left(\psi^{-1}(y)\right)\left|\operatorname{det} \partial_y \psi^{-1}(y)\right|$.
 
 #### Flows as generative Models
-A **flow** is a time-dependent mapping $\psi:[0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$ implementing $\psi:(t, x) \mapsto \psi_\iota(x)$. Such that the function $\psi_\iota(x)$ is a $C^r$ diffeomorphism in $x$ for all $t \in[0,1]$.
+A **flow** is a time-dependent mapping $\psi:[0,1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$ implementing $\psi:(t, x) \mapsto \psi_t(x)$. Such that the function $\psi_t(x)$ is a $C^r$ diffeomorphism in $x$ for all $t \in[0,1]$.
 A **flow model** is a *continuous-time Markov process* $\left(X_t\right)_{0 \leq t \leq 1}$ defined by applying a flow $\psi_t$ to the RV $X_0$: 
-	$X_\iota=\psi_\iota\left(X_0\right), \quad t \in[0,1]$, where $X_0 \sim p$.
+	$X_t=\psi_t\left(X_0\right), \quad t \in[0,1]$, where $X_0 \sim p$.
 The Markov property holds because for any choice of $0 \leq t<s \leq 1$, we obtain 
-	$X_s=\psi_s\left(X_0\right)=\psi_s\left(\psi_t^{-1}\left(\psi_\iota\left(X_0\right)\right)\right)=\psi_{s \mid t}\left(X_\iota\right)$
+	$X_s=\psi_s\left(X_0\right)=\psi_s\left(\psi_t^{-1}\left(\psi_t\left(X_0\right)\right)\right)=\psi_{s \mid t}\left(X_t\right)$
 which implies that states later than $t$ depend only on $X_t$.
 Much more interestingly, this dependence is *deterministic* for flow models. 
 (? Why is that the case?)
