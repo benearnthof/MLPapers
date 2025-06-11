@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Generative Models/Stochastic Interpolants.md",
+                "file": "Generative Models/Flow Matching for Generative Modeling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Stochastic Interpolants"
+              "title": "Flow Matching for Generative Modeling"
             }
           }
         ]
@@ -171,8 +171,10 @@
   },
   "active": "c64193588a3b7b45",
   "lastOpenFiles": [
-    "Misc/Alchemy and Artificial Intelligence.md",
+    "Measure Theoretic Probability.md",
     "Generative Models/Flow Matching for Generative Modeling.md",
+    "Generative Models/Stochastic Interpolants.md",
+    "Misc/Alchemy and Artificial Intelligence.md",
     "Misc",
     "CodeRepos/Diff Sampler.md",
     "CodeRepos/FMBoosting.md",
@@ -196,8 +198,6 @@
     "Generative Models/DDPM.md",
     "Generative Models/Generator Matching.md",
     "Generative Models/Discrete State Spaces.md",
-    "Generative Models/Moser Flow.md",
-    "Generative Models/Normalizing Flows on Manifolds.md",
     "$",
     "GeneralML",
     "Proteomics",
