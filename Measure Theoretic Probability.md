@@ -67,4 +67,9 @@ No. Vitali sets are a popular counter example, usually employed in the context o
 
 ### 1.2 Measures
 
+In the context of probability we're interested in set functions that assign any subset of a sigma algebra a number ("measurement"). This function should also adhere to certain restrictions.
+
+Let $S$ be any set and $\Sigma$ any $\sigma$-Algebra on $S$. A mapping $\mu: \Sigma \rightarrow[0, \infty]$ is 
+	(i) *finitely additive* if $\mu(\emptyset)=0$ and $\mu(E \cup F)=\mu(E)+\mu(F)$ for every pair of disjoint sets $E$ and $F$.
+	(ii) *$\sigma$-additive* if $\mu(\emptyset)=0$ and if $\mu\left(\cup_n E_n\right)=\sum_n \mu\left(E_n\right)$ for any sequence of disjoint sets of $\Sigma$ for which its union is also in $\Sigma$. (Which is technically fulfilled by additivity and closure under countable unions already).
 
