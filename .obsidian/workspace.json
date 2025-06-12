@@ -171,6 +171,7 @@
   },
   "active": "cd18612d87e76a15",
   "lastOpenFiles": [
+    "General Applications/Edit Flows.md",
     "Measure Theoretic Probability.md",
     "Proteomics/Protein Conformation Generation.md",
     "CodeRepos/ConfDiff.md",
@@ -197,7 +198,6 @@
     "General Applications/Movie Gen.md",
     "Mathematics/Doob's h-transform.md",
     "Generative Models/Diffusion Bridges.md",
-    "Mathematics/Geometric Perspective on Diffusion Models.md",
     "$",
     "GeneralML",
     "Proteomics",
