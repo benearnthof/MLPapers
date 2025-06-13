@@ -205,3 +205,14 @@ Proofs/Intuition in exercises.
 ### 1.6 Exercises
 
 #### 1.6.2 Prove [[Measure Theoretic Probability#Corrolary 1.8 $ sigma$-sub-Additivity]]
+
+
+
+
+
+
+
+## 2 Existence of Lebesgue Measure
+
+To construct the Lebesgue Measure on the Borel sets of $\mathbb{R}$ we begin by defining a suitable countably additive function on an algebra, extend it to a $\sigma$-Algebra strictly larger than $\mathfrak{B}(\mathbb{R})$ and then show that all desirable properties of our target function still hold when we restrict ourselves back to the Borel-$\sigma$-Algebra of the reals. 
+This is the core idea of the *Carathéodory Extension Theorem*.
