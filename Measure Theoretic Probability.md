@@ -1,5 +1,6 @@
 https://staff.fnwi.uva.nl/p.j.c.spreij/onderwijs/master/mtp.pdf
-
+https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/MAT425_Lecture_Notes.pdf
+TODO: take a refresher on transfinite induction https://de.wikipedia.org/wiki/Transfinite_Induktion
 ## 1. $\sigma$-Algebras and measures
 
 For any non-empty set $S$ we can select some collection of subsets $\Sigma_0 \subset 2^S$.
@@ -128,7 +129,49 @@ By extending $\mu$ to $\bar{\Sigma}$ we obtain an extended measure space $(S, \b
 
 ### 1.4 $\pi$- and $d$-systems
 
+The contents of the systems of sets we encounter in probability theory and functional analysis are often quite abstract and it can be hard to make constructive statements about the structure of the sets they contain. We will see how some "well behaved" systems of sets allow us to deduce properties of $\Sigma$ from the properties of $\mathcal{C}$ for $\sigma(\mathcal{C})=\Sigma$.
 
+#### Definition 1.10: $\pi$-system
+
+A collection $\mathcal{I}$ of subsets of $S$ is called a $\pi$-system if it is closed under pairwise intersection: 
+	$I_1, I_2 \in \mathcal{I}$ implies $I_1 \cap I_2 \in \mathcal{I}$.
+
+Corollary: By induction we can show that this also implies that $pi$-systems are closed under finite intersections.
+
+How is this useful for us, given our stronger definition of $\sigma$-Algebra?
+$\sigma$-Algebras allow *countably* many set operations. 
+It is possible to disentangle the defining properties of a $\sigma$-Algebra into:
+	(i) taking finite intersections
+	(ii) the defining properties of a $d$-system / $Dynkin$-system
+
+#### Definition 1.11: $d$-system / $Dynkin$-system
+
+A collection $\mathcal{D}$ of subsets of $S$ is called a $d$-system if the following conditions hold:
+	(i) $S \in \mathcal{D}$.
+	(ii) If $E, F \in \mathcal{D}$ such that $E \subset F$, then $F \backslash E \in \mathcal{D}$. (note this is a less general assumption than general set differences)
+	(iii) If $E_n \in \mathcal{D}$ for $n \in \mathbb{N}$, and $E_n \subset E_{n+1}$ for all $n$, then $\cup_n E_n \in \mathcal{D}$.
+
+#### Proposition 1.12: $\Sigma$ is a $\sigma$-algebra iff it is a $\pi$-system and a $d$-system.
+
+**Proof** Outline: We need to get from the combined properties of pi and dynkin systems to the properties of sigma-Algebras. We already get finite intersections for free. Can we somehow use the "nested difference" property of Dynkin systems with the countable union property to arrive at a full $\sigma$-Algebra? Implication from $\sigma$-Algebra to pi and d-systems is trivial.
+First we observe that the "Universe" property is given in d-systems. We use this in combination with (ii) to show that since every subset of a d-system is at least subset of the "universe" set we recover closure under the complement operation. Now we can derive that our system is thus closed under finite unions sine we can express a union as a complement of an intersection of complements, and $\Sigma$ is closed under intersections because it is a $pi$-system. We finally combine this with the third property of dynkin systems to recover that $\Sigma$ must be a $\sigma$-Algebra.
+Clarification: We show the countable union property by first defining auxiliary sets $B_n$ like so: 
+	$B_1=A_1, \quad B_n=A_n \backslash \bigcup_{k=1}^{n-1} A_k$ for $n \geq 2$.
+Where it is clear that each $B_n \subseteq A_n$, the $B_n$ are pairwise disjoint, and $\bigcup_{n=1}^{\infty} A_n=\bigcup_{n=1}^{\infty} B_n$. We only utilize finite intersections, difference and disjoint countable unions, which we all have shown to be valid operations for $\Sigma$. So we can conclude that $B_n \in \Sigma$ for all $n_r$ and finally:
+	$\bigcup_{n=1}^{\infty} A_n=\bigcup_{n=1}^{\infty} B_n \in \Sigma$ $\qquad \square$
+
+This leads us straight to Dynkin's Lemma:
+#### Proposition 1.13: Dynkin's Lemma: 
+Let $\mathcal{I}$ be a $\pi$-system. Then $d(\mathcal{I})=\sigma(\mathcal{I})$.
+Proof in the linked notes.
+Proposition 1.13 is equivalent to: 
+Let $\mathcal{I}$ be a $\pi$-system and $\mathcal{D}$ be a $d$-system. If $\mathcal{I} \subset \mathcal{D}$, then $\sigma(\mathcal{I}) \subset \mathcal{D}$.
+
+Which allows us to show that any finite measure on $\Sigma$ is characterized by its action on a rich enough $\pi$-system. (If we have two **finite** measures $\mu$ and $\nu$ defined on a $\sigma$-Algebra $\Sigma$, and they agree on a $\pi$-system $\mathcal{P} \subseteq \Sigma$ that generates $\Sigma$, then they must coincide on all of $\Sigma$).
+
+#### Theorem 1.15: Uniqueness of Measures
+
+Let $\mathcal{I}$ be a $\pi$-system and $\Sigma=\sigma(\mathcal{I})$. Let $\mu_1$ and $\mu_2$ be finite measures on $\Sigma$ with the properties that $\mu_1(S)=\mu_2(S)$ and that $\mu_1$ and $\mu_2$ coincide on $\mathcal{I}$.  Then $\mu_1=\mu_2($ on $\Sigma)$. (The measures coincide on the entire sigma Algebra.)
 
 
 
