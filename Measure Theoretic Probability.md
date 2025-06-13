@@ -172,6 +172,32 @@ Which allows us to show that any finite measure on $\Sigma$ is characterized by 
 #### Theorem 1.15: Uniqueness of Measures
 
 Let $\mathcal{I}$ be a $\pi$-system and $\Sigma=\sigma(\mathcal{I})$. Let $\mu_1$ and $\mu_2$ be finite measures on $\Sigma$ with the properties that $\mu_1(S)=\mu_2(S)$ and that $\mu_1$ and $\mu_2$ coincide on $\mathcal{I}$.  Then $\mu_1=\mu_2($ on $\Sigma)$. (The measures coincide on the entire sigma Algebra.)
+Note: Without finiteness for the measures this theorem does not hold.
+
+### 1.5: Probability Language
+
+In Probability Theory, we are used to the notation $(\Omega, \mathcal{F}, \mathbb{P})$ where we define such a specific instance of a measure space, equipped with a *probability* measure as a *probability space*.
+In this context, the measure $\mathbb{P}$ is normed to $\mathbb{P}(\Omega)=1$.  where we refer to $\Omega$ as set of outcomes with the respective *events* being subsets of $\mathcal{F}$. 
+**An event is a measurable subset of the set of all outcomes.**
+
+A probability space can be interpreted as a mathematical model of a random experiment. 
+
+In many interesting cases one needs to be careful how one specifies a probability measure to a probability space. Consider infinite sequences of coin tosses. The set of outcomes would take the form $\Omega=\{0,1\}^{\mathbb{N}}$ with each potential outcome being in infinite sequence $\left(\omega_1, \omega_2, \ldots\right)$ with $\omega_n \in\{0,1\}$. Can we just use the powerset of $\Omega$ as a suitable $\sigma$-Algebra?
+No! We can show that there is a bijection between the set of all infinite binary sequences (our set of events) and any interval on the real number line, meaning that we run into the same cardinality problem we already encountered when trying to show that there are subsets of $\mathbb{R}$ that are not part of $\mathfrak{B}(\mathbb{R})$. 
+How can we find a suitable candidate then?
+An alternative would be to define $\mathcal{C}$ as the collection of all events:
+	$\mathcal{C}=\left\{\left\{\omega \in \Omega: \omega_n=s\right\}, n \in \mathbb{N}, s \in\{0,1\}\right\}$
+Where the n-th entry corresponds to some outcome. 
+One can then show that there exists a probability measure on $\mathcal{F}=\sigma(\mathcal{C})$ that recovers all finite cases nicely. Proof: TODO
+
+#### Limsup and Liminf
+
+Interpreting $\mathcal{F}$ as a collection of events one can introduce limsup and liminf as special events.
+Consider a sequence of events $E_1, E_2, \dots$ and define:
+	$\begin{aligned} \limsup E_n & :=\bigcap_{m=1}^{\infty} \bigcup_{n=m}^{\infty} E_n \\ \liminf E_n & :=\bigcup_{m=1}^{\infty} \bigcap_{n=m}^{\infty} E_n .\end{aligned}$
+Limsup is described as the event that the $E_n$ occur infinitely often.
+Liminf is the event that the $E_n$ occur eventually.
+Proofs/Intuition in exercises. 
 
 
 
