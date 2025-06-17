@@ -1,7 +1,7 @@
 https://staff.fnwi.uva.nl/p.j.c.spreij/onderwijs/master/mtp.pdf
 https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/MAT425_Lecture_Notes.pdf
 TODO: take a refresher on transfinite induction https://de.wikipedia.org/wiki/Transfinite_Induktion
-## 1. $\sigma$-Algebras and measures
+# 1. $\sigma$-Algebras and measures
 
 For any non-empty set $S$ we can select some collection of subsets $\Sigma_0 \subset 2^S$.
 Such a collection of subsets is called an *algebra* on S if:
@@ -212,7 +212,157 @@ Proofs/Intuition in exercises.
 
 
 
-## 2 Existence of Lebesgue Measure
+# 2 Existence of Lebesgue Measure
 
 To construct the Lebesgue Measure on the Borel sets of $\mathbb{R}$ we begin by defining a suitable countably additive function on an algebra, extend it to a $\sigma$-Algebra strictly larger than $\mathfrak{B}(\mathbb{R})$ and then show that all desirable properties of our target function still hold when we restrict ourselves back to the Borel-$\sigma$-Algebra of the reals. 
 This is the core idea of the *Carathéodory Extension Theorem*.
+
+### 2.1 Outer Measure & Construction
+
+We define an *outer measure* on a set $S$ as a mapping $\mu^*: 2^S \rightarrow [0, \infty]$ that satisfies: 
+	(i) $\mu^*(\emptyset)=0$,
+	(ii) $\mu^*$ is monotone, i.e. $\mu^*(E) \leq \mu^*(F)$ if $E \subset F$,
+	(iii) $\mu^*$ is subadditive, i.e. $\mu^*\left(\bigcup_{n=1}^{\infty} E_n\right) \leq \sum_{n=1}^{\infty} \mu^*\left(E_n\right)$, valid for any sequence of sets $E_n$
+
+We immediately notice that $\mu^*$ is defined on the powerset of $S$ which means that it is defined even for sets that aren't measurable according to our prior definition. Can we somehow restrict this to a valid measure on the Borel sets for example?
+Additional note: This is also a slightly different approach to the way Kolmogorov introduces the concept of a general outer measure in chapter 25 section 2 of "Introductory Real Analysis", where he introduces outer measures as the greatest lower bound over all coverings of $E$ by a finite or countable system of rectangles $P_k$. We arrive at measurability by showing that the inner and outer measure of sets are equal to the measure itself, which is conceptually simpler but doesn't allow us to show that we can extend set functions defined on simple subsets to measures on $\sigma$-Algebras.
+This is why we take a slightly different approach, which is a bit more abstract.
+### 2.2 Definition $\mu$-measurable
+Let $\mu^*$ be an outer measure on a set $S$. A subset $E \subset S$ is called $\mu$-measurable if 
+	$\mu^*(F)=\mu^*(E \cap F)+\mu^*\left(E^c \cap F\right),\quad \forall F \subset S$ 
+This means that a $\mu$-measurable subset "splits" each other subset of $S$ additively. (This will come in handy for the construction of the Carathéodory $\sigma$-Algebra later.)
+The class of all such $\mu$-measurable sets, also known as the Carathéodory sets, is denoted by $\Sigma_\mu$.
+### 2.3 Carathéodory Criterion
+Let $\mu^*$ be an outer measure on a set $S$. Then $\Sigma_\mu$ is a $\sigma$-Algebra and the restricted mapping $\mu: \Sigma_\mu \rightarrow[0, \infty]$ of $\mu^*$ is a measure on $\Sigma_\mu$.
+
+**Proof**: We immediately see that the empty set $\emptyset$ is part of $\Sigma_\mu$ as any intersection with the empty set remains empty, which guarantees that $\emptyset$ is $\mu$-measurable.
+Further, $E^c \in \Sigma_\mu$ as soon as $E \in \Sigma_\mu$, meaning that $\Sigma_\mu$ is closed under complements.
+
+Let $E_1, E_2 \in \Sigma_\mu$ and $F \subset S$. The Identity: 
+	$F \cap\left(E_1 \cap E_2\right)^c=\left(F \cap E_1^c\right) \cup\left(F \cap\left(E_1 \cap E_2^c\right)\right)$
+yields, using the subadditivity of $\mu^*$, 
+	$\mu^*\left(F \cap\left(E_1 \cap E_2\right)^c\right) \leq \mu^*\left(F \cap E_1^c\right)+\mu^*\left(F \cap\left(E_1 \cap E_2^c\right)\right)$.
+Now, after adding $\mu^*\left(F \cap\left(E_1 \cap E_2\right)\right)$ to both sides and using that $E_1, E_2 \in \Sigma_\mu$ we obtain: 
+	$\mu^*\left(F \cap\left(E_1 \cap E_2\right)\right)+\mu^*\left(F \cap\left(E_1 \cap E_2\right)^c\right) \leq \mu^*(F)$,
+where we can show equality by using subadditivity of $\mu$ one more time. We have thus shown that $\Sigma_\mu$ is closed under intersections, and is thus an algebra. 
+
+We can then show, by induction and using the monotonicity property of $\mu^*$, that for any pairwise disjoint sequence of sets $E_i$ the following equality holds: 
+	$\mu^*(F \cap E)=\sum_{i=1}^{\infty} \mu^*\left(F \cap E_i\right)$
+
+Combining this one last time with monotonicity of $\mu$ for any countable union of sets $U_n=\bigcup_{i=1}^n E_i$ such that $U_n \in \Sigma_\mu$. we can finally show that $\Sigma_\mu$ is closed under countable unions and thus it is a $\sigma$-Algebra. $\square$
+
+We now use Theorem 2.3 to show the existence of Lebesgue measure on $(\mathbb{R}, \mathcal{B})$.
+(This is analogous to how Kolmogorov introduces the idea of outer measure in "Introductory Real Analysis). 
+Let $E$ be a subset of $\mathbb{R}$. By $\mathcal{I}(E)$ we denote a cover of $E$ consisting of at most countably many open intervals. For any interval $I$, we denote by $\lambda_0(I)$ its ordinary length. We now define a function $\lambda^*$ on $2^\mathbb{R}$ like so:
+	$\lambda^*(E)=\inf _{\mathcal{I}(E)} \sum_{I_k \in \mathcal{I}(E)} \lambda_0\left(I_k\right)$.
+In Lemma 2.4 of MTP we proceed to show that this is indeed a valid outer measure. The empty set criterion and monotonicity are immediately obvious / or can at least be proven easily by observing the infimum property of this definition. Kolmogorov just proceeds with the analogous definition of inner measure but for full rigor we would need to prove subadditivity.
+
+### Lemma 2.5: 
+Any Interval $I_a=(-\infty, a] \quad(a \in \mathbb{R})$ is $\lambda$-measurable. $I_a \in \Sigma_\lambda$. And thus $\mathcal{B} \subset \Sigma_\lambda$.
+
+**Proof**: Let $E \subset \mathbb{R}$. We already know that $\lambda^*$ is subadditive, so we only need to show that for any interval the "additive decomposable"/ Carathéodory Criterion holds: 
+	$\lambda^*\left(E \cap I_a\right)+\lambda^*\left(E \cap I_a^c\right)$.
+To accomplish this we choose a cover $\mathcal{I}(E)$ such that $\lambda^*(E) \geq\sum_{I \in \mathcal{I}(E)} \lambda^*(I)-\varepsilon$, for any $\varepsilon>0$. Which is valid by the definition of $\lambda^*$ and Lemma 2.4. 
+We then use the Carathéodory Criterion for our open cover over the interval:
+	$\lambda^*(I)=\lambda^*\left(I \cap I_a\right)+\lambda^*\left(I \cap I_a^c\right)$.
+To see that
+	$\lambda^*(E) \geq$ $\sum_{I \in \mathcal{I}(E)} \lambda^*\left(I \cap I_a\right)+\lambda^*\left(I \cap I_a^c\right)-\varepsilon$
+Which in turn is larger than:
+	$\lambda^*\left(E \cap I_a\right)+\lambda^*\left(E \cap I_a^c\right)-\varepsilon$.
+By letting $\varepsilon$ become arbitrarily close to zero we obtain the desired equality.
+
+We can now combine these results to arrive at the following theorem:
+
+### Theorem 2.6: Uniqueness of Lebesgue Measure on $\mathcal{B}$
+The (restricted) function $\lambda: \mathcal{B} \rightarrow[0, \infty]$ is the unique measure on $\mathcal{B}$ that satisfies $\lambda(I)=\lambda_0(I)$.
+
+**Proof**: We already know that $\lambda$ is a measure on the Carathéodory $\sigma$-Algebra $\Sigma_\lambda$.
+By Lemma 2.5 we know that its restriction to the Borel-sets on the reals is also a measure. 
+By Lemma 2.4 we also know that $\lambda(I)=\lambda_0(I)$. 
+What remains to be proven is the uniqueness of $\lambda$:
+Consider we have another measure $\mu$ with the same properties we listed above.
+For any $a \in \mathbb{R}$ and $n \in \mathbb{N}$, we have: 
+	$(-\infty, a] \cap[-n,+n] \in I$ 
+meaning that every such intersection is an interval, hence:
+	$\lambda((-\infty, a] \cap[-n,+n])=\mu((-\infty, a] \cap[-n,+n])$.
+Because the intervals $(-\infty, a]$ form a $\pi$-system (closed under pairwise intersections) that generates $\mathcal{B}$ we get: 
+	$\lambda(B \cap[-n,+n])=\mu(B \cap[-n,+n])$
+For any $B\in\mathcal{B}$ and $n\in\mathbb{N}$. 
+Every such set is bounded and thus measurable and in the domain of both measures.
+In this argument we basically approximate every Borel set by truncating it with the compact intervals $[-n, n]$: 
+	$B_n:=B \cap[-n, n]$.
+Since both candidate measures $\lambda$ and $\mu$ are $\sigma$-Additive by definition we get that their limits must be equal:
+	$\lambda(B)=\lim _{n \rightarrow \infty} \lambda\left(B_n\right), \quad \mu(B)=\lim _{n \rightarrow \infty} \mu\left(B_n\right)$.
+	$\lambda(B)=\mu(B)$ 
+Because for each $n$ they agree like we've already shown. 
+We approximate any (possibly unbounded) Borel set $B$ by an increasing sequence of bounded Borel sets $B_n=B \cap[-n, n].$ 
+
+The sets in the Carathéodory $\sigma$-Algebra $\Sigma_\lambda$ are also called the *Lebesgue-measurable* sets. 
+
+A function $f: \mathbb{R} \rightarrow \mathbb{R}$ is called *Lebesgue-measurable* if the sets $\{f \leq c\}$ are in $\Sigma_\lambda$ for all $c \in \mathbb{R}$.
+
+Are all subsets of $\mathbb{R}$ in $\Sigma_\lambda$? No. With the aforementioned construction of the Vitali sets we can prove this [[Measure Theoretic Probability#2.6 Exercises]]. 
+This is a bit more subtle than one might think since we can show that $\Sigma_\lambda$ has the same cardinality as the power set of the reals: 
+Consider the Cantor set in $[0, 1]$. By removing the "middle third" interval and then repeating this procedure for each of the remaining "outer thirds" countably many times we obtain a sequence of cantor sets $C_n$ and its limit: 
+$C:=\bigcap_{n=1}^{\infty} C_n$
+We immediately see that $\lambda(C)=0$. 
+On the other hand, we see that $C$ must be uncountable because we can localize every number remaining in it by their ternary expansion $\sum_{k=1}^{\infty} x_k 3^{-k}$ with $x_k \in\{0,2\}$.
+By completeness of $\left([0,1], \Sigma_\lambda, \lambda\right)$, every subset of $C$ has Lebesgue measure zero, and the cardinality of the power set of $C$ equals that of the power set of $[0, 1]$.
+
+## 2.2 A general extension theorem
+
+We can generalize the result of Theorem 2.6. In the specific instance above we basically proved that there exists a measure on a $\sigma$-Algebra (in this case on $\mathcal{B}$) that is such that its restriction to a suitable subclass of sets (the intervals) conforms to predetermined behavior. This is also valid in a more general sense.
+
+### 2.7 Carathéodory's Extension Theorem
+
+Let $\Sigma_0$ be an algebra on a set $S$ and let $\mu_0: \Sigma_0 \rightarrow[0, \infty]$ be finitely additive and countably subadditive. Then there exists a mesure $\mu$ defined on $\Sigma=\sigma\left(\Sigma_0\right)$ such that $\mu$ restricted to $\Sigma_0$ coincides with $\mu_0$. 
+The measure $\mu$ is thus an extension of $\mu_0$, and this extension is unique if $\mu_0$ is $\sigma$-finite on $\Sigma_0$.
+
+**Proof**: The general Idea is very similar to the proofs in the previous section, we first construct an outer measure on the power set of $S$, then show that by restricting the outer measure to the Carathéodory $\sigma$-Algebra of $S$ we obtain a proper measure. We then show that this measure is unique, concluding the proof.
+
+First we define an outer Measure on $2^S$ like so: 
+	$\mu^*(E)=\inf _{\Sigma_0(E)} \sum_{E_k \in \Sigma_0(E)} \mu_0\left(E_k\right)$,
+where, like before, we take the infimum over all countable covers of $E$ with elements $E_k$ from $\Sigma_0$.
+We've already shown that this is indeed a valid outer measure.
+
+For any $E \in \Sigma_0$ we have:
+	$(i)\quad\mu^*(E) \leq \mu_0(E)$.
+Now, given any cover of E $\left\{E_1, E_2, \ldots\right\}$ with $E_k \in \Sigma_0$, we have 
+	$\mu_0(E) \leq \sum_k \mu_0\left(E \cap E_k\right)$,
+because \mu_0$ is countably subadditive and any set $E$ can be split into a countable union $E=\cup_k\left(E \cap E_k\right)$.
+Because $\mu_0$ is also finitely additive we obtain: 
+	$\mu_0\left(E \cap E_k\right) \leq \mu_0\left(E_k\right)$
+Which leads us, by combination with the prior results, to:
+	$\mu_0(E) \leq \sum_k \mu_0\left(E_k\right)$.
+Now taking the infimum over all covers of $E$ we get:
+	$\mu_0(E) \leq \mu^*(E)$, for $E \in \Sigma_0$.
+Combining this with $(i)$ we see that both sides must be equal $\mu_0(E)=\mu^*(E)$ and therefore $\mu^*$ must be an extension of $\mu_0$.
+
+TODO: The two remaining steps of the proof (page 14 of MTP) 
+
+Remark: 
+Unicity of the extension fails to hold for $\mu_0$ that are not $\sigma$-finite. (Counterexample with infinite sets and the counting measure.)
+### 2.6 Exercises
+
+
+# 3 Measurable Functions and Random Variables
+
+Central goal: Define random variables as *measurable* functions on a probability space and derive their most important properties.
+
+## 3.1 General Setting
+
+Let $(S, \Sigma)$ be a measurable space. Recall that the elements of $\Sigma$ are called the measurable sets. 
+$\mathcal{B}=\mathcal{B}(\mathbb{R})$ is the collection of all the Borel sets of $\mathbb{R}$.
+
+### Definition 3.1 Measurable Functions / Mappings
+A mapping $h: S \rightarrow \mathbb{R}$ is called *measurable* if all of its preimages $h^{-1}[B]$ are contained in $\Sigma$ for all $B \in \mathcal{B}$: 
+	$h^{-1}[B] \in \Sigma \quad \forall B \in \mathcal{B}$ 
+One immediately notes that this always depends on the choice of $\sigma$-Algebras. This definition is analogous to the topological definition of continuity, where one defined the property of *continuity* (roughly speaking) by the fact that the preimages of all open sets of the function images are open sets themselves. 
+If $S$ is a topological space with a topology $\mathcal{T}$ and if $\Sigma=\sigma(\mathcal{T})$, a measurable function $h$ is also called a *Borel* measurable function. 
+
+Remarks on Notation:
+	$\{h \in B\}$ is shorthand for $\{s \in S: h(s) \in B\}$
+	$\{h \leq c\}$ is shorthand for $\{s \in S: h(s) \leq c\}$.
+
+### Proposition 3.3: Properties of Measurable Functions $I$
+
