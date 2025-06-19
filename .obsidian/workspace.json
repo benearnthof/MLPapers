@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Measure Theoretic Probability.md",
+                "file": "Mathematics/On the Closed-Form of Flow Matching.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Measure Theoretic Probability"
+              "title": "On the Closed-Form of Flow Matching"
             }
           }
         ],
@@ -187,6 +187,7 @@
   "active": "2790333f3d7c10f5",
   "lastOpenFiles": [
     "Measure Theoretic Probability.md",
+    "Mathematics/On the Closed-Form of Flow Matching.md",
     "Generative Models/The Diffusion Duality.md",
     "Untitled.md",
     "GeneralML/Zero-Shot Coreset Selection.md",
@@ -212,7 +213,6 @@
     "Generative Models/Action Matching.md",
     "Generative Models/FFJORD.md",
     "Generative Models/Iterative alpha Blending.md",
-    "General Applications/Pi_zero.md",
     "$",
     "GeneralML",
     "Proteomics",
