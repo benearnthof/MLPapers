@@ -171,7 +171,7 @@ Which allows us to show that any finite measure on $\Sigma$ is characterized by 
 
 #### Theorem 1.15: Uniqueness of Measures
 
-Let $\mathcal{I}$ be a $\pi$-system and $\Sigma=\sigma(\mathcal{I})$. Let $\mu_1$ and $\mu_2$ be finite measures on $\Sigma$ with the properties that $\mu_1(S)=\mu_2(S)$ and that $\mu_1$ and $\mu_2$ coincide on $\mathcal{I}$.  Then $\mu_1=\mu_2($ on $\Sigma)$. (The measures coincide on the entire sigma Algebra.)
+Let $\mathcal{I}$ be a $\pi$-system and $\Sigma=\sigma(\mathcal{I})$. Let $\mu_1$ and $\mu_2$ be finite measures on $\Sigma$ with the properties that $\mu_1(S)=\mu_2(S)$ and that $\mu_1$ and $\mu_2$ coincide on $\mathcal{I}$.  Then $\mu_1=\mu_2$ (on $\Sigma)$. (The measures coincide on the entire sigma Algebra.)
 Note: Without finiteness for the measures this theorem does not hold.
 
 ### 1.5: Probability Language
@@ -460,4 +460,110 @@ It is:
 Proof idea for (iv): We know that F is bounded from above and below. Each discontinuity must result in a positive jump > 0. We can only fit countably many such jumps into $[0, 1]$.
 
 ### Proposition 3.9: Distribution Functions Fully Describe Probability Distributions
+
+Let $\mu_1$ and $\mu_2$ be probability measures on $\mathcal{B}$. Let $F_1$ and $F_2$ be corresponding distribution functions. If $F_1(x) = F_2(x)$ for all $x$, then $\mu_1 = \mu_2$.
+**Proof:** Again, we refer to exercise 3.2 where we prove that the $\pi$-System $\mathcal{I}=\{(-\infty, x]: x \in \mathbb{R}\}$ generates the Borel-$\sigma$-Algebra and invoke Theorem [[Measure Theoretic Probability#Theorem 1.15 Uniqueness of Measures]].
+
+Therefore we have shown, that for any random variable $X$, its distribution, as in the *collection of all probabilities* $\mathbb{P}(X \in B)$ with $B \in \mathcal{B}$, is fully determined by its respective distribution function $F_X$.
+
+We call *any* function on $\mathbb{R}$ with the properties given in Proposition 3.8 a distribution function. Any distribution function is measurable (by their non-decreasing property and the fact that all sets $\{F \geq c\}$ are intervals and thus in $\mathcal{B}$).
+We will show in theorem 3.10 that for any distribution function $F$,  it is possible to construct a random variable on some probability space $(\Omega, \mathcal{F}, \mathbb{P})$, whose distribution function equals F. This theorem is based on the existence of the Lebesgue measure $\lambda$ on the Borel sets $\mathcal{B}[0,1]$ of $[0,1]$.
+[[Measure Theoretic Probability#Theorem 1.5 Existence and uniqueness of Lebesgue Measure]].
+What does this mean in practice? 
+
+Consider: $(\Omega, \mathcal{F}, \mathbb{P})=([0,1], \mathcal{B}[0,1], \lambda)$. Let $U: \Omega \rightarrow[0,1]$ be the identity map. 
+The distribution function $F^U$ of $U$ satisfies
+	$F^U(x) = x$ for $x \in[0,1]$ and so 
+	$\mathbb{P}(a<U \leq b)=F^U(b)-F^U(a)=b-a$ for $a, b \in[0,1]$ with $a \leq b$.
+Hence the distribution function $F^U$ corresponds to a probability measure on $([0,1], \mathcal{B}[0,1])$ and there exists a random variable $U$ on this space such that $U$ has $F^U$ as its distribution function. 
+This random variable is said to have the standard uniform distribution. 
+
+### Theorem 3.10: Skorokhod's Representation Theorem
+Let F be a distribution function on $\mathbb{R}$. Then there exists a probability space and a random variable $X: \Omega \rightarrow \mathbb{R}$ such that $F$ is the distribution function of $X$.
+
+**Proof:** Exercise 3.6 For the continuous and strictly increasing case
+
+## 3.3 Independence
+
+In basic probability theory we defined pairwise independence of evens $E, F \in \mathcal{F}$ by the product rule: $\mathbb{P}(E \cap F)=\mathbb{P}(E) \mathbb{P}(F)$. 
+We now want to generalize this notion of independence to independence of sequences of events and independence of sequences of $\sigma$-Algebras. 
+
+### Definition 3.11: Independence
+Independence for $\sigma$-Algebras, random variables, and events:
+	(i) A sequence of $\sigma$-algebras $\mathcal{F}_1, \mathcal{F}_2, \ldots$ is called independent, if for every $n$ it holds that $\mathbb{P}\left(E_1 \cap \cdots \cap E_n\right)=\prod_{i=1}^n \mathbb{P}\left(E_i\right)$, for all choices $E_i \in \mathcal{F}_i$ $(i=1, \ldots, n)$.
+	(ii) A sequence of random variables $X_1, X_2, \dots$ is called independent if the $\sigma$-algebras $\sigma\left(X_1\right), \sigma\left(X_2\right), \ldots$ are independent. 
+	(iii) A sequence of events $E_1, E_2, \ldots$ is called independent if th erandom variables $\mathbf{1}_{E_1}, \mathbf{1}_{E_2}, \ldots$ are independent. 
+
+This definition also applies to finite sequences. If follows that two $\sigma$-Algebras $\mathcal{F}_1$ and $\mathcal{F}_2$ are independent if:
+	$\mathbb{P}\left(E_1 \cap E_2\right)=\mathbb{P}\left(E_1\right) \mathbb{P}\left(E_2\right)$ for all $E_1 \in \mathcal{F}_1$ and $E_2 \in \mathcal{F}_2$.
+To check the independence of two $\sigma$-Algebras, theorem 1.15 is helpful once again:
+### Proposition 3.12 Independence of $\sigma$-Algebras
+Let $\mathcal{I}$ and $\mathcal{J}$ be $\pi$-systems and suppose that for all $I \in \mathcal{I}$ and $J \in \mathcal{J}$ the product rule $\mathbb{P}(I \cap J)=\mathbb{P}(I) \mathbb{P}(J)$ holds. Then the $\sigma$-algebras $\sigma(\mathcal{I})$ and $\sigma(\mathcal{J})$ are independent.
+
+**Proof**: Let $\mathcal{G}=\sigma(\mathcal{I}) \text { and } \mathcal{H}=\sigma(\mathcal{J}) .$ 
+We define on each $I \in \mathcal{I}$ the *finite measures* $\mu_I$ and $\nu_I$ on $\mathcal{H}$ by $\mu_I(H)=\mathbb{P}(H \cap I)$ and $\nu_I(H)=\mathbb{P}(H) \mathbb{P}(I)(H \in \mathcal{H})$.
+When do these measures coincide? 
+The product rule holds and since they are both $\pi$-systems this holds in the finite case.
+(pi-systems closed under intersections).
+Assuming now that $\mu_I(\Omega)=\mathbb{P}(I)=\nu_I(\Omega)$, we see that $\mu_I$ and $\nu_I$ coincide on $\mathcal{J}$.
+Using theorem 1.15 we know that they must coincide for all H: $\mu_I(H)=\nu_I(H)$ for all $H \in \mathcal{H}$.
+Now repeating these steps with swapped finite measures $\mu^H$ and $\nu^H$: $\mu^H(G)=\mathbb{P}(G \cap H)$ and $\nu^H(G)=\mathbb{P}(G) \mathbb{P}(H)$. We get the analogous result for $\mathcal{I}$. $\quad \square$
+
+Why is this important? 
+$\sigma$-Algebras are not easy to work with and can be quite abstract like we outlined in earlier discussions. Proposition 3.12 allows us to prove independence on the generating systems of sets that are in most cases much more manageable. 
+A simple example (that kind of seems circular because we use i.i.d. to use the product rule to prove independence): 
+Suppose we have i.i.d. random variables $X_1, X_2, \ldots, X_n$.
+- The sigma-algebra generated by $X_i$ is $\sigma\left(X_i\right)$.
+- This is generated by sets of the form $\left\{X_i \in A_i\right\}$, where $A_i \in \mathcal{B}(\mathbb{R})$.
+Now we can form a $\pi$-System like so: 
+	$\mathcal{I}_i:=\left\{\left\{X_i \in A_i\right\}: A_i \in \mathcal{B}(\mathbb{R})\right\} .$
+And only have to prove:
+	$\mathbb{P}\left(X_1 \in A_1, X_2 \in A_2, \ldots, X_n \in A_n\right)=\prod_{i=1}^n \mathbb{P}\left(X_i \in A_i\right) .$ 
+In order to verify that the underlying $\sigma$-Algebras and by extension random variables are independent. Better examples will follow.
+
+### Corollary 3.13
+Let $X_1, X_2$ be random variables defined on some probability space $(\Omega, \mathcal{F}, \mathbb{P})$.
+Then $X_1$ and $X_2$ are independent iff:
+$\mathbb{P}\left(\left\{X_1 \leq x_1\right\} \cap\left\{X_2 \leq x_2\right\}\right) = \mathbb{P}\left(X_1 \leq\right. \left.x_1\right) \mathbb{P}\left(X_2 \leq x_2\right)$ for all $x_1, x_2 \in \mathbb{R}$.
+
+**Proof:** Combining proposition 3.12 with exercise 3.2.
+
+### Lemma 3.14: Borel-Cantelli
+
+(i) Let $\left(E_n\right)_{n \geq 1}$ be a sequence of events in a probability space $(\Omega, \mathcal{F}, \mathbb{P})$.
+- Suppose:
+
+$$
+\sum_{n=1}^{\infty} \mathbb{P}\left(E_n\right)<\infty
+$$
+
+- Then:
+
+$$
+\mathbb{P}\left(\limsup _{n \rightarrow \infty} E_n\right)=0,
+$$
+
+i.e., with probability 1 , only finitely many of the events $E_n$ occur.
+If the total sum of the event probabilities is finite then the evens cannot keep happening forever.
+This is (intuitively) similar to the proof that a distribution function can only have countably many discontinuities: Every time an event happens, it requires some non-zero amount of probability. If the "total available probability" is finite, then the total number of events that happen must be finite.
+
+(ii) Now suppose that the events $E_n$ are independent, and
+
+$$
+\sum_{n=1}^{\infty} \mathbb{P}\left(E_n\right)=\infty .
+$$
+
+
+Then:
+
+$$
+\mathbb{P}\left(\limsup _{n \rightarrow \infty} E_n\right)=1,
+$$
+
+i.e., with probability 1 , infinitely many of the events happen.
+If the events are independent, and there is "enough probability mass" overall (the sum diverges), then the system cannot avoid having infinitely many hits. 
+
+## Exercises for Chapter 3
+
+# 4. Integration
 
