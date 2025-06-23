@@ -659,3 +659,13 @@ Let $f, g \in \mathfrak{S}^{+}$and $c \in[0, \infty)$.
 We omit the proofs here, as they can be done by constructing measurable partitions and summing up carefully. 
 
 ## 4.2 A General definition of the Integral
+
+How can we extend the ideas in the previous section to a more general class of functions? A direct approach is to expand definition 4.1 with the supremum, which allows us to recover all previous results in the case of simple functions, but also leads to many more powerful results.
+
+### Definition 4.8 Integrals for Nonnegative Measurable Functions
+
+Let $f$ be a nonnegative *measurable* function. The integral of $f$ is defined as:
+$$
+\mu(f):=\sup \left\{\mu(h): h \leq f, h \in \mathfrak{S}^{+}\right\},
+$$
+where $\mu(h)$ follows definition 4.2. As introduced above, this recovers the integral for simple functions completely.
