@@ -567,3 +567,95 @@ If the events are independent, and there is "enough probability mass" overall (t
 
 # 4. Integration
 
+The goal of this Chapter is a rigorous construction of an integration functional that generalizes the idea of the Riemann integral from calculus. We will show how to "build up" towards an integration functional from *simple functions*, proving some of their key properties and how to extend these ideas to functions that can be expressed as combinations of simple functions. This will help us to develop the Expectation operator, unifying the idea of discrete and continuous random variables and their Expectations in the process. This will also help us compute expectations that are, at first glance, hard to pin down, such as for mixed random variables. 
+
+## 4.1 Integration of Simple Functions
+Recall how in the case of the Riemann integral one approximates the "area under the curve" by calculating the upper and lower rectangle sums. In the case they coincide we say that the integral is well defined. It is natural to define the integral of a multiple of an indicator function as 
+	$a \cdot \mathbf{1}_E$ as $a \cdot \mu(E)$, for $E \in \Sigma$.
+We can use this idea to define the class of *simple functions*:
+### 4.1 Definition of Simple Functions
+A function $f: S \rightarrow[0, \infty)$ is called a nonnegative simple function, if it has a representation as a finite sum: 
+	$f=\sum_{i=1}^n a_i \mathbf{1}_{A_i}$
+where $a_i \in[0, \infty)$ and $A_i \in \Sigma$. Basically, if we are able to split the function into a countable number of constant parts, the sum of the respective multiples of the indicator functions is what we refer to as a *simple function*. We denote the class of all nonnegative simple functions by $\mathfrak{S}^{+}$.
+We directly see that simple functions, as linear combination of indicator functions, are **measurable**.
+
+Since we remember that Riemann integrals are linear operators and are equipped with the definition of the integral for an indicator function we can directly define an integral for any $f \in \mathfrak{S}^{+}$.
+
+### Definition 4.2: The Lebesgue Integral for Simple Functions
+Let $f \in \mathfrak{S}^{+}$. The (Lebesgue) integral of $f$ with respect to the measure $\mu$ is defined as: 
+	$\int f \mathrm{~d} \mu:=\sum_{i=1}^n a_i \mu\left(A_i\right)$,
+When $f$ has a representation as defined in 4.1.
+We see that the integral functional is nothing but a sum of set functions over the respective preimages, namely the sizes $\mu\left(A_i\right)$ of every preimage mapping to the corresponding image $a_i$.
+Other common notations that are often used for this integral are $\int f(s) \mu(\mathrm{d} s)$ and $\mu(f)$.
+Note that if $f=\mathbf{1}_A$, then $\mu(f)=\mu\left(\mathbf{1}_A\right)=\mu(A)$, so there is a bit of ambiguity in the notation.
+Note that $\mu(f) \in[0, \infty]$ and also that the above summation is well defined, since all quantities involved are nonnegative, although possibly infinite. 
+
+It should be clear that this definition of integral is, at first sight, troublesome. The representation of a simple function is not unique, and one might wonder if the integral defined as such may take on different values for different representations. This would be bad, but fortunately it is not the case.
+
+### Proposition 4.3: Representation Invariance for the Lebesgue Integral
+Let $f$ be a nonnegative simple function. Then the value of the integral $\mu(f)$ is independent of the chosen representation. 
+
+**Proof**: We want to show that for any possible representations of $f$:
+	$f=\sum_{i=1}^n a_i \mathbf{1}_{A_i}=\sum_{j=1}^m b_j \mathbf{1}_{B_j}$
+The value of the integral remains the same, no matter which representation we pick. 
+We want to show: 
+	$\sum_{i=1}^n a_i \mu\left(A_i\right)=\sum_{j=1}^m b_j \mu\left(B_j\right)$
+Where $A_i$ 's and $B_j$ 's form measurable sets and $A_i$ are pairwise disjoint and $a_i$ nonzero, and $B_j$ are pairwise disjoint and $b_j$ nonzero.
+Step 1: Construct a common refinement:
+Consider the collection of all pairwise intersections $C_{i j}=A_i \cap B_j$. Then the set of all $C_{ij}$ forms a measurable partition of $\Omega$, where some of them may possibly be empty sets. 
+If now any $x \in B_k$ then $x$ must be contained in one of the $A_j$ because otherwise their respective indicator functions would be zero, contradicting the definition for our representations. 
+Therefore $B_j \subset \cup A_i$  such that $\mu(B_j)$ is finite for all k and therefore our representation $B_j$ is integrable.
+By the same reasoning we obtain:
+	$B_k=\cup_j\left(A_j \cap B_k\right)$ and $A_j=\cup_k\left(B_k \cap A_j\right)$
+If $\boldsymbol{A}_j \cap \boldsymbol{B}_k$ is not empty, then for any $x \in A_j \cap B_k$ we have
+	$a_j=s_A(x)=s_B(x)=b_k$
+Combining this and swapping the order of summation we get the following: 
+$$
+\int s_B(x) d x=\sum_{k=1}^m b_k m\left(B_k\right)=\sum_{k=1}^m b_k m\left(\bigcup_{j=1}^n A_j \cap B_k\right)=
+$$
+$$
+=\sum_{k=1}^m b_k \sum_{j=1}^n m\left(A_j \cap B_k\right)=\sum_{j=1}^n \sum_{k=1}^m b_k m\left(A_j \cap B_k\right)=
+$$
+$$
+=\sum_{j=1}^n \sum_{k=1}^m a_j m\left(A_j \cap B_k\right)=\sum_{j=1}^n a_j \sum_{k=1}^m m\left(A_j \cap B_k\right)=
+$$
+$$
+=\sum_{j=1}^n a_j m\left(A_j\right)=\int s_A(x) d x
+$$
+This concludes the proof that the integrals agree regardless of the chosen representation. 
+It remains to be shown that the integral of a simple function agrees with the integral over the canonical representation of that function, i.e. when the sets are disjoint and coefficients are nonzero. 
+For this step we get back to our sets $C_i$:
+Recall that any simple function $f$ can be written in its canonical form:
+	$f=\sum_{i=1}^n c_i \mathbf{1}_{C_i}$
+Where $C_i$ are disjoint measurable sets, $c_i$ are distinct, nonzero values that $f$ takes, and the sets are chosen such that $C_i=\left\{x \in \Omega: f(x)=c_i\right\}$. This canonical form is unique up to $\mu$-nullsets.
+We observe that any representation can be refined into this canonical representation by considering: 
+	$C_i=\left\{x \in \Omega: f(x)=c_i\right\}=\bigcup_{j: a_j=c_i} A_j$
+Using the first part of our proof we then obtain:
+$$
+\sum_j a_j \mu\left(A_j\right)=\sum_{i=1}^n c_i \sum_{j: a_j=c_i} \mu\left(A_j\right)=\sum_{i=1}^n c_i \mu\left(\bigcup_{j: a_j=c_i} A_j\right)=\sum_{i=1}^n c_i \mu\left(C_i\right)
+$$
+Analogous to our the previous steps. Thus we have shown that the Lebesgue integral for simple functions is invariant of the chosen representation, concluding the proof. $\quad\square$
+
+This is technically all we need to define an integration functional for discrete random variables, since we already know that random variables only take at most countably many values: 
+Define $A_i=\left\{\omega \in \Omega: X(\omega)=x_i\right\}$, then $X(\omega)=\sum_i x_i \mathbf{1}_{A_i}(\omega)$, which leads us to the integral: 
+	$\int X d \mathbb{P}=\sum_i x_i \mathbb{P}\left(A_i\right)$
+Which is precisely the definition of the Lebesgue Integral of a simple function. For the continuous case we do need to expand our toolbox a bit more however.
+
+### Example 4.6: Lebesgue Integrable Function that is not Riemann integrable
+Let $(S, \Sigma, \mu)=([0,1], \mathcal{B}([0,1]), \lambda)$ where $f$ is the indicator function of the rational numbers in $[0, 1]$:
+$f=\mathbf{1}_{\mathbb{Q} \cap[0,1]}$. We know that $\lambda(\mathbb{Q} \cap[0,1])=0$ and thus it follows that $\lambda(f)=0$. This is a nice example of a function that is not Riemann integrable, since the upper and lower limits would not converge to the same number, whereas it is Lebesgue integrable trivially and has a very sensible solution. 
+Refresher: Why is $\lambda(\mathbb{Q} \cap[0,1])=0$ ? 
+Two arguments: 
+- The rational numbers are countable, and the measure is countably additive / $\sigma$-additive, meaning that, because the measure of singleton sets is zero, the total measure of all rationals in the interval must also be zero. 
+- Given any $\varepsilon>0$, for each rational $q_i \in[0,1]$, we construct an open interval $I_i$ centered at $q_i$ of length $\ell\left(I_i\right)=\varepsilon / 2^i$. The total length of the cover is therefore $\sum_{i=1}^{\infty} \frac{\varepsilon}{2^i}=\varepsilon$. Since $\varepsilon>0$ is arbitrarily small, the Lebesgue outer measure of $\mathbb{Q} \cap[0,1]$ must therefore be arbitrarily small and thus $\lambda(\mathbb{Q} \cap[0,1])=0$.
+
+### Proposition 4.7: Properties of Simple Functions
+We say that a property of elements of S holds almost everywhere, if the set for which this property does not hold, has measure zero. For instance we say that two measurable functions are equal almost everywhere if $\mu(\{f \neq g\})=0$. Elementary properties of the integral are listed below:
+Let $f, g \in \mathfrak{S}^{+}$and $c \in[0, \infty)$.
+	(i) If $f \leq g$ a.e., then $\mu(f) \leq \mu(g)$.
+	(ii) If $f=g$ a.e., then $\mu(f)=\mu(g)$.
+	(iii) $\mu(f+g)=\mu(f)+\mu(g)$ and $\mu(c f)=c \mu(f)$.
+
+We omit the proofs here, as they can be done by constructing measurable partitions and summing up carefully. 
+
+## 4.2 A General definition of the Integral
