@@ -712,3 +712,71 @@ We have thus constructed a general sequence of simple functions with limit $f$, 
 Let $f, g \in \Sigma^{+}$and $\alpha, \beta>0$. Then $\mu(\alpha f+\beta g)=\alpha \mu(f)+$ $\beta \mu(g) \leq \infty$.
 
 ### 4.15 Fatou's Lemma
+The Basic Idea behind the MCT, Fatou's Lemma, and the Dominated Convergence Theorem is that given a sequence of functions $f_n$ that converge pointwise to some limit function $f$, it is *not always* true that 
+	$\int \lim _{n \rightarrow \infty} f_n=\lim _{n \rightarrow \infty} \int f_n$
+Fatou's Lemma, MCT, and DCT all answer the question "When do $\lim _{n \rightarrow \infty}$ and $\int$ commute?"
+The MCT and DCT tell us that as long as we place certain restrictions on both $f_n$ and $f$, then we can interchange the limit and integral signs. Fatou's Lemma is a result that tells us the best we can do if we *do not* place any restrictions on the behavior of the functions. 
+
+**Fatou's Lemma**: Let $(X, \Sigma, \mu)$ be a measurable space and $\left\{f_n: X \rightarrow[0, \infty]\right\}$ a sequence of nonnegative, measurable functions. Then the function $\liminf _{n \rightarrow \infty} f_n$ is measurable and 
+$$
+\int_X \liminf _{n \rightarrow \infty} f_n d \mu \leq \liminf _{n \rightarrow \infty} \int_X f_n d \mu
+$$
+**Proof**:
+For each $k \in \mathbb{N}$, let $g_k=\inf _{n \geq k} f_n$ and define 
+	$$
+h=\lim _{k \rightarrow \infty} g_k=\lim _{k \rightarrow \infty} \inf _{n \geq k} f_n=\liminf _{n \rightarrow \infty} f_n
+$$
+From the definition of the infimum we observe that $\int g_k \leq \int f_n$ for all $n \geq k$. Hence $\int \inf _{n \geq k} f_n \leq \int f_n$ for all $n \geq k$ as claimed. This allows us to write 
+$$
+\int g_k \leq \inf _{n \geq k} \int f_n.
+$$
+We then observe that $g_k$ is an increasing sequence (because the infimum cannot get smaller by removing sequence elements) and $\lim _{k \rightarrow \infty} g_k=h$ pointwise. 
+Applying the MCT like so: 
+$$
+\int \liminf _{n \rightarrow \infty} f_n= \int h=\lim _{k \rightarrow \infty} \int g_k \leq \lim _{k \rightarrow \infty} \inf _{n \geq k} \int f_n=\liminf _{n \rightarrow \infty} \int f_n
+$$
+where the inequality in the middle follows from (1). We arrive at the desired result. 
+We conclude the proof by noting that $\liminf f_n$ is measurable as we've already shown. $\quad \square$ 
+
+**Example from Rudin:** 
+Define $$
+f_n= \begin{cases}\mathbf{1}_{(1,2]} & \text { if } n \text { is even } \\ \mathbf{1}_{[0,1]} & \text { if } n \text { is odd }\end{cases}
+$$
+As n increases the graph of $f_n$ switches back and forth from the indicator over each interval.
+For any given $n$, we obtain the same integral
+$$
+\int_{[0,2]} f_n=1
+$$
+But $\liminf _n f_n=0$, because $\liminf _n f_n$ is the infimum over all subsequential limits of $f_n$. This directly leads us to
+$$
+0=\int_{[0,2]} \liminf _{n \rightarrow \infty} f_n<\liminf _{n \rightarrow \infty} \int_{[0,2]} f_n=1,
+$$ proving that a strict inequality in Fatou's lemma is possible.
+
+Can we extend this notion of integral to (almost) arbitrary measurable functions? 
+
+### Definition 4.17: Positive & Negative Parts of Functions
+Let $f \in \Sigma$. For (extended) real numbers $x$ we define $x^{+}=\max \{x, 0\}$ and $x^{+}=\max \{x, 0\}$.
+For $f: S \rightarrow[-\infty, \infty]$, we define the functions $f^{+}$ and $f^{-}$ by $f^{+}(s)=f(s)^{+}$and $f^{-}(s)=f(s)^{-}$.
+This allows us to decompose any nonnegative measurable function into two parts like so: 
+	$f=f^{+}-f^{-}$
+Why is this relevant? Because we immediately see from this that both the positive and negative part of our initial *arbitrary* function fall into the class of *nonnegative* measurable functions again.
+	If $f \in \Sigma$, then $f^{+}, f^{-} \in \Sigma^{+}$.
+With this trick we can thus extend the integral properties we've derived for nonnegative measurable functions to arbitrary measurable functions:
+
+Let $f \in \Sigma$ and assume that $\mu\left(f^{+}\right)<\infty$ or $\mu\left(f^{-}\right)<\infty$. Then we define $\mu(f):=\mu\left(f^{+}\right)-\mu\left(f^{-}\right)$.
+If both $\mu\left(f^{+}\right)<\infty$ and $\mu\left(f^{-}\right)<\infty$, we say that $f$ is *integrable*.
+The set of all integrable functions is denoted by $\mathcal{L}^1(S, \Sigma, \mu)$.
+Note that $f \in \mathcal{L}^1(S, \Sigma, \mu)$ implies that $|f|<\infty \mu$-a.e.
+
+### Proposition 4.18: Properties of the Integral
+(i) Let $f, g \in \mathcal{L}^1(S, \Sigma, \mu)$ and $\alpha, \beta \in \mathbb{R}$. Then $\alpha f+\beta g \in \mathcal{L}^1(S, \Sigma, \mu)$ and $\mu(\alpha f+\beta g)=\alpha \mu(f)+\beta \mu(g)$. Hence $\mu$ can be seen as a linear operator on $\mathcal{L}^1(S, \Sigma, \mu)$.
+(ii) If $f, g \in \mathcal{L}^1(S, \Sigma, \mu)$ and $f \leq g$ a.e., then $\mu(f) \leq \mu(g)$.
+(iii) Triangle inequality: If $f \in \mathcal{L}^1(S, \Sigma, \mu)$, then $|\mu(f)| \leq \mu(|f|)$.
+
+Proof: Exercise 4.3
+
+This concludes the "Standard Machinery" of integration theory, whereby one often proves results by starting out with indicator functions, extending by linearity to nonnegative simple functions. After this one invokes the MCT, extending results to the class of nonnegative measurable functions. Now one shows the results to be true for functions in $\mathcal{L}^1(S, \Sigma, \mu)$ by splitting arbitrary measurable functions into positive and negative parts. This is also known as measure theoretic induction.
+
+We will now conclude this section by the aforementioned Dominated Convergence Theorem.
+
+### Theorem 4.19: Dominated Convergence Theorem
