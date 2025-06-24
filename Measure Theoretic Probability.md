@@ -669,3 +669,46 @@ $$
 \mu(f):=\sup \left\{\mu(h): h \leq f, h \in \mathfrak{S}^{+}\right\},
 $$
 where $\mu(h)$ follows definition 4.2. As introduced above, this recovers the integral for simple functions completely.
+
+### Proposition 4.9: Extending Integral Results to Measurable Functions
+Let $f, g \in \Sigma^{+}$. If $f=0$ a.e., then $\mu(f)=0$. If $f \leq g$ a.e., then $\mu(f) \leq \mu(g)$, and if $f=g$ a.e., then $\mu(f)=\mu(g)$. 
+**Proof**:
+Part 1: Let $f \in \Sigma^+$, $f = 0 a.e.$ Then, using Proposition 4.7, we can take any Take $h \in \mathfrak{S}^{+}$with $h \leq f$, conforming to our supremum definition of $\mu(f)$, and obtain $\{h>0\} \subset\{f>0\}$, and thus $\mu(\{h>0\}) \leq \mu(\{f>0\})$. The right side of this inequality is zero since f is only nonzero on $\mu$-nullsets and hence $h=0$ a.e. By 4.7(ii) $\mu(h) = 0$ and therefore $\mu(f)$, being the supremum of those $\mu(h)$, must also be zero. 
+Part 2: 
+Let $f, g \in \Sigma^{+}$and $N=\{f>g\}$. Take $h \in \mathfrak{S}^{+}$with $h \leq f$.
+Then we know that $h \mathbf{1}_N, h \mathbf{1}_{N^c} \in \mathfrak{S}^{+}$ and by proposition 4.7 (iii), and the fact that $h \mathbf{1}_N=0$ a.e., we have $\mu(h)=\mu\left(h \mathbf{1}_N\right)+\mu\left(h \mathbf{1}_{N^c}\right)=\mu\left(h \mathbf{1}_{N^c}\right)$. (We can always split a measurable function into the parts that are $\mu$-measurable and the "remaining" $\mu$-nullsets.) Moreover we see that:
+	$h 1_{N^c} \leq f 1_{N^c} \leq g 1_{N^c} \leq g$
+Because we have defined $\mu$ as supremum we obtain $\mu(h) \leq \mu(g)$.
+By taking the supremum in this inequality over all $h$, we get $\mu(f) \leq \mu(g)$. The equality assertion follows analoguously.
+
+### Lemma 4.11: The Zero Lemma for NN-Measurable Functions
+Let $f \in \Sigma^{+}$and suppose that $\mu(f)=0$. Then $f=0$ a.e.
+
+This already makes intuitive sense since all possible contributions to the integral can only be null or positive, since $f$ is a nonnegative measurable function. If there were any positive contribution however, we would not be able to "decrease" the total integral to zero anymore. Thus all $\mu$-measurable contributions to the integral must be zero e.g. the $f$ must be equal to 0 almost everywhere. Here is a rigorous proof to back up this intuition: 
+
+**Proof**:
+Because $\mu(f)=0$, it holds that $\mu(h)=0$ for all nonnegative simple functions with $h \leq f$.
+Take $h_n=\frac{1}{n} 1_{\{f \geq 1 / n\}}$, then $h_n \in \mathfrak{S}^{+}$and $h_n \leq f$.
+The equality $\mu\left(h_n\right)=0$ implies $\mu(\{f \geq 1 / n\})=0$. The desired result follows then from $\{f>0\}=\cup_n\{f \geq 1 / n\}$ and [[Measure Theoretic Probability#Corrolary 1.8 $ sigma$-sub-Additivity]].
+The idea is to show that any measurable set where $f$ is at least some positive amount 1/n must have measure zero. We do this by defining our $h_n$ strictly less than or equal to $f$ and can use monotonicity of the integral to show that the resulting integral must be less than or equal to zero. 
+We then use the countable union property to conclude that f must indeed be zero almost everyhwere.
+
+### 4.12 Monotone Convergence Theorem
+Let $\left(f_n\right)$ be a sequence in $\Sigma^{+}$, such that $f_{n+1} \geq f_n$ a.e. for each $n$. Let $f=\limsup f_n$. Then $\mu\left(f_n\right) \uparrow \mu(f) \leq \infty$.
+
+This is so useful because it allows us to swap limits and integration under some rather general conditions.  
+We skip the proof here as it is provided in the source material, and go directly to an application of MCT
+
+### 4.13 Application of MCT (Canonical Simple Approximation)
+Let $f \in \Sigma^{+}$ and, for each 
+$n \in \mathbb{N}$, put $E_{n, i}=\left\{i 2^{-n} \leq f<(i+1) 2^{-n}\right\}\left(i \in I_n:=\left\{0, \ldots, n 2^n-1\right\}\right)$.
+Put also $E_n=\{f \geq n\}$ and note that the sets $E_{n, i}$ and $E_n$ are in $\Sigma$.
+Define now
+	$f_n=\sum_{i \in I_n} i 2^{-n} \mathbf{1}_{E_{n, i}}+n \mathbf{1}_{E_n}$.
+These $f_n$ form an increasing sequence in $\Sigma^+$, even in $\mathfrak{S}^{+}$, with limit $f$.
+We have thus constructed a general sequence of simple functions with limit $f$, that can be used to approximate $\mu(f)$.
+
+### Proposition 4.14: Linearity of the Integral for NN-measurable Functions
+Let $f, g \in \Sigma^{+}$and $\alpha, \beta>0$. Then $\mu(\alpha f+\beta g)=\alpha \mu(f)+$ $\beta \mu(g) \leq \infty$.
+
+### 4.15 Fatou's Lemma
