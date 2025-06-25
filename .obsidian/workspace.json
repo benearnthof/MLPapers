@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Measure Theoretic Probability.md",
+                "file": "GeneralML/Stretching Each Dollar.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Measure Theoretic Probability"
+              "title": "Stretching Each Dollar"
             }
           }
         ],
@@ -186,9 +186,10 @@
   },
   "active": "2790333f3d7c10f5",
   "lastOpenFiles": [
+    "Measure Theoretic Probability.md",
+    "GeneralML/Stretching Each Dollar.md",
     "Misc/Dynadiff.md",
     "Mathematics/On the Closed-Form of Flow Matching.md",
-    "Measure Theoretic Probability.md",
     "Generative Models/The Diffusion Duality.md",
     "Untitled.md",
     "GeneralML/Zero-Shot Coreset Selection.md",
@@ -212,7 +213,6 @@
     "Generative Models/Variational Diffusion Models.md",
     "Generative Models/Action Matching.md",
     "Generative Models/FFJORD.md",
-    "Generative Models/Iterative alpha Blending.md",
     "$",
     "GeneralML",
     "Proteomics",
