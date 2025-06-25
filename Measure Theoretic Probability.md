@@ -780,3 +780,53 @@ This concludes the "Standard Machinery" of integration theory, whereby one often
 We will now conclude this section by the aforementioned Dominated Convergence Theorem.
 
 ### Theorem 4.19: Dominated Convergence Theorem
+Let $\left(f_n\right) \subset \Sigma$ and $f \in \Sigma$. Assume that $f_n(s) \rightarrow f(s)$ for all $s$ outside of a set of measure zero. Assume also that there exists a function $g \in \Sigma^+$ such that $sup_{n}|f_{n}| \leq g$ a.e. and that $\mu(g) < \infty$. Then $\mu(|f_n - f |) \rightarrow 0$, and hence $\mu(f_n) \rightarrow \mu(f)$.
+
+Intuition: We already know from the counter example in Fatou's lemma, that given a sequence of functions $f_n$ it is not always true that $\int \lim _{n \rightarrow \infty} f_n=\lim _{n \rightarrow \infty} \int f_n$.
+Again, Fatou's lemma makes no assumptions about the nature of the functions, leading to the "here is the best you can do" interpretation we discussed above. DCT now (similar to MCT) tells us, that *if* we do place certain restrictions on the $f_n$ and $f$, then ew can interchange the limit and integral operations.
+DCT: If $f_n$ is a sequence of measurable functions that converges pointwise almost everywhere to $f$, and there exists an integrable function $g$ such that $|f_n(x)| \leq g(x)$ for all $n$ and for all $x$, then $f$ is integrable and $\int_{\mathbb{R}} f=\lim _{n \rightarrow \infty} \int_{\mathbb{R}} f_n$.
+
+Why is domination necessary?
+Counter example from Kolmogorov: Define $f_n$ as 
+$$
+f_n(x)=n*1_{(0,1 / n]}(x)= \begin{cases}n, & \text { if } 0<x \leq \frac{1}{n} \\ 0, & \text { else }\end{cases}
+$$
+Clearly, this function converges pointwise to the zero function as n grows arbitrarily large -- but it is also not dominated by any $g$ since we can always find an $n$ such that $f_n$ is larger than any constant function $g$. Yet, the integral of this function always yields 1 for every $n$. The limit and integral do *not* commute in this example. 
+$$
+1=\lim _{n \rightarrow \infty} \int_0^1 f_n(x) d x \quad \neq \quad \int_0^1 \lim _{n \rightarrow \infty} f_n(x) d x=0
+$$
+Example: Application of the DCT
+Compute the following Integral: 
+$$
+\lim _{n \rightarrow \infty} \int_{\mathbb{R}} \frac{n \sin (x / n)}{x\left(x^2+1\right)} d x
+$$
+We know that the composition of measurable functions is measurable, therefore the each $f_n$ in the sequence 
+$$
+f_n(x)=\frac{n \sin (x / n)}{x\left(x^2+1\right)} \quad \text { for each } n \in \mathbb{N} .
+$$
+is measurable. Now we can show, by pulling out $\frac{1}{1+x^2}$ and dividing by n, that the sequence of functions converges: 
+$$
+\lim _{n \rightarrow \infty} f_n(x)=\lim _{n \rightarrow \infty}\left(\frac{\sin (x / n)}{x / n}\right) \frac{1}{1+x^2} = \frac{1}{1+x^2}
+$$
+Because
+$$
+\lim _{n \rightarrow \infty} \frac{\sin (x / n)}{x / n}=1
+$$
+since after we change variables like so $y=\frac{x}{n} \Rightarrow n \rightarrow \infty \Longleftrightarrow y \rightarrow 0$
+We obtain $\lim _{y \rightarrow 0} \frac{\sin y}{y}=1$. (Standard result for l'Hopital's rule.)
+But we also see that $g(x)=\frac{1}{1+x^2}$ works as a dominating function since the sin term is always less than or equal to 1. Thus we can apply DCT and calculate the result: 
+$$
+\begin{aligned}
+\lim _{n \rightarrow \infty} \int_{\mathbb{R}} \frac{n \sin (x / n)}{x\left(x^2+1\right)} d x & =\lim _{n \rightarrow \infty} \int_{-\infty}^{\infty} \frac{n \sin (x / n)}{x\left(x^2+1\right)} d x \\
+& =\int_{-\infty}^{\infty} \frac{1}{1+x^2} d x \\
+& =\left.\tan ^{-1}(x)\right|_{-\infty} ^{\infty} \\
+& =\pi
+\end{aligned}
+$$
+The proof of DCT is omitted here with a reference for the short version presented in the book. The partial result $\mu\left(\left|f_n-f\right|\right) \rightarrow 0$ is often denoted by $f_n \xrightarrow{\mathcal{L}^1} f$.
+
+### Lemma 4.20: Scheffé's Lemma
+Let $\left(f_n\right) \subset \Sigma^{+}$and assume that $f_n \rightarrow f$ a.e. Assume that $\mu\left(f_n\right)$ is finite for all $n$ and $\mu(f)<\infty$ as well. Then $\mu\left(\left|f_n-f\right|\right) \rightarrow 0$ iff $\mu\left(f_n\right) \rightarrow \mu(f)$.
+
+## 4.3 Integrals over Subsets
+
