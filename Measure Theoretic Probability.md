@@ -830,3 +830,105 @@ Let $\left(f_n\right) \subset \Sigma^{+}$and assume that $f_n \rightarrow f$ a.e
 
 ## 4.3 Integrals over Subsets
 
+This section is in a sense a prelude to the theorem of Radon-Nikodym. Let $f \in \Sigma^{+} \text {and } E \in \Sigma \text {. }$ Then we may define:
+$$
+\int_E f \mathrm{~d} \mu:=\mu\left(\mathbf{1}_E f\right)
+$$
+An alternative approach is to look at the *measurable* space $\left(E, \Sigma_E\right)$, where $\Sigma_E=\{E \cap F: F \in \Sigma\}$. Denote the restriction of $\mu$ to $\Sigma_E$ by $\mu_E$. Then $(E, \Sigma_E, \mu_E)$ is a measurable space. We consider integration on this space. 
+
+### Proposition 4.22
+Let $f\in\Sigma$ and denote by $f_E$ its restriction to $E$. Then $f_E \in \mathcal{L}^1\left(E, \Sigma_E, \mu_E\right)$ iff $1_E f \in \mathcal{L}^1(S, \Sigma, \mu)$, in which case the identity $\mu_E(f_E) = \mu(1_Ef)$ holds.
+**Proof**:
+First we establish that The trace sigma algebra $\Sigma_E$ is indeed a $\sigma$-Algebra:
+Closure under intersections gets us the first property of $\sigma$-Algebras for free.
+We then prove that for any set $X$ the trace $\sigma$-Algebra is closed under differences.
+And then use the fact that Intersection Distributes over Union https://proofwiki.org/wiki/Intersection_Distributes_over_Union and know that $\Sigma_E$ is indeed a valid $\sigma$-Algebra.
+The key point is now that we are working with restrictions, and on the set $E$ the function behaves identically to the unrestricted version: 
+$$
+\int_E f_E d \mu_E:=\int_E f d \mu=\int_S 1_E f d \mu
+$$
+because $\mu_E(A)=\mu(A)$ for all $A \subset E$.
+Integrability of the indicator of f over the entire space also gets us integrability on the subspace:
+$$
+\int_E|f| d \mu=\int_S\left|1_E f\right| d \mu<\infty
+$$
+
+
+### Refresher: The space $\mathcal{L}^1\left(E, \Sigma_E, \mu_E\right)$
+The space $\mathcal{L}^1\left(E, \Sigma_E, \mu_E\right)$ is Lebesgue space / L1 space of all functions that are defined almost everywhere on $E$ (up to sets of measure zero with respect to $\mu_E$) and with a finite absolute integral:
+	$\int_E|f| d \mu<\infty$
+So, practically speaking, elements of $\mathcal{L^1}$ over the real line are functions that satisfy:
+	$\int_{-\infty}^{\infty}|f(x)| d x<\infty$
+We also directly find some counterexamples like $|sin(x)|$ which do not have a finite integral over the real line. So in some sense, $\mathcal{L^1}$ functions have to decay to $0$ at $\pm \infty$.
+One way to think about $\mathcal{L^1}$ is that it is the completion of the set of all continuous functions supported on a compact set, under the metric induced by integration. (With slight caveats.)
+This is useful since we can thus approximate every $\mathcal{L^1}$ function by a sequence of continuous compactly supported functions arbitrarily closely in $L^1$-norm.
+(The approximating functions are not equal pointwise (even almost everywhere), only in norm.)
+
+Let now $f \in \Sigma^{+}$. Define for all $E \in \Sigma$
+$$
+\nu(E)=\int_E f \mathrm{~d} \mu\left(=\mu\left(\mathbf{1}_E f\right)\right)
+$$
+We can verify (exercise 4.9) that $\nu$ is a measure on $(S, \Sigma)$. We want to compute $\nu(h)$ for $h\in\Sigma^+$.
+For measurable indicator functions we have by definition that the integral $\nu\left(\mathbf{1}_E\right)$ equals $\nu(E)$, which is equal to $\mu\left(\mathbf{1}_E f\right)$. More generally we have
+### Proposition 4.23
+Let $f \in \Sigma^{+}$and $h \in \Sigma$. Then $h \in \mathcal{L}^1(S, \Sigma, \nu)$ iff $hf \in \mathcal{L}^1(S, \Sigma, \mu)$, in which case one has $\nu(h)=\mu(h f)$.
+
+So in essence the set function $\nu: \Sigma \rightarrow[0, \infty]$ defines a new measure over the same $\sigma$-Algebra $\Sigma$ that is absolutely continuous with respect to $\mu$ meaning $\nu \ll \mu$ because if $\mu(E)=0$, then $\nu(E)=\int_E f d \mu=0$.
+So we can think of the function $f$ as a *density* that translates integration from one measure to another. $\nu(E)=\int_E f d \mu$, then integrating any $h$ with respect to $\nu$ should be equivalent to integrating $hf$ with respect to $\mu$ since $\nu$ is defined via the relationship: 
+	$f=\frac{d \nu}{d \mu}$
+Which is basically the Radon-Nikodym derivative.
+### Example 4.24
+Let $(S, \Sigma, \mu)=(\mathbb{R}, \mathcal{B}, \lambda), f \geq 0$, Borel measurable, $\nu(E)=$ $\int \mathbf{1}_E f \mathrm{~d} \lambda$ and $h f \in \mathcal{L}^1(\mathbb{R}, \mathcal{B}, \lambda)$. Then
+$$
+\nu(h)=\int_{-\infty}^{\infty} h(x) f(x) \mathrm{d} x
+$$
+
+## 4.4 Expectation and Integral
+
+The main reason why we introduce integration theory in such detail, is that the Expectation of a random variable is precisely a Lebesgue integral. Indee, consider a probability space $(\Omega, \mathcal{F}, \mathbb{P})$, and let $X$ be a real random variable defined on it. Recall that $X: \Omega \rightarrow \mathbb{R}$ is by definition a measurable function. Just by adjusting our notation from $(S, \Sigma, \mu)$ to $(\Omega, \mathcal{F}, \mathbb{P})$, we obtain the following notation for the integral of $X$ with respect to $\mathbb{P}$:
+$$
+\mathbb{P}(X)=\int_{\Omega} X \mathrm{~d} \mathbb{P}
+$$
+This holds as long as the integral is well defined, which is certainly the case if $\mathbb{P}(|X|)<\infty$. Other often used notations for this integral are $\mathbb{P} X$ and $\mathbb{E} X$.
+The latter is the standard in statistics and one speaks of the $\mathbb{E}$xpectation of $X$.
+Note that $\mathbb{E} X$ is always defined when $X \geq 0$ *almost surely*. The latter concept meaning almost everywhere with respcet to the probability measure $\mathbb{P}$.
+
+Further, if $h: \mathbb{R} \rightarrow \mathbb{R}$ is Borel measurable, then $Y:=h \circ X($ we also write $Y=h(X))$ is a random variable as well. We have two methods for calculating $\mathbb{E}Y$:
+Exploiting the linearity of the expectation functional:
+$$
+\mathbb{E} Y=\int_{\Omega} Y \mathrm{~d} \mathbb{P}=\int_{\Omega} h(X) \mathrm{d} \mathbb{P},
+$$
+and using the following proposition, that allows us to compute  $\mathbb{E}Y$ as:
+$$
+\mathbb{E} Y=\int_{\mathbb{R}} y \mathbb{P}^Y(\mathrm{~d} y)=\int_{\mathbb{R}} h(x) \mathbb{P}^X(\mathrm{~d} x) .
+$$
+### Proposition 4.27 Pushforward 1
+Let $X$ be a random variable, and $h: \mathbb{R} \rightarrow \mathbb{R}$ Borel measurable. Let $\mathbb{P}^X$ be the distribution of $X$. Then $h \circ X \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$ iff $h \in \mathcal{L}^1\left(\mathbb{R}, \mathcal{B}, \mathbb{P}^X\right)$, in which case
+$$
+\mathbb{E} h(X)=\int_{\mathbb{R}} h \mathrm{dP}^X .
+$$
+**Proof:** Exercise 4.11
+Remark: Proposition 4.27 is defined in terms of equality of two integrals defined on different probability spaces. There is nothing essential here in working with probability measures. Indeed, consider a more general set up, where we have a measure space $(S, \Sigma, \mu)$ and another measurable space $\left(S^{\prime}, \Sigma^{\prime}\right)$. Let $f: S \rightarrow S^{\prime}$ be a measurable mapping and $\left(S^{\prime}, \Sigma^{\prime}\right)$. Let $f: S \rightarrow S^{\prime}$ and $h: S^{\prime} \rightarrow \mathbb{R}$ be Borel-measurable, then the composition $h(f)=h \circ f: S \rightarrow \mathbb{R}$ is Borel-measurable. Moreover, we can define th emeasure $\mu^f$ (also called push-forward measure) on $\Sigma^{\prime}$ by:
+$$\mu^f\left(E^{\prime}\right):=\mu\left(f^{-1}\left(E^{\prime}\right)\right), E^{\prime} \in \Sigma^{\prime} .$$
+Then $h \circ f \in \mathcal{L}^1(S, \Sigma, \mu)$ iff $h \in\left(S^{\prime}, \Sigma^{\prime}, \mu^f\right)$, in which case 
+$$
+\int_S h(f) \mathrm{d} \mu=\int_{S^{\prime}} h \mathrm{~d} \mu^f
+$$
+Note that the distribution of a random variable is a push-forward measure: $\mathbb{P}^X=\mathbb{P} \circ X^{-1}$.
+This is known as the transformation formula for expectations, and in general the transformation formula for integrals of arbitrary measure. 
+
+We thus conclude that the definition of expectation as a Lebesgue integral with respect to a probability measure yields the familiar formulas -- sums for discrete random variables, and Riemann integrals for random variables with an ordinary density function -- as special cases. We see that the Lebesgue integral serves as a unifying concept for expectation. At least as important is that we can use the powerful convergence theorems (MCT, DCT, Fatou's Lemma) for expectations as well. Every real constant function has a well defined, and trivially finite, expectation. Therefore one can in pertaining cases apply the DCT with the function g equal to a constant. Here is a simple example of the application of MCT: 
+### Example 4.30:
+Let $\left(X_n\right)$ be a sequence of nonnegative random variables, so all $\mathbb{E} X_n \leq \infty$ are well defined. Then $\sum X_n$ is a well defined random variable as well, nonnegative, and we have $\mathbb{E}\left(\sum X_n\right)=\sum \mathbb{E} X_n$. Moreover if $\sum \mathbb{E} X_n<\infty$, then $\sum X_n<\infty$ a.s. We thus get to swap expectations and sums "for free", as long as certain mild conditions are met.
+Verification of these assertions is straightforward and left as Exercise 4.12.
+
+### 4.31: Markov, Chebychev, and Jensen Inequalities
+
+
+## 4.5 Functions of Bounded Variation and Stieltjes Integrals
+
+## 4.6 $\mathcal{L}^p$-Spaces of Random Variables
+
+## 4.7 $\mathcal{L}^p$-Spaces of Random Variables
+
+# 5 Product Measures
