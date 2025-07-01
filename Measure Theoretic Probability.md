@@ -923,6 +923,63 @@ Let $\left(X_n\right)$ be a sequence of nonnegative random variables, so all $\m
 Verification of these assertions is straightforward and left as Exercise 4.12.
 
 ### 4.31: Markov, Chebychev, and Jensen Inequalities
+This paragraph presents some key inequalities that are very useful for proofs in Probability Theory.
+
+#### Markov Inequality
+Let $X$ be a real valued random variable and $g: \mathbb{R} \rightarrow [0, \infty]$ an increasing function. (e.g. a distribution function). Then 
+$$
+\mathbb{E} g(X) \geq g(c) \mathbb{P}(X \geq c) .
+$$
+**Proof:** This follows from the inequality $g(X) \mathbf{1}_{\{X \geq c\}} \geq g(c) \mathbf{1}_{\{X \geq c\}}$.
+The Markov Inequality alone may seem not very useful, but is a very powerful stepping stone to Chebychev's Inequality.
+
+#### Chebychev Inequality
+An example of the Markov Inequality is obtained by taking $g(x) = x^+$ and replacing $X$ with $|X|$. One gets $\mathbb{E}|X| \geq c \mathbb{P}(|X| \geq c)$. In the special case where $g(x)$ is $(x^+)^2$, it is known as Chebychev's inequality. This name is especially used, if we apply it with $|X - \mathbb{E}X|$ instead of $X$. For $c \geq 0$ we then obtain  $\operatorname{Var} X \geq c^2 \mathbb{P}(|X-\mathbb{E} X| \geq c)$.
+A more general, measure theoretic statement of Chebychev's Inequality is:
+$$\mu\{x: x\in A, f(x) \geq c\} \leq \frac{1}{c} \int_Af(x)d\mu$$
+With a simple **proof**:
+$\int_A f \geq \int_S f \geq \int_S c=c \mu(S)$ 
+where $S=\{x \in A \mid f(x) \geq \lambda\}$.
+In essence this says that, since the integral over our set S must be at least the measure of S times the constant function c, we can rearrange to get the final inequality.
+Thus, since in a probabilistic sense the right side of the inequality is nothing but the Expectation, we can interpret this as "the probability that a random variable is greater than or equal to c is less than or equal to the Expectation of the RV divided by c." So just knowing the Expectation is enough to get upper bounds for the probability of some events. Take for example: Let the expected value of gambling be a gain of $5. So we can obtain an upper bound for the probability of gaining $20 as $\frac{5}{20}$ or $0.25$. 
+Probabilistic interpretation:
+If you take $f=|X-\mathbb{E} X|^2$ and $c=\varepsilon^2$, you get:
+
+$$
+\mathbb{P}(|X-\mathbb{E} X| \geq \varepsilon) \leq \frac{\mathbb{E}\left(|X-\mathbb{E} X|^2\right)}{\varepsilon^2}=\frac{\operatorname{Var}(X)}{\varepsilon^2} .
+$$
+Which builds a nice connection to the variance of the random variable. 
+#### Jensen's Inequality:
+We skip some properties of convex sets and convex functions here and just state the following:
+Let $g: G \rightarrow \mathbb{R}$ be convex and $X$ a random variable with $\mathbb{P}(X \in G)=1$. Assume that $\mathbb{E}|X|<\infty$ and $\mathbb{E}|g(X)|<\infty$. Then
+
+$$
+\mathbb{E} g(X) \geq g(\mathbb{E} X)
+$$
+The expected value of a convex transformation of a RV is at least the convex transformation of the expected value. 
+We can directly use this to prove the nonnegativity of Variance: 
+Recall that variance can be written as:
+$$
+\operatorname{Var}(X)=\mathbb{E}\left[(X-\mathbb{E} X)^2\right] .
+$$
+Consider the convex function $g(x)=x^2$. Then applying Jensen gives:
+$$
+\mathbb{E}\left[X^2\right] \geq(\mathbb{E} X)^2 .
+$$
+This is exactly:
+$$
+\mathbb{E}\left[X^2\right]-(\mathbb{E} X)^2 \geq 0 .
+$$
+And as a corollary we get some useful moment inequalities:
+$$
+\mathbb{E}\left[X^p\right] \geq(\mathbb{E} X)^p .
+$$
+Telling us that higher moments grow faster than powers of the expectation.
+Jensen is also very useful for negative log transformations, which are very common in Maximum Likelihood, since $-log$ is convex for any positive real valued random variable.
+
+
+
+
 
 
 ## 4.5 Functions of Bounded Variation and Stieltjes Integrals
