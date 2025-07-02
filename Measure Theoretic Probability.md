@@ -978,11 +978,65 @@ Telling us that higher moments grow faster than powers of the expectation.
 Jensen is also very useful for negative log transformations, which are very common in Maximum Likelihood, since $-log$ is convex for any positive real valued random variable.
 
 
-
-
-
-
 ## 4.5 Functions of Bounded Variation and Stieltjes Integrals
+In this section we define functions of bounded variation and review some of their basic properties. Stieltjes integrals will be discussed subsequently. We consider functions defined on an interval $[a, b].$ Next to these we consider partitions $\Pi$ of $[a, b]$ -- finite subsets $\left\{t_0, \ldots, t_n\right\}$ of $[a, b]$ with the  convention $t_0 \leq \cdots \leq t_n$, and $\mu(\Pi)$ denotes the mesh of $\Pi$. 
+$$
+\mu(\Pi)=\max _{1 \leq i \leq n}\left(t_i-t_{i-1}\right) .
+$$
+Extended partitions, denoted $\Pi^*$, are partitions $\Pi$, coupled with additional points $\tau_i$  with $t_{i-1} \leq \tau_i \leq t_i$. By definition $\mu\left(\Pi^*\right)=\mu(\Pi)$. Given a function $\alpha$ over the partition $\Pi$, we define 
+$$
+V^1(\alpha ; \Pi):=\sum_{i=1}^n\left|\alpha\left(t_i\right)-\alpha\left(t_{i-1}\right)\right|,
+$$
+as the *variation* of $\alpha$ over the partition $\Pi$.
+One again, we make use of the supremum over the collections of all possible partitions, to arrive at the definition of *functions of bounded variation*:
+
+### 4.33 Functions of Bounded Variation
+A function $\alpha$ is said to be of bounded variation if $V^1(\alpha):= \sup _{\Pi} V^1(\alpha ; \Pi)<\infty,$ where the supremum is taken over all partitions $\Pi$. The variation function $\mathcal{v}_\alpha:[a, b] \rightarrow \mathbb{R}$ is defined by 
+$v_\alpha(t)=V^1\left(\alpha 1_{[a, t]}\right)$. In this way the variation function yields how much total variation has accrued between $a$ and $t$. It is monotone increasing and has values: $v_\alpha(a)=0$, and $v_\alpha(b)=V^1(\alpha)$ for the two trivial cases. 
+A *refinement* $\Pi^\prime$ of a partition $\Pi$ satisfies by definition the inclusion $\Pi \subset \Pi^{\prime}$. In such a case, one has 
+$\mu\left(\Pi^{\prime}\right) \leq \mu(\Pi)$ and $V^1\left(\alpha ; \Pi^{\prime}\right) \geq V^1(\alpha ; \Pi)$. It follows from the definition of $V^1(\alpha)$, that there exists a sequence $(\Pi_n)$ of partitions (taken as successive refinements) such that $V^1\left(\alpha ; \Pi_n\right) \rightarrow V^1(\alpha)$.
+
+### Example 3.34 Variation as Riemann Sum
+Let $\alpha$ be continuously differentiable and assume $\int_a^b|\alpha^\prime(t)|dt$ is finite. Then the variation of alpha is nothing but the Riemann integral of the absolute derivative of alpha: 
+$$
+V^1(\alpha)=\int_a^b\left|\alpha^{\prime}(t)\right| \mathrm{d} t
+$$
+Since we can express the variation as a Riemann sum:
+$$
+\sum_{i=1}^n\left|\alpha^{\prime}\left(\tau_i\right)\right|\left(t_i-t_{i-1}\right),
+$$
+Where the $\tau_i$ satisfy $t_{i-1} \leq \tau_i \leq t_i$ and $\alpha^{\prime}\left(\tau_i\right)=\frac{\alpha\left(t_i\right)-\alpha\left(t_{i-1}\right)}{t_i-t_{i-1}}$.
+This makes intuitive sense since, by taking the supremum over finer and finer refinements we essentially approximate the absolute value of finite differences for each interval and then sum them up to obtain the total variation.
+We immediately see that any monotone function $\alpha$ is of bounded variation, where we can express the variation as $|\alpha(b)-\alpha(a)|$ with $v_\alpha(t)=|\alpha(t)-\alpha(a)|$ respectively. 
+The difference of two increasing functions is of bounded variation. This fact also has a converse:
+### Proposition 4.35 Decomposition of Functions of Bounded Variation
+Let $\alpha$ be of bounded variation. Then there exists increasing functions $v_\alpha^{+}$and $v_\alpha^{-}$ such that $v_\alpha^{+}(a)=v_\alpha^{-}(a)=0, \alpha(t)-\alpha(a)=v_\alpha^{+}(t)-v_\alpha^{-}(t)$. Moreover, one can choose them such that $v_\alpha^{+}+v_\alpha^{-}=v_\alpha$. 
+This is known as the canonical decomposition theorem (due to Jordan) for functions of bounded variation of one real variable. This decomposition is related to the Jordan decomposition (of a signed measure). 
+
+The decomposition in this proposition enjoys a minimality property. If $w^{+}$and $w_{-}$are increasing functions, $w^{+}(a)=w^{-}(a)=0$ and $\alpha(t)-\alpha(a)=w^{+}(t)-$ $w^{-}(t)$, then for all $t^{\prime}>t$ one has $w^{+}\left(t^{\prime}\right)-w^{+}(t) \geq v_\alpha^{+}\left(t^{\prime}\right)-v_\alpha^{+}(t)$ and $w^{-}\left(t^{\prime}\right)-$ $w^{-}(t) \geq v_\alpha^{-}\left(t^{\prime}\right)-v_\alpha^{-}(t)$. This property is basically the counterpart of the Jordan decomposition (6.4) of signed measures.
+
+The following definition generalizes the concept of Riemann Integral.
+### Definition 4.36 Stieltjes Integral
+Let $f, \alpha:[a, b] \rightarrow \mathbb{R}$ and $\Pi^*$ be an extended partition of $[a, b]$. Write
+
+$$
+S\left(f, \alpha ; \Pi^*\right)=\sum_{i=1}^n f\left(\tau_i\right)\left(\alpha\left(t_i\right)-\alpha\left(t_{i-1}\right)\right)
+$$
+We say that $S(f, \alpha)=\lim _{\mu\left(\Pi^*\right) \rightarrow 0} S\left(f, a ; \Pi^*\right)$, if for all $\varepsilon>0$, there exists $\delta>0$ such that $\mu\left(\Pi^*\right)<\delta$ implies $\left|S(f, \alpha)-S\left(f, \alpha ; \Pi^*\right)\right|<\varepsilon$. If this happens, we say that $f$ is integrable w.r.t. $\alpha$ and we commonly write $\int f \mathrm{~d} \alpha$ for $S(f, \alpha)$, and call it the Stieltjes integral of $f$ w.r.t. $\alpha$.
+
+Note the difference to traditional Riemann sums: In the Riemann Integral, the increment is the length of the interval: $\sum f\left(\tau_i\right)\left(t_i-t_{i-1}\right)$ (using the midpoints $\tau_i$ as an alternative to upper and lower sums), but in the Stieltjes integral the increment is the *increment* of $\alpha$ over the interval: $\alpha\left(t_i\right)-\alpha\left(t_{i-1}\right)$. Roughly, in the Stieltjes integral we think of $\alpha$ as providing a generalized measure of "weight" assigned to each interval, which allows us to integrate functions that have discontinuities. If $\alpha$ is continuous with continuous derivative we recover the Riemann integral. 
+We effectively Integrate $f$ weighted by some *integrator* $\alpha$:
+
+The Riemann-Stieltjes integral is effectively a Riemann integral, except the integrand is "weighted" at every point according to a given function, the "integrator." In fact, if the integrand is $f$ and the integrator $g$ is differentiable, then
+$$
+\int_a^b f(x) d g(x)=\int_a^b f(x) g^{\prime}(x) d x
+$$
+If $g$ is increasing (and when I learned about the Riemann-Stieltjes integral it was required to be), then you can think of $g$ as sort of acting on the real line - and also acting on the graph of $f$. For example, if $g(x)=2 x$, then $g$ acts on the real line by "stretching" by a factor of 2 . If you think of $f$ as being graphed on a rubber sheet (corresponding to a coordinate plane) which you stretch yourself by a factor of 2 , then the area under the graph of $f$ will double, corresponding to the fact that
+$$
+\int_a^b f(x) d(2 x)=2 \int_a^b f(x) d x
+$$
+If $g$ is a more complicated function, then the transformation might be harder to parse, but this is effectively what is happening.
+
 
 ## 4.6 $\mathcal{L}^p$-Spaces of Random Variables
 
