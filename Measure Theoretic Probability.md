@@ -1037,9 +1037,85 @@ $$
 $$
 If $g$ is a more complicated function, then the transformation might be harder to parse, but this is effectively what is happening.
 
+### Proposition 4.37 Stieltjes Integrability Conditions
+Let $f, \alpha:[a, b] \rightarrow \mathbb{R}, f$ continuous and $\alpha$ of bounded variation. Then $f$ is integrable with respect to $\alpha$. Moreover, the triangle inequality $\left|\int f \mathrm{~d} \alpha\right| \leq \int|f| \mathrm{d} v_\alpha$ holds.
+Intuitively integrability w.r.t. $\alpha$ makes sense, since functions of bounded variation can be expressed, by the previous proposition, as the difference of two monotonically nondecreasing functions. We already established that measurability and integrability hold under sums and differences. We skip the rigorous $\epsilon - \delta$ proof here and refer to chapter 4 in the linked script.
 
+### Proposition 4.38 Integration by Parts
+Let $f, \alpha:[a, b] \rightarrow \mathbb{R}$, be continuous and of bounded variation. Then the following integration by parts formula holds: 
+$$
+\int f \mathrm{~d} \alpha+\int \alpha \mathrm{d} f=f(b) \alpha(b)-f(a) \alpha(a)
+$$
+The proof is compact and combines proposition 4.37 with Abel's summation formula. The proof for the formula on wikipedia applies Integration by Parts however which seems circular. More investigations are here needed.
+
+We can use Integration by Parts to define $\int\alpha d f$ for functions of bounded variation by putting:
+$$
+\int \alpha \mathrm{d} f:=f(b) \alpha(b)-f(a) \alpha(a)-\int f \mathrm{~d} \alpha .
+$$
+### Proposition 4.40 Equality of Stieltjes and Lebesgue Integral
+Let $f, \alpha:[a, b] \rightarrow \mathbb{R}, f$ continuous and $\alpha$ of bounded variation. Then the Lebesgue integral $\int f \mathrm{~d} \mu_\alpha$ and the Stieltjes integral $\int f \mathrm{~d} \alpha$ are equal, $\int f \mathrm{~d} \mu_\alpha=\int f \mathrm{~d} \alpha$.
+**Proof**: Exercise 4.17
 ## 4.6 $\mathcal{L}^p$-Spaces of Random Variables
 
-## 4.7 $\mathcal{L}^p$-Spaces of Random Variables
+In this section we introduce the $p$-norms and the spaces of random variables with finite $p$-norm. We start with a definition.
+### Definition 4.41 Random Variables with Finite Moments
+Let $1 \leq p<\infty$ and $X$ a random variable on $(\Omega, \mathcal{F}, \mathbb{P})$. If $\mathbb{E}|X|^p<\infty$, we write $X \in \mathcal{L}^p(\Omega, \mathcal{F}, \mathbb{P})$ and $\|X\|_p=\left(\mathbb{E}|X|^p\right)^{1 / p}$.
+
+The notation $\|\cdot\|$ suggests that we are dealing with a norm. In a sense, this is correct, but we will not rigorously prove this until the end of this section. It is however obvious that $\mathcal{L}^p:=\mathcal{L}^p(\Omega, \mathcal{F}, \mathbb{P})$ is a vector space, since $|X+Y|^p \leq(|X|+|Y|)^p \leq 2^p\left(|X|^p+\right.$ $\left.|Y|^p\right)$.
+In the special case $p=2$, we have for $X, Y \in \mathcal{L}^2$ that $|X Y|=\frac{1}{2}\left((|X|+|Y|)^2-\right. \left.X^2-Y^2\right)$ has finite expectation and is thus in $L^1$. Of course we also have $|\mathbb{E}(X Y)| \leq \mathbb{E}|X Y|$, which directly leads us to the Cauchy-Schwarz inequality.
+### Proposition 4.42 The Cauchy-Schwarz Inequality
+Let $X, Y \in \mathcal{L}^2$. Then $X Y \in \mathcal{L}^1$ and $\mathbb{E}|X Y| \leq\|X\|_2\|Y\|_2$.
+**Interpretation:** If $X, Y$ have finite variance, then their product has finite expectation and:
+$$
+\mathbb{E}|X Y| \leq \sqrt{\mathbb{E}\left[X^2\right]} \sqrt{\mathbb{E}\left[Y^2\right]} .
+$$
+**Proof** If $\mathbb{E} Y^2=0$, then $Y=0$ a.s. (Lemma 4.11), so also $X Y=0$ a.s. and there is nothing to prove. Assume then that $\mathbb{E} Y^2>0$ and let $c=\mathbb{E}|X Y| / \mathbb{E} Y^2$. One trivially has $\mathbb{E}(|X|-c|Y|)^2 \geq 0$. But the left hand side equals $\mathbb{E} X^2-$ $\frac{(\mathbb{E}|X Y|)^2}{\mathbb{E} Y^2}$.
+
+This directly leads us to the final proposition of this section:
+### Proposition 4.43 Expectation of Independent Random Variables
+Let $X, Y \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$ be independent random variables. Then $X Y \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$ and $\mathbb{E}(X Y)=\mathbb{E} X \cdot \mathbb{E} Y$.
+This can be proven by the "standard machine", we refer for this to the original script.
+### Summary on Expectation:
+Given any random variable $X$, the distribution measure is:
+$$
+\mu_X(B)=\mathbb{P}\{\omega: X(\omega) \in B\} .
+$$
+Then:
+$$
+\mathbb{E}[X]=\int_{\mathbb{R}} x d \mu_X(x)
+$$
+This is the Lebesgue integral with respect to the probability measure $\mu_X$.
+Recall that any probability measure $\mu_X$ corresponds to the cumulative distribution function (roughly, see https://math.stackexchange.com/questions/4764604/probability-measure-as-a-synonym-of-cumulative-distribution-function-cdf for the precise correspondence):
+$$
+F(x)=\mathbb{P}(X \leq x) .
+$$
+And the integral
+$$
+\int_{\mathbb{R}} g(x) d F(x)
+$$
+is the Lebesgue-Stieltjes integral, which integrates $g$ with respect to the CDF $F$.
+So in this notation:
+$$
+\mathbb{E}[X]=\int_{\mathbb{R}} x d F(x)
+$$
+This is equivalent to integrating with respect to $\mu_X$.
+But we know from the Stieltjes Integral, that we can just take the derivative of the integrator to reduce to the Riemann form. This is analogous to the following:
+If $\mu_X$ is absolutely continuous with respect to Lebesgue measure, there is a density $f(x)$ such that:
+$$
+d \mu_X(x)=f(x) d x
+$$
+and:
+$$
+F(x)=\int_{-\infty}^x f(t) d t
+$$
+Then:
+$$
+\mathbb{E}[X]=\int_{\mathbb{R}} x f(x) d x
+$$
+Here is a very nice visual interpretation of the Stieltjes Integral:
+https://sci-hub.se/https://doi.org/10.2307/2322483
+Here is a complete treatise on the Stieltjes Integral with some nice applications in probability:
+https://www.diva-portal.org/smash/get/diva2:719488/FULLTEXT01.pdf
 
 # 5 Product Measures
+
