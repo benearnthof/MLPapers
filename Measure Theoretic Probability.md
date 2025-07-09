@@ -885,13 +885,13 @@ $$
 
 ## 4.4 Expectation and Integral
 
-The main reason why we introduce integration theory in such detail, is that the Expectation of a random variable is precisely a Lebesgue integral. Indee, consider a probability space $(\Omega, \mathcal{F}, \mathbb{P})$, and let $X$ be a real random variable defined on it. Recall that $X: \Omega \rightarrow \mathbb{R}$ is by definition a measurable function. Just by adjusting our notation from $(S, \Sigma, \mu)$ to $(\Omega, \mathcal{F}, \mathbb{P})$, we obtain the following notation for the integral of $X$ with respect to $\mathbb{P}$:
+The main reason why we introduce integration theory in such detail, is that the Expectation of a random variable is precisely a Lebesgue integral. Indeed, consider a probability space $(\Omega, \mathcal{F}, \mathbb{P})$, and let $X$ be a real random variable defined on it. Recall that $X: \Omega \rightarrow \mathbb{R}$ is by definition a measurable function. Just by adjusting our notation from $(S, \Sigma, \mu)$ to $(\Omega, \mathcal{F}, \mathbb{P})$, we obtain the following notation for the integral of $X$ with respect to $\mathbb{P}$:
 $$
 \mathbb{P}(X)=\int_{\Omega} X \mathrm{~d} \mathbb{P}
 $$
 This holds as long as the integral is well defined, which is certainly the case if $\mathbb{P}(|X|)<\infty$. Other often used notations for this integral are $\mathbb{P} X$ and $\mathbb{E} X$.
 The latter is the standard in statistics and one speaks of the $\mathbb{E}$xpectation of $X$.
-Note that $\mathbb{E} X$ is always defined when $X \geq 0$ *almost surely*. The latter concept meaning almost everywhere with respcet to the probability measure $\mathbb{P}$.
+Note that $\mathbb{E} X$ is always defined when $X \geq 0$ *almost surely*. The latter concept meaning almost everywhere with respect to the probability measure $\mathbb{P}$.
 
 Further, if $h: \mathbb{R} \rightarrow \mathbb{R}$ is Borel measurable, then $Y:=h \circ X($ we also write $Y=h(X))$ is a random variable as well. We have two methods for calculating $\mathbb{E}Y$:
 Exploiting the linearity of the expectation functional:
@@ -1114,10 +1114,52 @@ $$
 $$
 Here is a very nice visual interpretation of the Stieltjes Integral:
 https://sci-hub.se/https://doi.org/10.2307/2322483
+https://arxiv.org/pdf/math/0110241
+https://sci-hub.se/https://doi.org/10.1080/07468342.2019.1580109
+https://sci-hub.se/https://link.springer.com/article/10.1023/B:TAMP.0000018457.70786.36
+
 Here is a complete treatise on the Stieltjes Integral with some nice applications in probability:
 https://www.diva-portal.org/smash/get/diva2:719488/FULLTEXT01.pdf
 
 # 5 Product Measures
+
+In the preceding chapters, we introduced Measure- and Probability Spaces, Random Variables and their Expectation rigorously, but so far only for the "one dimensional" case. A natural question is "Can we directly extend these ideas to multiple, possibly dependent, Random Variables?". We can start by introducing an informal example.
+
+Take $f: S_1 \times S_2 \rightarrow \mathbb{R}$ and assume any good notion of measurability and integrability. Then $\mu\left(f\left(\cdot, s_2\right)\right):=\int f\left(\cdot, s_2\right) \mathrm{d} \mu_1$ defines a function of $s_2$, and so we'd like to take the integral with respect to $\mu_2$. One could also have performed the integration with respect to $\mu_2$ first, leading us directly to the question whether these integrals are well defined and both approaches yield the same result. 
+Readers already familiar with Fubini's theorem will know that certain conditions have to be fulfilled to be able to swap the order of integration, here is an illustrative example of when this might fail.
+
+We know that integration with respect to the counting measure is nothing but addition. In this context what we've outlined above is just interchanging the order of summation. So if $(a_{n,m})$ is a double array of real numbers, the above can be expressed as  $\sum_n \sum_m a_{n, m}=\sum_m \sum_n a_{n, m}$, which is obviously true if $n$ and $m$ run through a finite set, but this does not necessarily hold for indices from infinite sets. Consider for example
+$$
+a_{n, m}=\left\{\begin{aligned}
+1 & \text { if } n=m+1 \\
+-1 & \text { if } m=n+1 \\
+0 & \text { else. }
+\end{aligned}\right.
+$$
+We can visualize this as a two dimensional grid of numbers with zero everywhere except the lower and upper off diagonals. In particular, we see that the lower off diagonal is filled with 1 entries, the upper diagonal is filled with negative one. We thus see that the first row of this infinite grid sums to -1, since it does not contain values of the lower off diagonal. Any other row sums to zero, since they contain both upper and lower values. Thus we find $\sum_n \sum_m a_{n, m}=-1$. Following the same logic we can show that, by summing over columns instead of rows, we get $\sum_m \sum_n a_{n, m}=+1$. 
+What are sufficient conditions that allow us to interchange the order of summation? We will show that $\sum_m \sum_n\left|a_{n, m}\right|<\infty$ is such a sufficient condition. As a side remark we note that this case has everything to do with a well known theorem by Riemann that tells us that a series of real numbers is absolutely convergent iff it is unconditionally convergent. (All reorderings of the series converge to the same value.)
+
+## 5.1 Product of Two Measure Spaces
+Our goal is to construct a measure space $(S, \Sigma, \mu)$ with $S=S_1 \times S_2$. Just taking the Cartesian product of the two universes is straightforward enough, but we do need to prove that the product $\sigma$-Algebra remains a proper $\sigma$-Algebra and measurability properties still hold.
+First we construct $\Sigma$. It is natural that "measurable rectangles" are in $\Sigma$. Let $\mathcal{R}$ be $\left\{E_1 \times E_2: E_1 \in \Sigma_1, E_2 \in \Sigma_2\right\}$. This is a $\pi$-System as all possible intersections of rectangles are also rectangles (or the empty set), but not necessarily a $\sigma$-Algebra since the complement of a rectangle is not a rectangle. (Consider $[0,1] \times[0,1] \cup[2,3] \times[2,3]$ or any other nontrivial example.) Therefore we define $\Sigma:=\sigma(\mathcal{R})$, the *product $\sigma$-algebra* of $\Sigma_1$ and $\Sigma_2$. A common notation for this product $\sigma$-Algebra is the standard cartesian product: $\Sigma=\Sigma_1 \times \Sigma_2$.
+
+Alternatively, one can consider the projections $\pi_i: S \rightarrow S_i$, defined by $\pi_i\left(s_1, s_2\right)=s_i$. It is easy to show that $\Sigma$ coincides with the smallest such $\sigma$-Algebra that makes these projections measurable. 
+Consider, for example the rectangle $R=[0,1] \times[2,3]$. Taking the projection $\pi_1: \mathbb{R}^2 \rightarrow \mathbb{R}$, where $\pi_1(x, y)=x$ we obtain the image $[0, 1]$ and preimage $\pi_1^{-1}([0,1])=\left\{(x, y) \in \mathbb{R}^2: x \in[0,1], y \in \mathbb{R}\right\}=[0,1] \times \mathbb{R}$.
+The product $\sigma$-Algebra is the smallest $\sigma$-Algebra that contains any such vertical and horizontal strips, since this allows us, with countably many set operations, to construct any Borel-measurable subset of $\mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R}) \subseteq \mathcal{B}\left(\mathbb{R}^2\right)$.
+
+Next to the projections, we now consider *embeddings*. For a fixed $s_1 \in S_1$ we define $e_{s_1}: S_2 \rightarrow S$ by  $e_{s_1}\left(s_2\right)=\left(s_1, s_2\right)$. Similarly, we define $e^{s_2}\left(s_1\right)=\left(s_1, s_2\right)$. One easily checks that the embeddings $e_{s_1}$ are $\Sigma_2 / \Sigma$-measurable and that the $e^{s_2}$ are $\Sigma_1 / \Sigma$-measurable. As a consequence we have the following proposition.
+
+### Proposition 5.1
+Let $f: S \rightarrow \mathbb{R}$ be $\Sigma$-measurable. Then the marginal mappings $s_1 \mapsto f\left(s_1, s_2\right)$ and $s_2 \mapsto f\left(s_1, s_2\right)$ are $\Sigma_1$-, respectively $\Sigma_2$-measurable, for any $s_2 \in S_2$, respectively $s_1 \in S_1$.
+
+**Proof**: This follows from the fact that a composition of measurable functions is also measurable.
+
+The converse statement of proposition 5.1 is not true in general. There are functions $f: S \rightarrow \mathbb{R}$ that are not measurable with respect to the product $\sigma$-Algebra $\Sigma$ ,although the mappings $s_1 \mapsto f\left(s_1, s_2\right)$ and $s_2 \mapsto f\left(s_1, s_2\right)$ are $\Sigma_{1^{-}},$ respectively $\Sigma_2$-measurable. Counterexamples are not obvious. Fortunately, there are also conditions that are sufficient to ahve measurability of $f$ with respect to $\Sigma$, when measurability of the marginal functions is given. (See Exercise 5.8).
+
+Having constructed the product $\sigma$-algebra $\Sigma$, we now draw our attention to the construction of the product measure $\mu$ on $\Sigma$, denoted by $\mu_1 \times \mu_2$. We will construct $\mu$ such that the property $\mu\left(E_1 \times E_2\right)=\mu_1\left(E_1\right) \mu_2\left(E_2\right)$ holds. This justifies the name product measure. We will assume that the measures $\mu_1$ and $\mu_2$ are finite until further notice.
+
+Consider a bounded $\Sigma$-measurable function f.
+
 
 # 6 Derivative of a Measure
 
