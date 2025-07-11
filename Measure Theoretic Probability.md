@@ -1154,11 +1154,91 @@ Let $f: S \rightarrow \mathbb{R}$ be $\Sigma$-measurable. Then the marginal mapp
 
 **Proof**: This follows from the fact that a composition of measurable functions is also measurable.
 
-The converse statement of proposition 5.1 is not true in general. There are functions $f: S \rightarrow \mathbb{R}$ that are not measurable with respect to the product $\sigma$-Algebra $\Sigma$ ,although the mappings $s_1 \mapsto f\left(s_1, s_2\right)$ and $s_2 \mapsto f\left(s_1, s_2\right)$ are $\Sigma_{1^{-}},$ respectively $\Sigma_2$-measurable. Counterexamples are not obvious. Fortunately, there are also conditions that are sufficient to ahve measurability of $f$ with respect to $\Sigma$, when measurability of the marginal functions is given. (See Exercise 5.8).
+The converse statement of proposition 5.1 is not true in general. There are functions $f: S \rightarrow \mathbb{R}$ that are not measurable with respect to the product $\sigma$-Algebra $\Sigma$ ,although the mappings $s_1 \mapsto f\left(s_1, s_2\right)$ and $s_2 \mapsto f\left(s_1, s_2\right)$ are $\Sigma_{1^{-}},$ respectively $\Sigma_2$-measurable. Counterexamples are not obvious. Fortunately, there are also conditions that are sufficient to have measurability of $f$ with respect to $\Sigma$, when measurability of the marginal functions is given. (See Exercise 5.8).
 
 Having constructed the product $\sigma$-algebra $\Sigma$, we now draw our attention to the construction of the product measure $\mu$ on $\Sigma$, denoted by $\mu_1 \times \mu_2$. We will construct $\mu$ such that the property $\mu\left(E_1 \times E_2\right)=\mu_1\left(E_1\right) \mu_2\left(E_2\right)$ holds. This justifies the name product measure. We will assume that the measures $\mu_1$ and $\mu_2$ are finite until further notice.
 
-Consider a bounded $\Sigma$-measurable function f.
+Consider a bounded $\Sigma$-measurable function $f$. We know that the mappings $s_i \mapsto f\left(s_1, s_2\right)$ are $\Sigma_i$-measurable and therefore the respective integrals $\mu_i$ are well defined. Let then
+$$
+\begin{aligned}
+I_1^f\left(s_1\right) & =\int f\left(s_1, s_2\right) \mu_2\left(\mathrm{~d} s_2\right) \\
+I_2^f\left(s_2\right) & =\int f\left(s_1, s_2\right) \mu_1\left(\mathrm{~d} s_1\right)
+\end{aligned}
+$$
+be the respective marginal integrals. 
+### Lemma 5.3 Preamble to Fubini
+Let $f$ be a bounded $\Sigma$-measurable function. Then the mappings $I_i^f: S_i \rightarrow \mathbb{R}$ are $\Sigma_i$-measurable $(i=1,2)$. Moreover we have the identity
+$$
+\mu_1\left(I_1^f\right)=\mu_2\left(I_2^f\right)
+$$
+or, in a more appealing notation,
+$$
+\int_{S_1}\left(\int_{S_2} f\left(s_1, s_2\right) \mu_2\left(\mathrm{~d} s_2\right)\right) \mu_1\left(\mathrm{~d} s_1\right)=\int_{S_2}\left(\int_{S_1} f\left(s_1, s_2\right) \mu_1\left(\mathrm{~d} s_1\right)\right) \mu_2\left(\mathrm{~d} s_2\right) .
+$$
+**Proofsketch**: This can be proven by considering the space of all bounded $\Sigma$-measurable functions that satisfy the assertions of the lemma and noticing that this is indeed a vector space, since sums of measurable functions retain their measurability and integrals are linear operators. We then show that if $f_n$ is in this vector space and $f_n \geq 0$ and $f_n \uparrow f$ where $f$ is bounded then $f$ is also in our vector space. We then use the MCT to swap limits and integrals which leads us to  $\mu_1\left(I_1^{f_n}\right)=\mu_2\left(I_2^{f_n}\right)$ for all $n$, in the case where $f$ is a bounded $\Sigma$-measurable function. All that is left to show now is that $\mathcal{H}$ contains the indicators of all sets in $\mathcal{R}$ which would allow us, by [[Measure Theoretic Probability#Theorem 3.6 Monotone Class Theorem]], to conclude that $\mathcal{H}$ coincides with the space of all bounded $\Sigma$-measurable functions.
+
+Lemma 5.3 is essentially a special case of Fubini's theorem, for bounded functions and finite product measures, without any explicit integrability assumptions just yet. We're essentially proving that slicing a measurable function and then integrating the slices yields a measurable marginal function. Moreover, the double integral is symmetric in the product measure. We then start with simple rectangles and build up using the monotone class machinery to show that the *benign* space $\mathcal{H}$ we picked to satisfy the conditions of the lemma coincides with the full space of bounded $\Sigma$-measurable functions. 
+
+It follows directly from this, that for al $E \in \Sigma$, the indicator function $1_E$ satisfies the assertions of the lemma. This allows us to define the following:
+### Definition 5.4 Product Measure
+We define $\mu: \Sigma \rightarrow[0, \infty)$ by $\mu(E)=\mu_2\left(I_2^{\mathbf{1}_E}\right)$ for $E \in \Sigma$.
+In Fubini's Theorem below we assert that this defines a measure on $(S, \Sigma)$ and also tells us how to compute integrals with respect to this measure in terms of iterated integrals w.r.t . $\mu_1$ and $\mu_2$.
+### Theorem 5.5 Fubini's Theorem
+The mapping $\mu: \Sigma \rightarrow[0, \infty)$ by $\mu(E)=\mu_2\left(I_2^{\mathbf{1}_E}\right)$ for $E \in \Sigma$ has the following properties:
+	(i) It is a measure on $(S, \Sigma)$. Moreover, it is the only measure on $(S, \Sigma)$ with the property that $\mu\left(E_1 \times E_2\right)=\mu_1\left(E_1\right) \mu_1\left(E_2\right)$. It is therefore called the product measure of $\mu_1$ and $\mu_2$ and often written as $\mu_1 \times \mu_2$.
+	(ii) If $f \in \Sigma^{+}$, then
+$$
+\mu(f)=\mu_2\left(I_2^f\right)=\mu_1\left(I_1^f\right) \leq \infty .
+$$
+	(iii) If $f \in \mathcal{L}^1(S, \Sigma, \mu)$, then Equation (5.3) is still valid and $\mu(f) \in \mathbb{R}$.
+
+**Proof** (i) It is obvious that $\mu(\emptyset)=0$. If $\left(E_n\right)$ is a disjoint sequence in $\Sigma$ with union $E$, then we have $\mathbf{1}_E=\lim _n \sum_{i=1}^n \mathbf{1}_{E_i}$. Linearity of the integral and Monotone Convergence (applied two times) show that $\mu$ is $\sigma$-additive. Uniqueness of $\mu$ follows from Theorem 1.15 applied to the $\pi$-system $\mathcal{R}$.
+(ii) We use the standard machine. The two equalities in (5.3) are by definition of $\mu$ valid for $f=\mathbf{1}_E$, when $E \in \Sigma$. Linearity of the integrals involved show that it is true for nonnegative simple functions $f$ and Monotone Convergence yields the assertion for $f \in \Sigma^{+}$.
+(iii) Of course, here we have to use the decomposition $f=f^{+}-f^{-}$. The tricky details are left as Exercise 5.2.
+
+Fubini has been proven under the standing assumption that the initial measures $\mu_1$ and $\mu_2$ are finite. The results extend to the case where both of these measures are $\sigma$-finite. We can see this by splitting up each of the $S_i$ into countable unions of disjoint sets and observing that the individual results still apply to the involved integrals by splitting the integration over the sets $S_{ij}$ and adding up the results. 
+We note that if one goes beyond $\sigma$-finite measures the assertion may no longer be true. 
+
+## 5.2 Applications in Probability Theory
+In this section we consider real valued random variables, as well as real *random vectors*. The latter are defined as follows:
+Consider a probability space $(\Omega, \mathcal{F}, \mathbb{P})$ and a map $X: \Omega \rightarrow E$, where $E$ is some other set. Let $\mathcal{E}$ be a $\sigma$-Algebra on $E$. If the map $X$ is $\mathcal{F} / \mathcal{E}$-measurable, $X$ is also called a random element of $E$. If $E$ is a vector space, we call $X$ a **Random Vector**. Notice that this definition depends on the $\sigma$-Algebras at hand, which we don't immediately recognize in the term *random vector*. 
+A concrete example of such a vector space is $\mathbb{R}^2$. Suppose we have two random variables $X_1, X_2: \Omega \rightarrow \mathbb{R}$. We consider the map $X=\left(X_1, X_2\right): \Omega \rightarrow \mathbb{R}^2$, defined by $X(\omega)=\left(X_1(\omega), X_2(\omega)\right)$, which for any $\omega$ yields the respective tuple $\left(X_1(\omega), X_2(\omega)\right)$ and thus aligns quite naturally with the notion of a random vector. To justify this terminology, we need a $\sigma$-Algebra on $\mathbb{R^2}$ and there are two candidates that immediately come to mind. The Borel $\sigma$-Algebra generated by the open sets in $\mathbb{R}^2$ as in section 1.1, and, continuing our discussion of the previous section, the product $\sigma$-Algebra $\mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R})$.
+
+### Proposition 5.8 Equivalence of Borel- and Product $\sigma$-Algebra
+It holds that $\mathcal{B}\left(\mathbb{R}^2\right)=\mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R})$.
+**Proof** The projections $\pi_i: \mathbb{R}^2 \rightarrow \mathbb{R}$ are continuous and thus $\mathcal{B}\left(\mathbb{R}^2\right)$-measurable. Since $\mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R})$ is the smallest $\sigma$-algebra for which the projections are measurable, we have $\mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R}) \subset \mathcal{B}\left(\mathbb{R}^2\right)$. Conversely, if $G$ is open in $\mathbb{R}^2$, it is the countable union of (open) rectangles in $\mathcal{R}$ (similar to the proof of Proposition 1.3) and hence $G \in \mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R})$, which yields the other inclusion.
+
+### Remark 5.9 On Polish Spaces
+Observe that proposition 5.8 generalizes to general topological spaces equipped with the Borel sets. For the proof of the reverse inclusion we used the fact that the real numbers are separable under the ordinary topology. Thus, our proposition holds for Polish spaces, but without equality, e.g. the strict inclusion of the product $\sigma$-Algebra in the Borel $\sigma$-Algebra on the product space (with the product topology).
+
+Since we now know that $\mathcal{B}\left(\mathbb{R}^2\right)$ and $\mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R})$ are equivalent, we can use the term 2-dimensional random vector and arrive at the following corollary.
+
+### Corollary 5.10 Random Vectors
+Let $X_1, X_2:\Omega \rightarrow \mathbb{R}$ be given. The vector mapping $X=(X_1,X_2):\Omega \rightarrow \mathbb{R}^2$ is a random vector iff the $X_i$ are random variables.
+**Proof**: Exercise 5.3
+
+We already know that the sum of two arbitrary Random Variables $X_1, X_2$ is also a random variable. Let now $f:\mathbb{R}^2\rightarrow\mathbb{R}$ be a continuous function. Then it is also $\mathcal{B}\left(\mathbb{R}^2\right)$-measurable, and by 5.10 and composition of measurable functions $f(X_1, X_2)$ is a random variable as well. Take for example the trivial case $f(x_1, x_2) = x_1+x_2$. 
+Recall that we defined in section [[Measure Theoretic Probability#3.2 Random Variables]] the distribution, or *law* of a random variable. Suppose now that $X=\left(X_1, X_2\right)$ is a random vector defined on $(\Omega, \mathcal{F}, \mathbb{P})$ with values in $\mathbb{R}^2$. Let $E \in \mathcal{B}\left(\mathbb{R}^2\right)$, then 
+$$
+\mathbb{P}^X(E):=\mathbb{P}(X \in E),
+$$
+for any $E \in \mathcal{B}\left(\mathbb{R}^2\right)$ defines a probability measure on $\left(\mathbb{R}^2, \mathcal{B}\left(\mathbb{R}^2\right)\right)$, the distribution of $X$, also called the joint distribution of $X_1, X_2$. Taking now $E=E_1 \times \mathbb{R}$, we obtain the marginal probability of $E_1$ as $\mathbb{P}^X\left(E_1 \times \mathbb{R}\right)=\mathbb{P}\left(X_1 \in E_1\right)=\mathbb{P}^{X_1}\left(E_1\right)$. Common terminology is to call $\mathbb{P}^{X_1}$ the marginal distribution, or marginal law, of $X_1$. 
+Along with the joint distribution of $X$, we introduce the joint distribution function $F=F_X: \mathbb{R}^2 \rightarrow[0,1]$, given by
+$$
+F\left(x_1, x_2\right)=\mathbb{P}^X\left(\left(-\infty, x_1\right] \times\left(-\infty, x_2\right]\right)=\mathbb{P}\left(X_1 \leq x_1, X_2 \leq x_2\right) .
+$$
+Notice that we recover $F_{X_1}(x_1)$ from the limiting process $F_{X_1}\left(x_1\right)=\lim _{x_2 \rightarrow \infty} F\left(x_1, x_2\right)$, also denoted $F\left(x_1, \infty\right)$.
+It may happen that there exists a nonnegative $\mathcal{B}\left(\mathbb{R}^2\right)$-measurable function $f$ such that 
+$\mathbb{P}^X(E)=\int_E f \mathrm{~d}(\lambda \times \lambda)$, for all $E \in \mathcal{B}\left(\mathbb{R}^2\right)$. In that case, $f$ is called the *joint density* of $X$.
+The obvious marginal density $f_{X_1}$ of $X_1$ is defined by $f_{X_1}\left(x_1\right)=\int f\left(x_1, x_2\right) \lambda\left(\mathrm{d} x_2\right)$. One similarly defines the marginal density of $X_2$. Check these are indeed densities in the sense of Example 4.29.
+
+We recall how, in Chapter 3, we introduced independence in relation to the multiplication of probabilities. It should be natural to connect this with the idea of product measures.
+### Proposition 5.12 Independence of Joint Random Variables
+Two random variables $X_1, X_2$ on ( $\Omega, \mathcal{F}, \mathbb{P}$ ) are independent iff the joint distribution $\mathbb{P}^{\left(X_1, X_2\right)}$ is the product measure $\mathbb{P}^{X_1} \times \mathbb{P}^{X_2}$. This in turn happens iff $F\left(x_1, x_2\right)=F_{X_1}\left(x_1\right) F_{X_2}\left(x_2\right)$, for all $x_1, x_2 \in \mathbb{R}$. Assume further that ( $X_1, X_2$ ) has a joint probability density function $f$. Let $f_1$ and $f_2$ be the (marginal) probability density functions of $X_1$ and $X_2$ respectively. Then $X_1$ and $X_2$ are independent iff $f\left(x_1, x_2\right)=f_1\left(x_1\right) f_2\left(x_2\right)$ for all $\left(x_1, x_2\right)$ except in a set of $\lambda \times \lambda$-measure zero.
+### Remark 5.13
+Suppose one is given a random variable $X$, defined on a given $(\Omega, \mathcal{F}, \mathbb{P})$. Sometimes one needs an additional random variable $Y$ having a specified distribution. It may happen that the given probability space is not rich enough to have such a random variable well defined. Suppose $\Omega=\{0,1\}$ and $X(\omega)=\omega$, having a Bernoulli distribution for $\mathbb{P}$ defined on the power set of $\Omega$ with $\mathbb{P}(\{1\})=p$. Clearly, it is impossible to define on this $\Omega$ a random variable having more than two different outcomes. Extending the probability space to a suitable product space offers a way out, see Exercise 5.13, from which it even follows that $X$ and $Y$ are independent.
+
+It is straightforward to generalize these ideas to higher dimensions, let us now take a look at the case of infinite products. 
 
 
 # 6 Derivative of a Measure
