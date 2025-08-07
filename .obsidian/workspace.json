@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Measure Theoretic Probability.md",
+                "file": "GeneralML/Generating Long Sequences with Sparse Transformers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Measure Theoretic Probability"
+              "title": "Generating Long Sequences with Sparse Transformers"
+            }
+          },
+          {
+            "id": "f34b5b9c0d77743c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "GeneralML/Native Sparse Attention.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Native Sparse Attention"
             }
           }
         ]
@@ -169,16 +183,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cd18612d87e76a15",
+  "active": "1fcff350edde9a71",
   "lastOpenFiles": [
-    "Misc/An Enriched Category Theory of Language.md",
+    "GeneralML/Improving Language Understanding by Generative Pre-Training.md",
+    "GeneralML/Generating Long Sequences with Sparse Transformers.md",
+    "Untitled.md",
+    "GeneralML/Native Sparse Attention.md",
+    "GeneralML/Identity Mappings in Deep Residual Networks.md",
+    "GeneralML/Training Deep Nets with Sublinear Memory Cost.md",
+    "GeneralML/Attention Is All You Need.md",
     "Measure Theoretic Probability.md",
+    "Generative Models/Memorization to Generalization.md",
+    "Misc/An Enriched Category Theory of Language.md",
     "Generative Models/An analytic theory of creativity in convolutional diffusion models.md",
     "Misc/Dynadiff.md",
     "GeneralML/Stretching Each Dollar.md",
     "Mathematics/On the Closed-Form of Flow Matching.md",
     "Generative Models/The Diffusion Duality.md",
-    "Untitled.md",
     "GeneralML/Zero-Shot Coreset Selection.md",
     "General Applications/Edit Flows.md",
     "Proteomics/Protein Conformation Generation.md",
@@ -191,13 +212,6 @@
     "Misc/Alchemy and Artificial Intelligence.md",
     "Misc",
     "CodeRepos/Diff Sampler.md",
-    "CodeRepos/FMBoosting.md",
-    "CodeRepos/torchdiffeq.md",
-    "General Applications/Audiobox.md",
-    "Mathematics/Reverse-Time Diffusion Equation Models.md",
-    "Generative Models/Progressive Distillation.md",
-    "Generative Models/Schrödinger Bridge Matching.md",
-    "Generative Models/Variational Diffusion Models.md",
     "$",
     "GeneralML",
     "Proteomics",

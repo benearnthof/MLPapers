@@ -1238,7 +1238,14 @@ Two random variables $X_1, X_2$ on ( $\Omega, \mathcal{F}, \mathbb{P}$ ) are ind
 ### Remark 5.13
 Suppose one is given a random variable $X$, defined on a given $(\Omega, \mathcal{F}, \mathbb{P})$. Sometimes one needs an additional random variable $Y$ having a specified distribution. It may happen that the given probability space is not rich enough to have such a random variable well defined. Suppose $\Omega=\{0,1\}$ and $X(\omega)=\omega$, having a Bernoulli distribution for $\mathbb{P}$ defined on the power set of $\Omega$ with $\mathbb{P}(\{1\})=p$. Clearly, it is impossible to define on this $\Omega$ a random variable having more than two different outcomes. Extending the probability space to a suitable product space offers a way out, see Exercise 5.13, from which it even follows that $X$ and $Y$ are independent.
 
-It is straightforward to generalize these ideas to higher dimensions, let us now take a look at the case of infinite products. 
+It is straightforward to generalize these ideas to higher dimensions, let us now take a look at the case of infinite products.  
+### 5.3 Infinite Products
+The extension of product spaces from finite to infinite products is a different matter.  Nevertheless this extension is inevitable if one wants to construct a well defined independent infinite sequence of random variables. These considerations are vital, since they will later allow us a rigorous construction of stochastic processes. Recall that we've seen so far, that the independence of two random variables has everything to do with product measures. An infinite sequence of independent random variables will therefore require an infinite product of probability measures. 
+
+For real valued random variables we have already encountered a construction of a supporting probability space in Section 3.3. Here we continue with the construction of a countable product of probability spaces. 
+
+Assume that for every 
+
 
 
 # 6 Derivative of a Measure
