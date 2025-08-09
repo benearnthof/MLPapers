@@ -36,3 +36,27 @@ $$
 \tilde{K}_t^{\mathrm{cmp}}=f_K^{\mathrm{cmp}}\left(\mathbf{k}_{: t}\right)=\left\{\varphi\left(\mathbf{k}_{i d+1: i d+l}\right) \left\lvert\, 0 \leqslant i \leqslant\left\lfloor\frac{t-l}{d}\right\rfloor\right.\right\}
 $$
 ### Token Selection
+By only using compressed keys the model would lose fine grained local information, leading the authors to resort to the direct selection of specific, individual tokens. How can this be done in a way that is both efficient and dynamically identifies the most relevant tokens?
+
+#### Blockwise Selection
+NSA processes key and value sequences in spacially contiguous blocks, which is key for an efficient GPU implementation. The actual selection process then follows distributional patterns inherent to attention scores. [[Minference]] demonstrated that attention scores often exhibit spatial continuity, suggesting that neighboring keys tend to share similar importance levels. 
+Key, and value sequences are first divided separately into blocks and then assigned importance scores that determine if they are selected for downstream processing or discarded. 
+#### Importance Score Computation
+Computing block importance scores would be quite inefficient in practice, but we can leverage intermediate attention scores from the prior attention computation already performed during token compression. When compression and selection blocks share the same blocking scheme, we can directly obtain the selection block importance scores by calculating 
+$$
+\operatorname{Softmax}\left(\mathbf{q}_t^T \tilde{K}_t^{\mathrm{cmp}}\right)
+$$
+Where $\tilde{K}_t^{\mathrm{cm}}$ is the respective compression score for the current block $t$. Should the blocking schemes differ one can derive auxiliary scores via their spatial relationship. See equation 9 in the paper. 
+#### Top-n Block Selection
+After block importance scores have been obtained only those tokens within the top-n sparse blocks ranked by their block importance are retained. The selected blocks are then concatenated for further processing. 
+### Sliding Window
+To avoid the learning process being dominated by strong local dependencies in data NSA introduces a third attention branch, using a sliding window approach to allow the model to learn local features separate from the global compressed features and highly specific top-n selected features. The three separate information branches are then aggregated through a learned gating mechanism -- basically a weighted sum. 
+### Kernel Design
+The authors implement NSA as custom, efficient GPU kernels with triton. Multi head attention is memory-intensive and inefficient for decoding, they focus on architectures with shared KV caches like GQA and MQA. 
+Compression and Sliding window attention are already compatible with available [[FlashAttention]] kernels, the authors introduce a specialized kernel for sparse selection attention. 
+They follow a different query grouping strategy, loading all query heads within each GQA group into SRAM, for each position on the query sequence. 
+In essence they utilize three strategies: 
+* Group-Centric Data Loading: For each inner loop, load all heads' queries in the GQA group at position $t$ and their shared sparse key/value blocks indices $I_t$
+* Shared KV Fetching: In the inner loop, sequentiall load continuous key/value blocks indexed by $I_t$ into SRAM to minimize memory loads.
+* Outer Loop on Grid: Since the inner loop length remains nearly identical for different query blocks, query and output loops remain in tritons grid scheduler to simplify and optimize the kernel. 
+

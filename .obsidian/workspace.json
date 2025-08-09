@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sparse Attention/Native Sparse Attention.md",
+                "file": "GeneralML/Improving Language Understanding by Generative Pre-Training.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Native Sparse Attention"
+              "title": "Improving Language Understanding by Generative Pre-Training"
+            }
+          },
+          {
+            "id": "1d9d7fa3658e81da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Minference.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Minference"
             }
           }
         ]
@@ -171,6 +185,9 @@
   },
   "active": "f34b5b9c0d77743c",
   "lastOpenFiles": [
+    "Sparse Attention/Attention Sinks.md",
+    "Sparse Attention/Native Sparse Attention.md",
+    "Minference.md",
     "Sparse Attention/HashAttention.md",
     "Sparse Attention/SnapKV.md",
     "Sparse Attention/MQA Fast Transformer Decoding.md",
@@ -178,7 +195,6 @@
     "README.md",
     "Sparse Attention/LLM x MapReduce.md",
     "Sparse Attention/InfLLM Training Free Long Context Extrapolation.md",
-    "Sparse Attention/Native Sparse Attention.md",
     "Sparse Attention/MagicPIG LSH Sampling for Efficient LLM Generation.md",
     "Sparse Attention/Quest Query Aware Sparsity.md",
     "Sparse Attention/Adaptive KV-Cache Compression for LLMs.md",
@@ -197,8 +213,6 @@
     "GeneralML/Is Chain-of-Thought Reasoning of LLMs a Mirage.md",
     "GeneralML/Improving Language Understanding by Generative Pre-Training.md",
     "GeneralML/Identity Mappings in Deep Residual Networks.md",
-    "GeneralML/Training Deep Nets with Sublinear Memory Cost.md",
-    "GeneralML/Attention Is All You Need.md",
     "Misc",
     "$",
     "GeneralML",
