@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GeneralML/Graph Attention Networks.md",
+                "file": "Sparse Attention/FlashAttention.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graph Attention Networks"
+              "title": "FlashAttention"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/The Mathematics of Diffusion.md",
+                "file": "Sparse Attention/FlashAttention.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Mathematics of Diffusion"
+              "title": "Outline of FlashAttention"
             }
           }
         ],
@@ -156,8 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -169,11 +168,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1fcff350edde9a71",
+  "active": "f34b5b9c0d77743c",
   "lastOpenFiles": [
+    "Sparse Attention/Dynamic Memory Compression.md",
+    "Sparse Attention/FlashAttention.md",
+    "Sparse Attention/The Sparse Frontier.md",
+    "Sparse Attention/Sparse is Enough in Scaling Transformers.md",
+    "Sparse Attention/Big Bird - Transformers for Longer Sequences.md",
     "GeneralML/Group Normalization.md",
     "GeneralML/Graph Attention Networks.md",
-    "Sparse Attention/FlashAttention.md",
     "Sparse Attention/Online normalizer calculations for softmax.md",
     "Proteomics/ProtFlow.md",
     "Mathematics/The Description Length of Deep Learning Models.md",
@@ -193,10 +196,6 @@
     "Misc/The Platonic Representation Hypothesis.md",
     "Sparse Attention/Adaptive KV-Cache Compression for LLMs.md",
     "Proteomics/500 Million Years of Evolution.md",
-    "Proteomics/The de novo design of protein structures.md",
-    "Proteomics/RFdiffusion.md",
-    "Proteomics/ProtTrans.md",
-    "Proteomics/ProteinMPNN.md",
     "Sparse Attention/Untitled",
     "Sparse Attention",
     "Misc",
