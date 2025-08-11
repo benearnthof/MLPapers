@@ -13,21 +13,49 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GeneralML/Improving Language Understanding by Generative Pre-Training.md",
+                "file": "Sparse Attention/FlashAttention.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Improving Language Understanding by Generative Pre-Training"
+              "title": "FlashAttention"
             }
           },
           {
-            "id": "1d9d7fa3658e81da",
+            "id": "d8b8b7a57881e502",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Minference.md",
+                "file": "GeneralML/CycleGAN.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CycleGAN"
+            }
+          },
+          {
+            "id": "fb90c1440326949b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "GeneralML/Harnessing the Universal Geometry of Embeddings.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Harnessing the Universal Geometry of Embeddings"
+            }
+          },
+          {
+            "id": "e9bc0cc141953e54",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sparse Attention/Minference.md",
                 "mode": "source",
                 "source": false
               },
@@ -35,7 +63,8 @@
               "title": "Minference"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -183,36 +212,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f34b5b9c0d77743c",
+  "active": "1fcff350edde9a71",
   "lastOpenFiles": [
-    "Sparse Attention/Attention Sinks.md",
-    "Sparse Attention/Native Sparse Attention.md",
-    "Minference.md",
-    "Sparse Attention/HashAttention.md",
-    "Sparse Attention/SnapKV.md",
-    "Sparse Attention/MQA Fast Transformer Decoding.md",
-    "Sparse Attention/SeerAttention.md",
-    "README.md",
-    "Sparse Attention/LLM x MapReduce.md",
-    "Sparse Attention/InfLLM Training Free Long Context Extrapolation.md",
-    "Sparse Attention/MagicPIG LSH Sampling for Efficient LLM Generation.md",
-    "Sparse Attention/Quest Query Aware Sparsity.md",
-    "Sparse Attention/Adaptive KV-Cache Compression for LLMs.md",
-    "Sparse Attention/Generating Long Sequences with Sparse Transformers.md",
-    "Sparse Attention/GQA Generalized Multi Query Attention.md",
-    "Sparse Attention/ClusterKV.md",
-    "Sparse Attention/ALISA.md",
-    "Sparse Attention/H2O Heavy Hitter Oracle.md",
-    "Sparse Attention/SpAtten.md",
-    "Sparse Attention/Rethinking Attention with Performers.md",
+    "GeneralML/CycleGAN.md",
+    "GeneralML/Gromov-Wasserstein Alignment of Word Embedding Spaces.md",
+    "GeneralML/Harnessing the Universal Geometry of Embeddings.md",
+    "GeneralML/Unsupervised Multilingual Word Embeddings.md",
+    "GeneralML/Unsupervised Alignment of Embeddings with Wasserstein Procrustes.md",
+    "GeneralML/Word Translation Without Parallel Data.md",
+    "Misc/The Platonic Representation Hypothesis.md",
     "Sparse Attention/FlashAttention.md",
-    "Sparse Attention/Reformer.md",
+    "Sparse Attention/Adaptive KV-Cache Compression for LLMs.md",
+    "Proteomics/500 Million Years of Evolution.md",
+    "Proteomics/The de novo design of protein structures.md",
+    "Proteomics/RFdiffusion.md",
+    "Proteomics/ProtTrans.md",
+    "Proteomics/ProteinMPNN.md",
+    "Proteomics/Protein Universe.md",
+    "Proteomics/Protein Conformation Generation.md",
+    "Proteomics/De Novo Protein Design.md",
+    "Proteomics/CATH.md",
+    "Proteomics/AlphaFold3.md",
+    "Proteomics/AlphaFold1.md",
+    "Proteomics/AlphaFlow.md",
+    "Proteomics/Advances in Protein Structure Prediction.md",
+    "GeneralML/DINOv2.md",
+    "GeneralML/Classifier-Free Diffusion Guidance.md",
+    "GeneralML/Attention Is All You Need.md",
+    "GeneralML/Improving Language Understanding by Generative Pre-Training.md",
     "Sparse Attention/Untitled",
     "Sparse Attention",
-    "Misc/Music Source Separation with Band-Split RoPE Transformer.md",
-    "GeneralML/Is Chain-of-Thought Reasoning of LLMs a Mirage.md",
-    "GeneralML/Improving Language Understanding by Generative Pre-Training.md",
-    "GeneralML/Identity Mappings in Deep Residual Networks.md",
     "Misc",
     "$",
     "GeneralML",
