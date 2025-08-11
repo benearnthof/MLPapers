@@ -1,4 +1,5 @@
 https://arxiv.org/pdf/2505.12540
+https://github.com/rjha18/vec2vec/tree/main
 
 Translating vector embeddings from one vector space to another without any paired data. 
 Do vector spaces have the same dimension or is this solved by concatenation or some architectural trick? 
