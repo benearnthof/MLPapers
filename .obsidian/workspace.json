@@ -13,44 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sparse Attention/FlashAttention.md",
+                "file": "GeneralML/Graph Attention Networks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "FlashAttention"
-            }
-          },
-          {
-            "id": "d8b8b7a57881e502",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "GeneralML/CycleGAN.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "CycleGAN"
-            }
-          },
-          {
-            "id": "fb90c1440326949b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "GeneralML/Harnessing the Universal Geometry of Embeddings.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Harnessing the Universal Geometry of Embeddings"
+              "title": "Graph Attention Networks"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,34 +169,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fb90c1440326949b",
+  "active": "1fcff350edde9a71",
   "lastOpenFiles": [
-    "Sparse Attention/Minference.md",
-    "GeneralML/CycleGAN.md",
-    "GeneralML/Gromov-Wasserstein Alignment of Word Embedding Spaces.md",
+    "GeneralML/Group Normalization.md",
+    "GeneralML/Graph Attention Networks.md",
+    "Sparse Attention/FlashAttention.md",
+    "Sparse Attention/Online normalizer calculations for softmax.md",
+    "Proteomics/ProtFlow.md",
+    "Mathematics/The Description Length of Deep Learning Models.md",
     "GeneralML/Harnessing the Universal Geometry of Embeddings.md",
+    "GeneralML/Training Large Language Models to Reason in a Continuous Latent Space.md",
+    "GeneralML/Unsupervised Learning of Semantic Mappings.md",
+    "Sparse Attention/Self-attention Does Not Need On2 Memory.md",
+    "Untitled 1.md",
+    "Untitled.md",
+    "Sparse Attention/Training LLMs with MXPF4.md",
+    "GeneralML/CycleGAN.md",
+    "Sparse Attention/Minference.md",
+    "GeneralML/Gromov-Wasserstein Alignment of Word Embedding Spaces.md",
     "GeneralML/Unsupervised Multilingual Word Embeddings.md",
     "GeneralML/Unsupervised Alignment of Embeddings with Wasserstein Procrustes.md",
     "GeneralML/Word Translation Without Parallel Data.md",
     "Misc/The Platonic Representation Hypothesis.md",
-    "Sparse Attention/FlashAttention.md",
     "Sparse Attention/Adaptive KV-Cache Compression for LLMs.md",
     "Proteomics/500 Million Years of Evolution.md",
     "Proteomics/The de novo design of protein structures.md",
     "Proteomics/RFdiffusion.md",
     "Proteomics/ProtTrans.md",
     "Proteomics/ProteinMPNN.md",
-    "Proteomics/Protein Universe.md",
-    "Proteomics/Protein Conformation Generation.md",
-    "Proteomics/De Novo Protein Design.md",
-    "Proteomics/CATH.md",
-    "Proteomics/AlphaFold3.md",
-    "Proteomics/AlphaFold1.md",
-    "Proteomics/AlphaFlow.md",
-    "Proteomics/Advances in Protein Structure Prediction.md",
-    "GeneralML/DINOv2.md",
-    "GeneralML/Classifier-Free Diffusion Guidance.md",
-    "GeneralML/Attention Is All You Need.md",
     "Sparse Attention/Untitled",
     "Sparse Attention",
     "Misc",
