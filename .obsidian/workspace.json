@@ -20,6 +20,34 @@
               "icon": "lucide-file",
               "title": "FlashAttention"
             }
+          },
+          {
+            "id": "73d929f2e9ca2d69",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sparse Attention/FlashAttention 3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "FlashAttention 3"
+            }
+          },
+          {
+            "id": "8429c8ebe3e5600b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sparse Attention/FlashAttention 2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "FlashAttention 2"
+            }
           }
         ]
       }
@@ -168,34 +196,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f34b5b9c0d77743c",
+  "active": "1fcff350edde9a71",
   "lastOpenFiles": [
-    "Sparse Attention/Dynamic Memory Compression.md",
+    "General CS",
+    "Sparse Attention/Native Sparse Attention.md",
+    "Sparse Attention/Arithmetic Intensity.md",
     "Sparse Attention/FlashAttention.md",
+    "General CS/Dissecting the Ampere GPU.md",
+    "General CS/Demystifying NVIDIA Ampere.md",
+    "General CS/Computer Architecture A Quantitative Approach.md",
+    "Sparse Attention/Data Movement Is All You Need.md",
+    "General CS/Dissecting the NVIDIA Volta GPU.md",
+    "General CS/IO-Complexity.md",
+    "Sparse Attention/Scatterbrain.md",
+    "Sparse Attention/Longformer.md",
+    "Sparse Attention/Linformer.md",
+    "Sparse Attention/Transformers are RNNs.md",
+    "Sparse Attention/Reformer.md",
+    "Sparse Attention/Routing Transformers.md",
+    "GeneralML/Language Models are Few Shot Learners.md",
+    "GeneralML/Deepnet.md",
+    "Sparse Attention/Generating Long Sequences with Sparse Transformers.md",
+    "Sparse Attention/FlashAttention 3.md",
+    "Sparse Attention/FlashAttention 2.md",
+    "Sparse Attention/Dynamic Memory Compression.md",
     "Sparse Attention/The Sparse Frontier.md",
     "Sparse Attention/Sparse is Enough in Scaling Transformers.md",
     "Sparse Attention/Big Bird - Transformers for Longer Sequences.md",
     "GeneralML/Group Normalization.md",
-    "GeneralML/Graph Attention Networks.md",
-    "Sparse Attention/Online normalizer calculations for softmax.md",
-    "Proteomics/ProtFlow.md",
-    "Mathematics/The Description Length of Deep Learning Models.md",
-    "GeneralML/Harnessing the Universal Geometry of Embeddings.md",
-    "GeneralML/Training Large Language Models to Reason in a Continuous Latent Space.md",
-    "GeneralML/Unsupervised Learning of Semantic Mappings.md",
-    "Sparse Attention/Self-attention Does Not Need On2 Memory.md",
-    "Untitled 1.md",
-    "Untitled.md",
-    "Sparse Attention/Training LLMs with MXPF4.md",
-    "GeneralML/CycleGAN.md",
-    "Sparse Attention/Minference.md",
-    "GeneralML/Gromov-Wasserstein Alignment of Word Embedding Spaces.md",
-    "GeneralML/Unsupervised Multilingual Word Embeddings.md",
-    "GeneralML/Unsupervised Alignment of Embeddings with Wasserstein Procrustes.md",
-    "GeneralML/Word Translation Without Parallel Data.md",
-    "Misc/The Platonic Representation Hypothesis.md",
-    "Sparse Attention/Adaptive KV-Cache Compression for LLMs.md",
-    "Proteomics/500 Million Years of Evolution.md",
     "Sparse Attention/Untitled",
     "Sparse Attention",
     "Misc",

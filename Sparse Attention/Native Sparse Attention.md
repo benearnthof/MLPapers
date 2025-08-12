@@ -5,7 +5,7 @@ https://github.com/a-hamdi/native-sparse-attention
 NSA, a Natively trainable Sparse Attention mechanism integrates algorithmic advances with hardware-aligned optimizations. 
 Dynamic, hierarchical sparse strategy, combining coarse token compression with fine token selection. This preserves both global coherence and local precision. 
 
-Keyword: Arithmetic Intensity -- How much of computation time is spent actually calculating vs how much time do we need to fetch data from memory. We want to optimize this with the available hardware in mind. 
+Keyword: [[Arithmetic Intensity]] -- How much of computation time is spent actually calculating vs how much time do we need to fetch data from memory. We want to optimize this with the available hardware in mind. 
 
 NSA maintains performance on downstream tasks when compared to Full Attention and achieves substantial speedups on 64k-length sequences across decoding, forward- and backward propagation. 
 
