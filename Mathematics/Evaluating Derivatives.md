@@ -1,0 +1,2 @@
+Principles and Techniques of Algorithmic Differentiation
+https://nzdr.ru/data/media/biblio/kolxoz/Cs/CsCa/Griewank%20A.,%20Walther%20A.%20Evaluating%20derivatives..%20principles%20and%20techniques%20of%20algorithmic%20differentiation%20(2ed.,%20SIAM,%202008)(ISBN%209780898716597)(460s)_CsCa_.pdf

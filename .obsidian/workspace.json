@@ -198,10 +198,12 @@
   },
   "active": "1fcff350edde9a71",
   "lastOpenFiles": [
+    "Mathematics/Evaluating Derivatives.md",
+    "Sparse Attention/FlashAttention.md",
+    "Sparse Attention/MegatronLM.md",
     "General CS",
     "Sparse Attention/Native Sparse Attention.md",
     "Sparse Attention/Arithmetic Intensity.md",
-    "Sparse Attention/FlashAttention.md",
     "General CS/Dissecting the Ampere GPU.md",
     "General CS/Demystifying NVIDIA Ampere.md",
     "General CS/Computer Architecture A Quantitative Approach.md",
@@ -223,7 +225,6 @@
     "Sparse Attention/The Sparse Frontier.md",
     "Sparse Attention/Sparse is Enough in Scaling Transformers.md",
     "Sparse Attention/Big Bird - Transformers for Longer Sequences.md",
-    "GeneralML/Group Normalization.md",
     "Sparse Attention/Untitled",
     "Sparse Attention",
     "Misc",
@@ -232,7 +233,6 @@
     "Proteomics",
     "Generative Models",
     "Differential Equations",
-    "General Applications",
-    "CodeRepos"
+    "General Applications"
   ]
 }

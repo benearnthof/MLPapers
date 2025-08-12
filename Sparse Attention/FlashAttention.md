@@ -45,5 +45,29 @@ GPU kernels deploy a massive amount of parallel threads to execute operations. T
 [[Arithmetic Intensity]]
 
 Kernel Fusion: If there are multiple operations to be performed on the same input we can load the input once from HBM and perform the operations in order. Compilers can automatically fuse many elementwise operations. 
-In the context of LLM training, the intermediate values still need to be written to HBM, because they are used during the backward pass, thus reducing the effectiveness of naive kernel fusion. 
+In the context of LLM training, the intermediate values still need to be written to HBM, because they are used during the backward pass, thus reducing the effectiveness of naïve kernel fusion. 
+### The Standard Attention Implementation
+Given input sequences $\mathbf{Q}, \mathbf{K}, \mathbf{V} \in \mathbb{R}^{N \times d}$ where $N$ is the sequence length and $d$ is the head dimension, we want to compute the attention output $\mathbf{O} \in \mathbb{R}^{N \times d}$ :
+$$
+\mathbf{S}=\mathbf{Q} \mathbf{K}^{\top} \in \mathbb{R}^{N \times N}, \quad \mathbf{P}=\operatorname{softmax}(\mathbf{S}) \in \mathbb{R}^{N \times N}, \quad \mathbf{O}=\mathbf{P V} \in \mathbb{R}^{N \times d}
+$$
+where softmax is applied row-wise.
+Standard attention implementations materialize the matrices $S$ and $P$ to HBM, which requires $O\left(N^2\right)$ memory. In modern transformers $N \gg d$ (GPT2 1024 vs 64)
+Most of the operations are memory bound, even streaming multiprocessors with limited SBM can perform GEMMs on matrices of these sizes quite comfortably, but require offloading to HBM.
+This results in large wall-clock times for attention computations in practice.
+Other elementwise operations like masking or dropout further exacerbate this problem which is why other papers have attempted to fuse several elementwise operations, like masking with softmax [[MegatronLM]].
+
+The standard implementation (roughly) does the following:
+1. Load Q, K from HBM, compute S=QK^T write S to HBM
+2. Read S from HBM, compute P = softmax(S), write P to HBM
+3. Load P and V from HBM, compute O = PV and write O to HBM
+
+### FlashAttention: Algorithm, Analysis and Extensions
+**Tiling:** FlashAttention computes attention blockwise. Softmax couples columns of $K$, so the authors decompose the large softmax operation via scaling [[Reformer]],[[Online normalizer calculations for softmax]], [[Self-attention Does Not Need On2 Memory]]
+The core idea is that a vector softmax can be decomposed into multiple separate softmax operations and then recombined by tracking some scaling factors. This allows us to compute row-wise softmax of the full QK^T matrix in blocks. 
+
+**Recomputation:** [[Training Deep Nets with Sublinear Memory Cost]]
+The backward pass requires $S$ and $P$ to calculate the gradients w.r.t. the QKV matrices, but by storing the output $O$ and the softmax normalization statistics  we can recompute the attention matrix $S$ and $P$ easily from the blocks of QKV we already have in SRAM. This is a form of selective gradient checkpointing. [[Evaluating Derivatives]]
+
+**Kernel Fusion**: Tiling allows us to combine operations such as masking and dropout with the CUDA kernel executed on the same data, usually left to compiler. 
 
