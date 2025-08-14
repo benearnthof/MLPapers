@@ -58,3 +58,21 @@ Transformers do have other issues during training however: Vanilla SGD is not su
 
 **Conditional Computing**
 
+### Specialized Approaches
+
+**Sparse Attention**
+
+**Learned and Adaptive Sparse Patterns**
+
+**Clustering and Locality-Sensitive Hashing**
+
+**Low-Rank Factorization**
+
+**Kernel Attention**
+
+**Clustering and LSH**
+
+**Memory**
+
+**Sequence Compression**
+

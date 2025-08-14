@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
+                "file": "Sparse Attention/FlashAttention.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "A Practical Survey on Faster and Lighter Transformers"
+              "title": "FlashAttention"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
+                "file": "Sparse Attention/FlashAttention.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of A Practical Survey on Faster and Lighter Transformers"
+              "title": "Outline of FlashAttention"
             }
           }
         ],
@@ -170,8 +170,8 @@
   },
   "active": "906e47d51252a171",
   "lastOpenFiles": [
-    "On Layer Normalization in the Transformer Architecture.md",
     "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
+    "On Layer Normalization in the Transformer Architecture.md",
     "On the Variance of the Adaptive Learning Rate and Beyond.md",
     "Rectified Linear Units.md",
     "Understanding the Difficulty of Training Deep Feedforward Neural Networks.md",
