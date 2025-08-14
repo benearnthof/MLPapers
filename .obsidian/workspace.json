@@ -4,49 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "be9defd5a77074c6",
+        "id": "5204d9794430216d",
         "type": "tabs",
         "children": [
           {
-            "id": "f34b5b9c0d77743c",
+            "id": "4f5f3dea713ca2e4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sparse Attention/FlashAttention.md",
+                "file": "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "FlashAttention"
-            }
-          },
-          {
-            "id": "73d929f2e9ca2d69",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Sparse Attention/FlashAttention 3.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "FlashAttention 3"
-            }
-          },
-          {
-            "id": "8429c8ebe3e5600b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Sparse Attention/FlashAttention 2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "FlashAttention 2"
+              "title": "A Practical Survey on Faster and Lighter Transformers"
             }
           }
         ]
@@ -170,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sparse Attention/FlashAttention.md",
+                "file": "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of FlashAttention"
+              "title": "Outline of A Practical Survey on Faster and Lighter Transformers"
             }
           }
         ],
@@ -196,35 +168,35 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1fcff350edde9a71",
+  "active": "4f5f3dea713ca2e4",
   "lastOpenFiles": [
-    "Mathematics/Evaluating Derivatives.md",
-    "Sparse Attention/FlashAttention.md",
-    "Sparse Attention/MegatronLM.md",
+    "Iterative Product Quantization.md",
+    "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
+    "Estimating or Propagating Gradients Through Stochastic Neurons.md",
+    "Quantization Aware Training.md",
+    "GeneralML/Mixed Precision Training.md",
+    "DistilBERT.md",
+    "GeneralML/Do Deep Nets Really Need to be Deep.md",
+    "Distilling the Knowledge of a Neural Network.md",
+    "When BERT Plays the Lottery.md",
+    "The Lottery Ticket Hypothesis.md",
+    "Are Sixteen Heads Really Better than One.md",
+    "GeneralML/Dropping Layers.md",
+    "GeneralML/ALBERT.md",
+    "GeneralML/NICE.md",
+    "GeneralML/Optimal Brain Damage.md",
+    "GeneralML/BERT.md",
+    "GeneralML/How does BatchNorm Help Optimization.md",
+    "GeneralML/Reconciling Modern Deep Learning with Traditional Optimization Analyses.md",
+    "Layer Normalization.md",
+    "GeneralML/Deep Residual Learning for Image Recognition.md",
+    "GeneralML/MLP-Mixer.md",
+    "GeneralML/Pay Attention to MLPs.md",
+    "Sparse Attention/A Survey of Transformers.md",
+    "Sparse Attention/Efficient Transformers.md",
+    "GeneralML/Sequence to Sequence Learning with Neural Networks.md",
+    "GeneralML/Schemata and Sequential Thought Processes.md",
     "General CS",
-    "Sparse Attention/Native Sparse Attention.md",
-    "Sparse Attention/Arithmetic Intensity.md",
-    "General CS/Dissecting the Ampere GPU.md",
-    "General CS/Demystifying NVIDIA Ampere.md",
-    "General CS/Computer Architecture A Quantitative Approach.md",
-    "Sparse Attention/Data Movement Is All You Need.md",
-    "General CS/Dissecting the NVIDIA Volta GPU.md",
-    "General CS/IO-Complexity.md",
-    "Sparse Attention/Scatterbrain.md",
-    "Sparse Attention/Longformer.md",
-    "Sparse Attention/Linformer.md",
-    "Sparse Attention/Transformers are RNNs.md",
-    "Sparse Attention/Reformer.md",
-    "Sparse Attention/Routing Transformers.md",
-    "GeneralML/Language Models are Few Shot Learners.md",
-    "GeneralML/Deepnet.md",
-    "Sparse Attention/Generating Long Sequences with Sparse Transformers.md",
-    "Sparse Attention/FlashAttention 3.md",
-    "Sparse Attention/FlashAttention 2.md",
-    "Sparse Attention/Dynamic Memory Compression.md",
-    "Sparse Attention/The Sparse Frontier.md",
-    "Sparse Attention/Sparse is Enough in Scaling Transformers.md",
-    "Sparse Attention/Big Bird - Transformers for Longer Sequences.md",
     "Sparse Attention/Untitled",
     "Sparse Attention",
     "Misc",
