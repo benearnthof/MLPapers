@@ -1,0 +1,2 @@
+What it does and how to do it
+https://www.researchgate.net/profile/Paul-Werbos/publication/2984354_Backpropagation_through_time_what_it_does_and_how_to_do_it/links/55ef061c08aef559dc44b02d/Backpropagation-through-time-what-it-does-and-how-to-do-it.pdf?__cf_chl_rt_tk=c7qQdx.cmaLGdrrjzIPHUaS0afg1iaL4u8oY086fZQI-1755272948-1.0.1.1-o6qyWzUPLt.YHC8Lzw_fbw5dOYGXk9J_TzApfNLRBJk
