@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Hardware Lottery.md",
+                "file": "Classic Papers/Understanding the Difficulty of Training Deep Feedforward Neural Networks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Hardware Lottery"
+              "title": "Understanding the Difficulty of Training Deep Feedforward Neural Networks"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 450.5
   },
   "right": {
     "id": "3c07b9f4148d9bd9",
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Hardware Lottery.md",
+                "file": "Classic Papers/Understanding the Difficulty of Training Deep Feedforward Neural Networks.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Hardware Lottery"
+              "title": "Outline of Understanding the Difficulty of Training Deep Feedforward Neural Networks"
             }
           }
         ],
@@ -170,41 +170,41 @@
   },
   "active": "e3c52b0fb4bab198",
   "lastOpenFiles": [
-    "Deep Learnign with COTS HPC systems.md",
-    "The Hardware Lottery.md",
-    "Building High-level Features.md",
-    "Parallel Distributed Processing.md",
-    "Parallel Models of Associative Memory.md",
-    "Neocognitron.md",
-    "Learning Matrices and Their Applications.md",
-    "Backpropagation.md",
-    "Cramming More Components onto Integrated Circuits.md",
-    "The Jacquard Machine.md",
-    "Principles of Neurodynamics.md",
-    "Machine Learning Systems.md",
-    "What Do Compressed Deep Neural Networks Forget.md",
-    "Characterising Bias in Compressed Models.md",
-    "MuZero.md",
-    "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
-    "Funnel Transformer.md",
-    "GeneralML/Backpropagation Through Time.md",
-    "Compressive Transformers.md",
-    "Fast Autoregressive Transformers with Linear Attention.md",
-    "Transformer-XL.md",
-    "Clustered Attention.md",
-    "Using the Nyström Method to Speed up Kernel Machines.md",
-    "Nyströmformer.md",
-    "Synthesizer.md",
-    "Sparse Attention/Routing Transformers.md",
+    "Classic Papers/Learning Long-Term Dependencies with Gradient Descent is Difficult.md",
+    "Classic Papers/Understanding the Difficulty of Training Deep Feedforward Neural Networks.md",
+    "Classic Papers/Efficient BackProp.md",
+    "Classic Papers/The Difficulty of Training Deep Architectures.md",
+    "Classic Papers/Extracting and Composing Robust Features with Denoising Autoencoders.md",
+    "Classic Papers/Deep Sparse Rectifier Neural Networks.md",
+    "Measure Theoretic Probability.md",
+    "GeneralML/DINOv3.md",
+    "Graph Neural Networks/Graph Convolutional Networks.md",
+    "Graph Neural Networks/A New Model for Learning in Graph Domains.md",
+    "Graph Neural Networks/The Graph Neural Network Model.md",
+    "Graph Neural Networks/Graph Neural Networks.md",
+    "Graph Neural Networks/Natural Graph Networks.md",
+    "Graph Neural Networks/On the Bottleneck of Graph Neural Networks and its Practical Implications.md",
+    "Graph Neural Networks/Understanding Over-Squashing and Bottlenecks on Graphs via curvature.md",
+    "Graph Neural Networks/XLVIN.md",
+    "Algorithmic Reasoning/Reasoning-Modulated Representations.md",
+    "Algorithmic Reasoning/Dual Algorithmic Reasoning.md",
+    "Algorithmic Reasoning/Neural Algorithmic Reasoning.md",
+    "Graph Neural Networks/Neural Algorithmic Reasoners are Implicit Planners.md",
+    "Graph Neural Networks/A Generalist Neural Algorithmic Learner.md",
+    "GeneralML/A Spline Theory of Deep Networks.md",
+    "Graph Neural Networks/ETA Prediction with Graph Neural Networks in Google Maps.md",
+    "Graph Neural Networks/How Neural Networks Extrapolate.md",
+    "GeneralML/Learning in High Dimension Always Amounts to Extrapolation.md",
+    "Algorithmic Reasoning/Teaching Algorithmic Reasoning via In-context Learning.md",
+    "Algorithmic Reasoning",
+    "Graph Neural Networks",
+    "Classic Papers",
     "General CS",
     "Sparse Attention/Untitled",
     "Sparse Attention",
     "Misc",
     "$",
     "GeneralML",
-    "Proteomics",
-    "Generative Models",
-    "Differential Equations",
-    "General Applications"
+    "Proteomics"
   ]
 }

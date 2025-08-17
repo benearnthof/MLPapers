@@ -1,1 +1,0 @@
-https://scontent-fra5-2.xx.fbcdn.net/v/t39.2365-6/155338737_461510838227037_8607415313123456263_n.pdf?_nc_cat=106&ccb=1-7&_nc_sid=3c67a6&_nc_ohc=qhnzRJmST_0Q7kNvwFs-VtR&_nc_oc=AdloOf7egnObOwQRPe_EvbPTBe8LKKRuBjEU0OTVQrZEoupsxQ0lVSHDgJv2XJFE8xU&_nc_zt=14&_nc_ht=scontent-fra5-2.xx&_nc_gid=EvEvtcg2kcrMlvS83_XUrw&oh=00_AfWUZxzEUjEDqpGSPG_pyq-fGDdmzagWjhfjb1YH-0Knbg&oe=68A01237

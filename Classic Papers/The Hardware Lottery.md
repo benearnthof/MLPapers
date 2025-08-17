@@ -10,7 +10,7 @@ The paper posits that the 30 year gap between theoretical landmark papers and em
 General purpose computers are ill suited for matrix multiplication operations.
 The need for parallelism in neural architectures was pointed out early in works like [[Parallel Models of Associative Memory]] and [[Parallel Distributed Processing]]
 
-The contrast between the 2012 paper on [[Building High-level Features]] and the 2013 paper [[Deep Learnign with COTS HPC systems]], the former using 16000 CPUs, the latter only two CPU cores and four GPUs is striking. 
+The contrast between the 2012 paper on [[Building High-level Features]] and the 2013 paper [[Deep Learning with COTS HPC systems]], the former using 16000 CPUs, the latter only two CPU cores and four GPUs is striking. 
 
 **Software lotteries**
 Lisp and prolog were replaced by frameworks like Torch, Caffe, Theano, pytorch, etc.
