@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Classic Papers/Optimal Brain Damage.md",
+                "file": "Measure Theoretic Probability.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Optimal Brain Damage"
+              "title": "Measure Theoretic Probability"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Classic Papers/Optimal Brain Damage.md",
+                "file": "Measure Theoretic Probability.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Optimal Brain Damage"
+              "title": "Outline of Measure Theoretic Probability"
             }
           }
         ],
@@ -160,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -168,11 +169,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1fcff350edde9a71",
+  "active": "e3c52b0fb4bab198",
   "lastOpenFiles": [
+    "Sparse Attention/Activation-Aware Weight Quantization.md",
+    "Sparse Attention/QLoRA.md",
+    "Sparse Attention/Training LLMs with MXFP4.md",
+    "Sparse Attention/FP4 All the Way.md",
+    "Classic Papers/Optimal Brain Damage.md",
     "Classic Papers/Three Approaches to the Quantitative Definition of Information.md",
     "Classic Papers/Minimal Description Length.md",
-    "Classic Papers/Optimal Brain Damage.md",
     "Classic Papers/Akaike Information Criterion.md",
     "Measure Theoretic Probability.md",
     "GeneralML/Understanding Deep Learning.md",
@@ -192,10 +197,6 @@
     "Graph Neural Networks/Graph Neural Networks.md",
     "Graph Neural Networks/Natural Graph Networks.md",
     "Graph Neural Networks/On the Bottleneck of Graph Neural Networks and its Practical Implications.md",
-    "Graph Neural Networks/Understanding Over-Squashing and Bottlenecks on Graphs via curvature.md",
-    "Graph Neural Networks/XLVIN.md",
-    "Algorithmic Reasoning/Reasoning-Modulated Representations.md",
-    "Algorithmic Reasoning/Dual Algorithmic Reasoning.md",
     "Algorithmic Reasoning",
     "Graph Neural Networks",
     "Classic Papers",
