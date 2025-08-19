@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/The Mathematics of Diffusion.md",
+                "file": "Measure Theoretic Probability.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Mathematics of Diffusion"
+              "title": "Backlinks for Measure Theoretic Probability"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CodeRepos/FMBoosting.md",
+                "file": "Measure Theoretic Probability.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from FMBoosting"
+              "title": "Outgoing links from Measure Theoretic Probability"
             }
           },
           {
@@ -169,8 +169,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e3c52b0fb4bab198",
+  "active": "b8975454e1da64a0",
   "lastOpenFiles": [
+    "Sparse Attention/A Survey of Transformers.md",
+    "Measure Theoretic Probability.md",
     "Sparse Attention/Activation-Aware Weight Quantization.md",
     "Sparse Attention/QLoRA.md",
     "Sparse Attention/Training LLMs with MXFP4.md",
@@ -179,7 +181,6 @@
     "Classic Papers/Three Approaches to the Quantitative Definition of Information.md",
     "Classic Papers/Minimal Description Length.md",
     "Classic Papers/Akaike Information Criterion.md",
-    "Measure Theoretic Probability.md",
     "GeneralML/Understanding Deep Learning.md",
     "Generative Models/Flow Matching Guide and Code.md",
     "Generative Models/Flow Matching for Generative Modeling.md",
@@ -196,7 +197,6 @@
     "Graph Neural Networks/The Graph Neural Network Model.md",
     "Graph Neural Networks/Graph Neural Networks.md",
     "Graph Neural Networks/Natural Graph Networks.md",
-    "Graph Neural Networks/On the Bottleneck of Graph Neural Networks and its Practical Implications.md",
     "Algorithmic Reasoning",
     "Graph Neural Networks",
     "Classic Papers",

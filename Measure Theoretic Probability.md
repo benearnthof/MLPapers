@@ -1,7 +1,7 @@
 https://staff.fnwi.uva.nl/p.j.c.spreij/onderwijs/master/mtp.pdf
 https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/MAT425_Lecture_Notes.pdf
 TODO: take a refresher on transfinite induction https://de.wikipedia.org/wiki/Transfinite_Induktion
-# 1. $\sigma$-Algebras and measures
+# 1 $\sigma$-Algebras and measures
 
 For any non-empty set $S$ we can select some collection of subsets $\Sigma_0 \subset 2^S$.
 Such a collection of subsets is called an *algebra* on S if:
@@ -565,7 +565,7 @@ If the events are independent, and there is "enough probability mass" overall (t
 
 ## Exercises for Chapter 3
 
-# 4. Integration
+# 4 Integration
 
 The goal of this Chapter is a rigorous construction of an integration functional that generalizes the idea of the Riemann integral from calculus. We will show how to "build up" towards an integration functional from *simple functions*, proving some of their key properties and how to extend these ideas to functions that can be expressed as combinations of simple functions. This will help us to develop the Expectation operator, unifying the idea of discrete and continuous random variables and their Expectations in the process. This will also help us compute expectations that are, at first glance, hard to pin down, such as for mixed random variables. 
 
@@ -657,9 +657,7 @@ Let $f, g \in \mathfrak{S}^{+}$and $c \in[0, \infty)$.
 	(iii) $\mu(f+g)=\mu(f)+\mu(g)$ and $\mu(c f)=c \mu(f)$.
 
 We omit the proofs here, as they can be done by constructing measurable partitions and summing up carefully. 
-
 ## 4.2 A General definition of the Integral
-
 How can we extend the ideas in the previous section to a more general class of functions? A direct approach is to expand definition 4.1 with the supremum, which allows us to recover all previous results in the case of simple functions, but also leads to many more powerful results.
 
 ### Definition 4.8 Integrals for Nonnegative Measurable Functions
@@ -711,9 +709,10 @@ We have thus constructed a general sequence of simple functions with limit $f$, 
 ### Proposition 4.14: Linearity of the Integral for NN-measurable Functions
 Let $f, g \in \Sigma^{+}$and $\alpha, \beta>0$. Then $\mu(\alpha f+\beta g)=\alpha \mu(f)+$ $\beta \mu(g) \leq \infty$.
 
-### 4.15 Fatou's Lemma
+
+### 4.15 Fatous Lemma
 The Basic Idea behind the MCT, Fatou's Lemma, and the Dominated Convergence Theorem is that given a sequence of functions $f_n$ that converge pointwise to some limit function $f$, it is *not always* true that 
-	$\int \lim _{n \rightarrow \infty} f_n=\lim _{n \rightarrow \infty} \int f_n$
+$\int \lim _{n \rightarrow \infty} f_n=\lim _{n \rightarrow \infty} \int f_n$
 Fatou's Lemma, MCT, and DCT all answer the question "When do $\lim _{n \rightarrow \infty}$ and $\int$ commute?"
 The MCT and DCT tell us that as long as we place certain restrictions on both $f_n$ and $f$, then we can interchange the limit and integral signs. Fatou's Lemma is a result that tells us the best we can do if we *do not* place any restrictions on the behavior of the functions. 
 
@@ -723,10 +722,10 @@ $$
 $$
 **Proof**:
 For each $k \in \mathbb{N}$, let $g_k=\inf _{n \geq k} f_n$ and define 
-	$$
+$$
 h=\lim _{k \rightarrow \infty} g_k=\lim _{k \rightarrow \infty} \inf _{n \geq k} f_n=\liminf _{n \rightarrow \infty} f_n
 $$
-From the definition of the infimum we observe that $\int g_k \leq \int f_n$ for all $n \geq k$. Hence $\int \inf _{n \geq k} f_n \leq \int f_n$ for all $n \geq k$ as claimed. This allows us to write 
+From the definition of the infimum we observe that $\int g_k \leq \int f_n$ for all $n \geq k$. Hence $\int \inf _{n \geq k} f_n \leq \int f_n$ for all $n \geq k$ as claimed. This allows us to write
 $$
 \int g_k \leq \inf _{n \geq k} \int f_n.
 $$
@@ -739,7 +738,8 @@ where the inequality in the middle follows from (1). We arrive at the desired re
 We conclude the proof by noting that $\liminf f_n$ is measurable as we've already shown. $\quad \square$ 
 
 **Example from Rudin:** 
-Define $$
+Define 
+$$
 f_n= \begin{cases}\mathbf{1}_{(1,2]} & \text { if } n \text { is even } \\ \mathbf{1}_{[0,1]} & \text { if } n \text { is odd }\end{cases}
 $$
 As n increases the graph of $f_n$ switches back and forth from the indicator over each interval.
@@ -750,11 +750,12 @@ $$
 But $\liminf _n f_n=0$, because $\liminf _n f_n$ is the infimum over all subsequential limits of $f_n$. This directly leads us to
 $$
 0=\int_{[0,2]} \liminf _{n \rightarrow \infty} f_n<\liminf _{n \rightarrow \infty} \int_{[0,2]} f_n=1,
-$$ proving that a strict inequality in Fatou's lemma is possible.
-
+$$
+proving that a strict inequality in Fatou's lemma is possible.
 Can we extend this notion of integral to (almost) arbitrary measurable functions? 
 
-### Definition 4.17: Positive & Negative Parts of Functions
+### Definition 4.16: Positive and Negative Parts of Functions
+
 Let $f \in \Sigma$. For (extended) real numbers $x$ we define $x^{+}=\max \{x, 0\}$ and $x^{+}=\max \{x, 0\}$.
 For $f: S \rightarrow[-\infty, \infty]$, we define the functions $f^{+}$ and $f^{-}$ by $f^{+}(s)=f(s)^{+}$and $f^{-}(s)=f(s)^{-}$.
 This allows us to decompose any nonnegative measurable function into two parts like so: 
@@ -829,7 +830,6 @@ The proof of DCT is omitted here with a reference for the short version presente
 Let $\left(f_n\right) \subset \Sigma^{+}$and assume that $f_n \rightarrow f$ a.e. Assume that $\mu\left(f_n\right)$ is finite for all $n$ and $\mu(f)<\infty$ as well. Then $\mu\left(\left|f_n-f\right|\right) \rightarrow 0$ iff $\mu\left(f_n\right) \rightarrow \mu(f)$.
 
 ## 4.3 Integrals over Subsets
-
 This section is in a sense a prelude to the theorem of Radon-Nikodym. Let $f \in \Sigma^{+} \text {and } E \in \Sigma \text {. }$ Then we may define:
 $$
 \int_E f \mathrm{~d} \mu:=\mu\left(\mathbf{1}_E f\right)
@@ -1242,17 +1242,58 @@ It is straightforward to generalize these ideas to higher dimensions, let us now
 ### 5.3 Infinite Products
 The extension of product spaces from finite to infinite products is a different matter.  Nevertheless this extension is inevitable if one wants to construct a well defined independent infinite sequence of random variables. These considerations are vital, since they will later allow us a rigorous construction of stochastic processes. Recall that we've seen so far, that the independence of two random variables has everything to do with product measures. An infinite sequence of independent random variables will therefore require an infinite product of probability measures. 
 
-For real valued random variables we have already encountered a construction of a supporting probability space in Section 3.3. Here we continue with the construction of a countable product of probability spaces. 
+For real valued random variables we have already encountered a construction of a supporting probability space in Section 3.3. Here we continue with the construction of a **countable** product of probability spaces. 
 
-Assume that for every 
+Assume that for every $n \in \mathbb{N}$ we have a corresponding probability space $\left(\Omega_n, \mathcal{F}_n, \mathbb{P}_n\right)$. Let $\Omega=\prod_{n=1}^{\infty} \Omega_n$ and denote by $\omega=\left(\omega_1, \omega_2, \ldots\right)$ a typical element of $\Omega$. The construction of the product $\sigma$-Algebra remains the same as before. (we basically apply the $\Sigma$-Operator to the n-dimensional rectangles like at the beginning of the chapter.)
+The projection $\pi_n: \Omega \rightarrow \Omega_n$ is defined by $\pi_n(\omega)=\omega_n$.
+On the product set $\Omega$ we define the $\sigma$-Algebra $\mathcal{F}$ as the smallest such $\sigma$-Algebra that makes all projections $\pi_n$ measurable mappings. 
 
+This is similar to defining a subbasis of the product topology. 
 
+One can also define a multivariate projection $\pi_{(1, \ldots, n)}: \Omega \rightarrow \prod_{k=1}^n \Omega_k$ by $\pi_{(1, \ldots, n)}(\omega)=\left(\omega_1, \ldots, \omega_n\right)$ and it follows that all multivariate projections are $\mathcal{F}$-measurable as well. 
 
+A **cylinder**, or **measurable rectangle**, is by definition the inverse image of a measurable set in some product space, endowed with the respective product $\sigma$-Algebra $\mathcal{F}_1 \times \cdots \times \mathcal{F}_n$ under the projection $\pi_{(1, \ldots, n)}$. 
+It follows that a cylinder is of the type $B_n \times \prod_{k=n+1}^{\infty} \Omega_k$ (for some $n$ ), with $B_n \in \mathcal{F}_1 \times \cdots \times \mathcal{F}_n$. Such a cylinder will be denoted by $C_n$. Let $\mathcal{C}$ be the collection of all cylinders and note that $\mathcal{C}$ is an algebra. Define the mapping $\mathbb{P}_0: \mathcal{C} \rightarrow[0,1]$ by $\mathbb{P}_0(C)=\prod_{i=1}^n \mathbb{P}_i\left(B_n\right)$, if $C=C_n$ for some $n$. Verify that if one writes $C=C_m$ for some $m \neq n$, it holds that $\prod_{i=1}^n \mathbb{P}_i\left(B_n\right)=\prod_{i=1}^m \mathbb{P}_i\left(B_m\right)$, which implies that $\mathbb{P}_0$ is unambiguously defined, i.e. not depending on the chosen representation of $C$. Verify too that $\mathbb{P}_0$ is finitely additive on $\mathcal{C}$. The next theorem states the existence of an infinite product probability measure $\mathbb{P}$, sometimes denoted by $\prod_{n=1}^{\infty} \mathbb{P}_n$. In the proof we use results from Section 2.2.
+
+### Theorem 5.14 Existence and uniqueness of infinite probability measures
+There exists a unique probability measure $\mathbb{P}$ on $(\Omega, \mathcal{F})$ such that $\mathbb{P}$ restricted to the algebra $\mathcal{C}$ is equal to $\mathbb{P}_0$. In particular: 
+$$
+\mathbb{P}\left(E_1 \times \cdots \times E_n \times \prod_{k=n+1}^{\infty} \Omega_k\right)=\prod_{i=1}^n \mathbb{P}_i\left(E_i\right),
+$$
+if $E_i \in \mathcal{F}_i, i=1, \ldots, n$.
+In essence this asserts that there exists a **unique probability measure** $\mathbb{P}$ on the infinite product space $(\Omega, \mathcal{F})$ such that, on finite-dimensional cylinders, it agrees with the obvious finite product measure. This is a special case of Kolmogorovs Extension Theorem https://en.wikipedia.org/wiki/Kolmogorov_extension_theorem that would even allow us to specify this notion of product spaces to uncountable index sets $T$, but we would have to restrict the measure to the product $\sigma$-Algebra $\left(\mathbb{R}^n\right)^T$ which is not very rich. 
+
+We leave the proof as an application of Carathéodory's Extension Theorem to the reader.
 # 6 Derivative of a Measure
 
+The topics of this chapter are *absolute continuity* and *singularity* of a pair of measures. The central result is a kind of converse of Proposition 4.23, known as the **Radon-Nikodym Theorem**
+We will work towards the full proof of this theorem by first proving some essential intermediary results. Let us start by providing the necessary terminology.
+
+## 6.1 Linear Functionals on $\mathbb{R}^n$
+Let $H=\mathbb{R}^n$. It is well known that every linear map $T: H \rightarrow \mathbb{R}^m$ can uniquely be represented by an $m \times n$ matrix $M=M(T)$ via $T(x)=M x$ (the usual product of matrix and a vector), which we will reprove below for the case $m=1$. Let $m=1$ and $\langle\cdot, \cdot\rangle$ be the usual inner product on $H,\langle x, y\rangle=x^{\top} y$. For this case the matrix $M$ becomes a row vector. For $y=M^{\top} \in \mathbb{R}^n$ one then has
+$$
+T(x)=\langle x, y\rangle \quad (6.1)
+$$
+Hence we can identify the mapping $T$ with the vector $y$. Let $H^*$ be the set of all linear maps on $H$. In this case we have the identification of $H^*$ with $H$ itself via the equation above. 
+Basically, any linear function al can be written in the form of a vector or matrix. But $H^*$ is itself a vector space, we can add functionals and scale them by some constant etc. So these spaces are isomorphic -- we can define a bijection between them.
+Suppose we know that $T(x)=\langle x, y\rangle$ holds. Then the **Kernel** K of T is the space of vectors that are orthogonal to y and the **orthogonal complement** of K is the space of all vectors that are multiples of y.  We use this to prove 6.1 as follows: 
+Let $T\neq0$. Then the kernel $K$ of $T$ is a proper linear subspace of $H$. Take any nonzero vector $z$ in the orthogonal complement of $K$, a one-dimensional linear subspace of $H$. Every vector $x$ can therefore be written as a sum $x=\lambda z+u$, with $\lambda \in \mathbb{R}$ and $u \in K$. Therefore: 
+$$
+\lambda=\frac{\langle x, z\rangle}{\langle z, z\rangle} \text { and } T(x)=\lambda T(z) .
+$$
+Let $y=\frac{T(z)}{\langle z, z\rangle} z$. Then $\langle x, y\rangle=\frac{T(z)}{\langle z, z\rangle}\langle x, z\rangle=\lambda T(z)=T(x)$, as follows from (6.2). Uniqueness of $y$ is shown as follows. Let $y^{\prime} \in H$ be such that $T(x)=\left\langle{x, y^{\prime}}\right\rangle$. Then $\left\langle x, y-y^{\prime}\right\rangle$ is zero for all $x \in H$, in particular for $x=y-y^{\prime}$. But then $y-y^{\prime}$ must be the zero vector. 
+
+The key observation is now, that this proof carries over to the case where we're working with continuous linear functionals on a Hilbert space.
+## 6.2 Linear Functionals on a Hilbert Space
+
+
 # 7 Convergence and Uniform Integrability
+## 7.1 asdf
+
 
 # 8 Conditional Expectation
+## asdf
+
 
 # 9 Martingales and their Relatives
 
