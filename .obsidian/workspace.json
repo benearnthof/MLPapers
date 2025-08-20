@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Measure Theoretic Probability.md",
+                "file": "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Measure Theoretic Probability"
+              "title": "Backlinks for A Practical Survey on Faster and Lighter Transformers"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Measure Theoretic Probability.md",
+                "file": "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Measure Theoretic Probability"
+              "title": "Outgoing links from A Practical Survey on Faster and Lighter Transformers"
             }
           },
           {
@@ -169,10 +169,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b8975454e1da64a0",
+  "active": "e3c52b0fb4bab198",
   "lastOpenFiles": [
-    "Sparse Attention/A Survey of Transformers.md",
+    "Sparse Attention/FNet Mixing Tokens with Fourier Transforms.md",
+    "Sparse Attention/Efficient Transformers.md",
     "Measure Theoretic Probability.md",
+    "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
+    "Sparse Attention/A Survey of Transformers.md",
     "Sparse Attention/Activation-Aware Weight Quantization.md",
     "Sparse Attention/QLoRA.md",
     "Sparse Attention/Training LLMs with MXFP4.md",
@@ -194,9 +197,6 @@
     "GeneralML/DINOv3.md",
     "Graph Neural Networks/Graph Convolutional Networks.md",
     "Graph Neural Networks/A New Model for Learning in Graph Domains.md",
-    "Graph Neural Networks/The Graph Neural Network Model.md",
-    "Graph Neural Networks/Graph Neural Networks.md",
-    "Graph Neural Networks/Natural Graph Networks.md",
     "Algorithmic Reasoning",
     "Graph Neural Networks",
     "Classic Papers",
