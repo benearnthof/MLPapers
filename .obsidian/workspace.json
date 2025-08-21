@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Measure Theoretic Probability.md",
+                "file": "Why Transformers Are Sparse and What to Do About It.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Measure Theoretic Probability"
+              "title": "Why Transformers Are Sparse and What to Do About It"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Measure Theoretic Probability.md",
+                "file": "Why Transformers Are Sparse and What to Do About It.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Measure Theoretic Probability"
+              "title": "Outline of Why Transformers Are Sparse and What to Do About It"
             }
           }
         ],
@@ -171,32 +171,32 @@
   },
   "active": "e3c52b0fb4bab198",
   "lastOpenFiles": [
+    "Sparse Attention/Generating Long Sequences with Sparse Transformers.md",
+    "Why Transformers Are Sparse and What to Do About It.md",
+    "GeneralML/Image Transformer.md",
+    "GPT-3.md",
+    "GPT-4.md",
+    "GeneralML/GPT-1.md",
+    "GPT-1.md",
+    "Improving.md",
+    "GPT-2.md",
+    "Positional Encoding.md",
+    "Modeling High-Dimensional Discrete Data with Multi-Layer Neural Networks.md",
+    "The Neural Autoregressive Distribution Estimator.md",
+    "GeneralML/Attention Is All You Need.md",
+    "Long Short-Term Memory-Networks for Machine Reading.md",
+    "Relational inductive biases, deep learning, and graph networks.md",
+    "A Decomposable Attention Model for Natural Language Inference.md",
+    "PixelCNN.md",
+    "GeneralML/Theory and Experiments on Vector Quantized Autoencoders.md",
+    "GeneralML/Stand-Alone Self-Attention in Vision Models.md",
+    "Sparse Attention/Routing Transformers.md",
+    "Sparse Attention/PaLM.md",
+    "Measure Theoretic Probability.md",
+    "Neural Nets as Distribution Transformers.md",
     "Sparse Attention/FNet Mixing Tokens with Fourier Transforms.md",
     "Sparse Attention/Efficient Transformers.md",
-    "Measure Theoretic Probability.md",
     "Sparse Attention/A Practical Survey on Faster and Lighter Transformers.md",
-    "Sparse Attention/A Survey of Transformers.md",
-    "Sparse Attention/Activation-Aware Weight Quantization.md",
-    "Sparse Attention/QLoRA.md",
-    "Sparse Attention/Training LLMs with MXFP4.md",
-    "Sparse Attention/FP4 All the Way.md",
-    "Classic Papers/Optimal Brain Damage.md",
-    "Classic Papers/Three Approaches to the Quantitative Definition of Information.md",
-    "Classic Papers/Minimal Description Length.md",
-    "Classic Papers/Akaike Information Criterion.md",
-    "GeneralML/Understanding Deep Learning.md",
-    "Generative Models/Flow Matching Guide and Code.md",
-    "Generative Models/Flow Matching for Generative Modeling.md",
-    "Generative Models/DDPM.md",
-    "Classic Papers/Understanding the Difficulty of Training Deep Feedforward Neural Networks.md",
-    "Classic Papers/Learning Long-Term Dependencies with Gradient Descent is Difficult.md",
-    "Classic Papers/Efficient BackProp.md",
-    "Classic Papers/The Difficulty of Training Deep Architectures.md",
-    "Classic Papers/Extracting and Composing Robust Features with Denoising Autoencoders.md",
-    "Classic Papers/Deep Sparse Rectifier Neural Networks.md",
-    "GeneralML/DINOv3.md",
-    "Graph Neural Networks/Graph Convolutional Networks.md",
-    "Graph Neural Networks/A New Model for Learning in Graph Domains.md",
     "Algorithmic Reasoning",
     "Graph Neural Networks",
     "Classic Papers",

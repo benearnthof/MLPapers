@@ -52,4 +52,4 @@ Gradient checkpointing [[Training Deep Nets with Sublinear Memory Cost]] is part
 TODO: Look at CUDA implementation of block transpose aggregate operations
 
 ### Notable training techniques
-Mixed precision training & gradient accumulation across multiple GPUs. Gradient Clipping, weight decay, cosine decay learning rate annealing [[Improving Language Understanding by Generative Pre-Training]]
+Mixed precision training & gradient accumulation across multiple GPUs. Gradient Clipping, weight decay, cosine decay learning rate annealing [[GPT-1]]
