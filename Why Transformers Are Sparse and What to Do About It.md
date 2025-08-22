@@ -3,6 +3,8 @@ https://reinforcedknowledge.com/sparse-transformers/
 [[Relational inductive biases, deep learning, and graph networks]]
 Short survey on CIFAR-10 https://arxiv.org/pdf/2501.06220
 
+Notes on Cosine Learning Rate Annealing [[Chinchilla]]
+
 
 First steps: 
 Archive preprint dataset: 
