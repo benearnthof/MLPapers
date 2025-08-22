@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Chinchilla.md",
+                "file": "Relational inductive biases, deep learning, and graph networks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chinchilla"
+              "title": "Relational inductive biases, deep learning, and graph networks"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Chinchilla.md",
+                "file": "Relational inductive biases, deep learning, and graph networks.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chinchilla"
+              "title": "Outline of Relational inductive biases, deep learning, and graph networks"
             }
           }
         ],
@@ -186,6 +186,13 @@
   },
   "active": "16790fb3a88fc640",
   "lastOpenFiles": [
+    "Classic Papers/The New Riddle of Induction.md",
+    "Relational inductive biases, deep learning, and graph networks.md",
+    "Graph Neural Networks/Hyperbolic Attention Networks.md",
+    "Classic Papers/Deep Stack.md",
+    "Classic Papers/The Nature of Explanation.md",
+    "Classic Papers/On Language.md",
+    "Classic Papers/Aspects of the Theory of Syntax.md",
     "Chinchilla.md",
     "Why Transformers Are Sparse and What to Do About It.md",
     "Sparse Attention/Generating Long Sequences with Sparse Transformers.md",
@@ -201,17 +208,10 @@
     "The Neural Autoregressive Distribution Estimator.md",
     "GeneralML/Attention Is All You Need.md",
     "Long Short-Term Memory-Networks for Machine Reading.md",
-    "Relational inductive biases, deep learning, and graph networks.md",
     "A Decomposable Attention Model for Natural Language Inference.md",
     "PixelCNN.md",
     "GeneralML/Theory and Experiments on Vector Quantized Autoencoders.md",
     "GeneralML/Stand-Alone Self-Attention in Vision Models.md",
-    "Sparse Attention/Routing Transformers.md",
-    "Sparse Attention/PaLM.md",
-    "Measure Theoretic Probability.md",
-    "Neural Nets as Distribution Transformers.md",
-    "Sparse Attention/FNet Mixing Tokens with Fourier Transforms.md",
-    "Sparse Attention/Efficient Transformers.md",
     "Algorithmic Reasoning",
     "Graph Neural Networks",
     "Classic Papers",
