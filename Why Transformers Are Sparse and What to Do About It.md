@@ -5,6 +5,9 @@ Short survey on CIFAR-10 https://arxiv.org/pdf/2501.06220
 
 Notes on Cosine Learning Rate Annealing [[Chinchilla]]
 
+Attention sinks from the graph perspective
+https://publish.obsidian.md/the-tensor-throne/Transformers+as+GNNs/Attention+sinks+from+the+graph+perspective
+
 
 First steps: 
 Archive preprint dataset: 
@@ -36,3 +39,10 @@ In [[Image Transformer]] the authors mention that a context of 3000 would be pro
 Transformer
 	Short Multihead Attention Explainer
 	Visualize KQV matrices at various stages during training
+
+Block Sparse Attention Repo with Kernels
+	https://github.com/mit-han-lab/Block-Sparse-Attention
+
+On the Statistics of Block Sparse Attention
+	https://guangxuanx.com/blog/block-sparse-attn-stats.html
+

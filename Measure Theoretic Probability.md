@@ -1326,11 +1326,44 @@ $$
 Radon Nikodym derivatives are unique up to $\mu$-null sets, probability density functions are only defined almost everywhere. 
 
 ### Remark 6.11
+If $\nu$ is a positive $\sigma$-finite measure, then the Radon-Nikodym theorem is still true with the exception thatwe only have $\mu(h1_{s_n})\lt \inf$, where the $S_n$ form a measurable partition of $S$ such that $\nu\left(S_n\right)<\infty$ for all $n$. Notice that in this case we may still take $h \geq 0$.
 
+### Remark 6.12 The Radon Nikodym Derivative
+The function $h$ of the RN-Theorem, the Radon-Nikodym derivative of $\nu_a$ w.r.t. $\mu$ is also called the **density** of $\nu_a$ w.r.t. $\mu$. If $\lambda$ is the Lebesgue measure on ( $\mathbb{R}, \mathcal{B}$ ) and $\nu$ is the law of a random variable $X$ that is absolutely continuous w.r.t. $\lambda$ we have that 
+$$
+F(x):=\nu((-\infty, x])=\int_{(-\infty, x]} f \mathrm{~d} \lambda, \text { where } f=\frac{\mathrm{d} \nu}{\mathrm{~d} \lambda} .
+$$
+Traditionally, the function $f$ was called the density of $X$, and we see that calling a Radon-Nikodym derivative a density is in agreement with this tradition, but also extends it. 
 
+## 6.6 Decomposition of a Distribution Function
+In elementary probability one often distinguishes between distribution functions that are of pure jump type (discrete random variables) and those that admit and ordinary distribution. These can both be recognized as examples of the following result.
+
+### Proposition 6.13: Decomposition of a Distribution Function
+Let $F$ be a distribution function, $F: \mathbb{R}\rightarrow \mathbb{R}$. Then there exists a purely discontinuous right-continuous nondecreasing function $F_d$ with  $\lim _{x \rightarrow-\infty} F_d(x)=0$, a nonnegative Borel-measurable function $f$ and a nondecreasing continuous function $F_s$ with $\lim _{x \rightarrow-\infty} F_s(x)=0$ such that the decomposition 
+$$
+F=F_d+F_s+F_{a c}
+$$
+holds true, with $F_{a c}$ defined by $F_{a c}(x)=\int_{-\infty}^x f(y) \mathrm{d} y$. Such a decomposition is unique.
+
+In essence this states that we can split any distribution function mapping from $\mathbb{R}$ to $\mathbb{R}$ into three "mutually orthogonal" parts: 
+	A purely discontinuous jump function, encoding the point masses of the function
+	An absolutely continuous function, the "smooth part" of F w.r.t. Lebesgue measure
+	A singular, continuous part, nondecreasing yet continuous and *singular* w.r.t. Lebesgue measure (increases only on a set of Lebesgue measure zero (Cantor distribution function))
+
+Example for the third part that is most unintuitive: The Cantor distribution. 
+### The Cantor Distribution
+The Cantor distribution is the probability distribution whose cumulative distribution function is the Cantor function. It has neither a pdf nor a pmf, since although its cumulative distribution function is a continuous function, the distribution is not absolutely continuous w.r.t. Lebesgue measure, nor does it have any point-masses. (So the decomposition would consist only of F_s?). It is thus neither a discrete nor an absolutely continuous probability distribution, nor is it a mixture of these, rather an example of a singular distribution. 
+Its cumulative distribution function is continuous everywhere but horizontal almost everywhere. 
+
+### Exercise 6.10
+Let $\mu$ be a real measure on a space $(S, \Sigma)$. Define $\nu: \Sigma \rightarrow [0, \inf)$ by $\nu(E)=\sup \{\mu(F): F \in \Sigma, F \subset E, \mu(F) \geq 0\}$.
+Show that $\nu$ is a finite positive measure, Give a characterization of $\nu$.
+(Hahn decomposition & Measure properties)
 
 # 7 Convergence and Uniform Integrability
-## 7.1 asdf
+In this chapter we first review a number of convergence concepts for random variables and study how they are interrelated. The important concept of uniform integrability shall enable us to perform a more refined analysis.
+## 7.1 Modes of Convergence
+
 
 
 # 8 Conditional Expectation
