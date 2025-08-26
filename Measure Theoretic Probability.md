@@ -1364,6 +1364,64 @@ Show that $\nu$ is a finite positive measure, Give a characterization of $\nu$.
 In this chapter we first review a number of convergence concepts for random variables and study how they are interrelated. The important concept of uniform integrability shall enable us to perform a more refined analysis.
 ## 7.1 Modes of Convergence
 
+Let $X, X_1, X_2, ...$ be random variables. We have the following definitions of different modes of convergence, where it is always implied that the parameter $n$ tends to infinity, unless stated otherwise.
+
+### Definition 7.1: Modes of Convergence for Random Variables
+1. If $\mathbb{P}\left(\omega: X_n(\omega) \rightarrow X(\omega)\right)=1$, we say that $X_n$ converges to $X$ **almost surely**.
+2. If $\mathbb{P}\left(\left|X_n-X\right|>\varepsilon\right) \rightarrow 0$ for all $\varepsilon>0$, we say that $X_n$ converges to $X$ **in probability**.
+3. If $\mathbb{E}\left|X_n-X\right|^p \rightarrow 0$ (equivalently, $\left\|X_n-X\right\|_p \rightarrow 0$ ) for some $p \geq 1$, then we say that $X_n$ converges to $X$ **in $p$-th mean**, or in $\mathcal{L}^p$.
+First we will study almost sure convergence in a bit more detail. If This type of convergence is given, we have: 
+$$
+\mathbb{P}\left(\omega: \forall \varepsilon>0: \exists N: \forall n \geq N:\left|X_n(\omega)-X(\omega)\right|<\varepsilon\right)=1 .
+$$
+But then also dropping the $\omega$ in the notation we obtain: 
+$$
+\text { for all } \varepsilon>0: \mathbb{P}\left(\exists N: \forall n \geq N:\left|X_n-X\right|<\varepsilon\right)=1 \text {. }
+$$
+Conversely, if this holds, we have almost sure convergence.
+
+Limits are often required to be unique in an appropriate sense. The natural concept of uniqueness here is that of almost sure uniqueness. 
+### Proposition 7.2 Almost Sure Uniqueness of Limits
+For each of the convergence concepts in definition 7.1 the **limit**, if it exists, is almost surely unique. This means that if there are two candidate limits $X$ and $X^\prime$, one must have $\mathbb{P(X=X^\prime)} = 1$.
+### Proposition 7.3: Convergence Relationships
+The following implications hold: 
+1. $X_n \xrightarrow{\text { a.s. }} X$, then $X_n \xrightarrow{\mathbb{P}} X$. (Almost surely implies in probability)
+2. If for all $\varepsilon>0$ the series $\sum_n \mathbb{P}\left(\left|X_n-X\right|>\varepsilon\right)$ is convergent, then $X_n \xrightarrow{\text { a.s. }} X$. (Series technique for almost surely)
+3. If $X_n \xrightarrow{\mathcal{L}^p} X$, then $X_n \xrightarrow{\mathbb{P}} X$. (p-th mean implies in probability)
+4. If $p>q>0$ and $X_n \xrightarrow{\mathcal{L}^p} X$, then $X_n \xrightarrow{\mathcal{L}^q} X$. (higher mean implies lower mean)
+
+Proof hints: 1. Dominated convergence, 2. Borel-Cantelli, 3. Markov Inequality, 4. [[Measure Theoretic Probability#Proposition 4.44]]
+### 7.4: Examples
+#### Almost Surely
+Let $X_n(\omega) = \omega^{1/n}$ for $\omega \in [0, 1]$ equipped with Lebesgue measure. Then $X_n(\omega)\rightarrow 1$ for any $\omega > 0$, but not at $\omega = 0$. Since $\mathbb{P}(\{0\})=0$, we have $X_n \rightarrow 1$ almost surely.
+Almost surely means convergence everywhere but on sets with measure 0. 
+#### In Probability
+As n grows the probability that $X_n$ differs from $X$ by more than any fiexed tolerance $\epsilon$ tends to zero. This does not guarantee convergence for individual sample paths, it only says that "most of the mass" of the distribution of $X_n$ is getting closer to $X$.
+Example: Let $X_n$ be a random variable equal to 0 with probability $1- 1/n$, and equal to $n$ with probability $1/n$. Then $X_n \rightarrow 0$ in probability, but not almost surely, since along the subsequence where rare events happen, values blow up to infinity. Here the "rare" subsets always have measure > 0. So Almost surely implies in probability, but the converse does not hold. 
+
+#### In p-th Mean
+This is a quantitative way of measuring convergence: Not only do we want $X_n$ close to $X$, we want the *expected distance* raised to the p-th power to shrink to zero. 
+Example: If $X_n=X+\frac{1}{n}$, then $X_n \rightarrow X$ in every $\mathcal{L}^p$. But if $X_n=X+Y_n$ with $Y_n \sim \operatorname{Cauchy}(0,1 / n)$, then $X_n \rightarrow X$ in probability, but not in $L^p$, because Cauchy random variables don't have finite moments.
+
+Uniqueness is only guaranteed *almost surely*, not pointwise. 
+
+### 7.4: Almost Surely Bounded
+Let $X_n$ be a sequence of random variables that is almost surely bounded and let there be $K>0$ such that $\mathbb{P}\left(\left|X_n\right|>K\right)=0$, for all $n$. Let $X$ be a random variable. If $X_n \xrightarrow{\mathbb{P}} X$, then $|X| \leq K$ a.s. and $X_n \xrightarrow{\mathcal{L}^1} X$.
+
+This is a "near converse" of one of the propositions in 7.3. For an almost surely converging sequence, the Dominated Convergence Theorem would yield the result immediately. The slightly weaker assumption of convergence in probability renders it slightly less trivial. 
+### Proposition 7.5 There is equivalence between
+(i) $X_n \xrightarrow{\mathbb{P}} X$ and
+(ii) every subsequence of ( $X_n$ ) contains a further subsequence that is almost surely convergent to $X$.
+
+This is useful because, while we cannot get from convergence in probability to almost surely globally, we can always find a suitable subsequence that does converge almost surely. This is good because almost sure convergence is easier to work with than convergence in probability because it is pointwise and pathwise. In most cases we are only concerned with subsequences we can apply dominated convergence, monotone convergence etc. to, essentially rendering convergence in probability "robust enough" for many applications.
+### Proposition 7.6: Continuous Functions Preserve Convergence
+Let $X, X_1, X_2, \ldots$ be random variables and $g: \mathbb{R} \rightarrow \mathbb{R}$ be continuous. If $X_n \xrightarrow{\text { a.s. }} X$, we also have $g\left(X_n\right) \xrightarrow{\text { a.s. }} g(X)$ and if $X_n \xrightarrow{\mathbb{P}} X$, then also $g\left(X_n\right) \xrightarrow{\mathbb{P}} g(X)$.
+### Proposition 7.7 Convergence of Random Vectors
+
+
+
+
+## 7.2 Uniform Integrability
 
 
 # 8 Conditional Expectation

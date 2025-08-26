@@ -46,3 +46,6 @@ Block Sparse Attention Repo with Kernels
 On the Statistics of Block Sparse Attention
 	https://guangxuanx.com/blog/block-sparse-attn-stats.html
 
+Very nice resource on Vision Transformers and Autoregressive Image Models
+	https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial15/Vision_Transformer.html
+
