@@ -1395,9 +1395,12 @@ Proof hints: 1. Dominated convergence, 2. Borel-Cantelli, 3. Markov Inequality, 
 #### Almost Surely
 Let $X_n(\omega) = \omega^{1/n}$ for $\omega \in [0, 1]$ equipped with Lebesgue measure. Then $X_n(\omega)\rightarrow 1$ for any $\omega > 0$, but not at $\omega = 0$. Since $\mathbb{P}(\{0\})=0$, we have $X_n \rightarrow 1$ almost surely.
 Almost surely means convergence everywhere but on sets with measure 0. 
+Almost sure convergence is the type of stochastic convergence most similar to *pointwise convergence* we already know from real analysis. Events for which x_n does not converge to X have probability 0. It is the notion of convergence used to prove the Strong Law of Large Numbers.
+
 #### In Probability
-As n grows the probability that $X_n$ differs from $X$ by more than any fiexed tolerance $\epsilon$ tends to zero. This does not guarantee convergence for individual sample paths, it only says that "most of the mass" of the distribution of $X_n$ is getting closer to $X$.
+As n grows the probability that $X_n$ differs from $X$ by more than any fixed tolerance $\epsilon$ tends to zero. This does not guarantee convergence for individual sample paths, it only says that "most of the mass" of the distribution of $X_n$ is getting closer to $X$.
 Example: Let $X_n$ be a random variable equal to 0 with probability $1- 1/n$, and equal to $n$ with probability $1/n$. Then $X_n \rightarrow 0$ in probability, but not almost surely, since along the subsequence where rare events happen, values blow up to infinity. Here the "rare" subsets always have measure > 0. So Almost surely implies in probability, but the converse does not hold. 
+Convergence in probability is very useful in statistics. An estimator is called *consistent* if it converges in probability. We will later use Convergence in Probability to prove the weak law of large numbers. Convergence in probability implies convergences in distribution.
 
 #### In p-th Mean
 This is a quantitative way of measuring convergence: Not only do we want $X_n$ close to $X$, we want the *expected distance* raised to the p-th power to shrink to zero. 
@@ -1417,11 +1420,16 @@ This is useful because, while we cannot get from convergence in probability to a
 ### Proposition 7.6: Continuous Functions Preserve Convergence
 Let $X, X_1, X_2, \ldots$ be random variables and $g: \mathbb{R} \rightarrow \mathbb{R}$ be continuous. If $X_n \xrightarrow{\text { a.s. }} X$, we also have $g\left(X_n\right) \xrightarrow{\text { a.s. }} g(X)$ and if $X_n \xrightarrow{\mathbb{P}} X$, then also $g\left(X_n\right) \xrightarrow{\mathbb{P}} g(X)$.
 ### Proposition 7.7 Convergence of Random Vectors
-
-
-
+Convergence, almost surely or in probability, of random vectors is defined similarly. For instance $X_1, X_2, X_3, ...$ are n-dimensional random vectors and $\|\cdot\|$ is a norm on $\mathbb{R}^n$, then we say that $X_n \xrightarrow{\mathbb{P}} X$ if $\left\|X_n-X\right\| \xrightarrow{\mathbb{P}} 0$. Here we apply the definition of convergence for real random variables to the implicit random variable in the norm. A nice feature of the convergence concepts introduced above is that appropriate convergence results for real valued random variables carry over to results for random vectors. 
+### Interjection: Terence Tao's notes on Modes of convergence
+[[Modes of Convergence]]
 
 ## 7.2 Uniform Integrability
+This section deals with collections of random variables that in some sense *uniformly* belong to $\mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$.
+### Lemma 7.8
+Let $X \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$ and put $\nu(F):=\mathbb{E}|X| \mathbf{1}_F, F \in \mathcal{F}$. Then for all $\varepsilon>0$ there exists $\delta>0$, such that $\nu(F)<\varepsilon$, if $\mathbb{P}(F)<\delta$.
+This essentially justifies what we previously called *absolute continuity* of $\nu$ w.r.t. $\mathbb{P}$.
+
 
 
 # 8 Conditional Expectation
