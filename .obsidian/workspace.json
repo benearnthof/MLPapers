@@ -10,6 +10,7 @@
           {
             "id": "e3c52b0fb4bab198",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
@@ -17,22 +18,25 @@
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
               "title": "Measure Theoretic Probability"
             }
           },
           {
-            "id": "16790fb3a88fc640",
+            "id": "c45d36e8d12f8336",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sparse Attention/MoBA.md",
+                "file": "Training data-efficient image transformers.md",
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "MoBA"
+              "title": "Training data-efficient image transformers"
             }
           },
           {
@@ -41,15 +45,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "XAttention.md",
+                "file": "Deja Vu.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "XAttention"
+              "title": "Deja Vu"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -170,13 +175,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Measure Theoretic Probability.md",
+                "file": "Deja Vu.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Measure Theoretic Probability"
+              "title": "Outline of Deja Vu"
             }
           }
         ],
@@ -197,34 +202,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e3c52b0fb4bab198",
+  "active": "e35093659c419e0d",
   "lastOpenFiles": [
-    "Modes of Convergence.md",
-    "Measure Theoretic Probability.md",
-    "General Applications/Large Language Diffusion Models.md",
-    "Generative Models/asdf.md",
-    "GeneralML/Next Visual Granularity Generation.md",
-    "Why Transformers Are Sparse and What to Do About It.md",
-    "Transformers are Graph Neural Networks.md",
+    "FAISS.md",
+    "Deja Vu.md",
+    "Efficient and Robust Approximate Nearest Neighbor Search.md",
+    "Mean Shift Clustering.md",
+    "Mathematics/Mean-Shift Algorithm.md",
+    "The Lazy Neuron Phenomenon.md",
+    "Inducing and Exploiting Activation Sparsity for Fast Inference on Deep Neural Networks.md",
+    "Pruning Convolutional Neural Networks for Resource Efficient Inference.md",
+    "Fast Attention Requires Bounded Entries.md",
+    "SmoothQuant.md",
+    "SparseGPT.md",
+    "GPTQ.md",
+    "LLM.int8().md",
+    "ZeroQuant.md",
+    "Training data-efficient image transformers.md",
+    "Improving Neural Network Quantization without Retraining.md",
+    "Data-Free Quantization.md",
+    "Quantization and Training of Neural Networks.md",
+    "Deep Compression.md",
+    "A Study of Branch Prediction Strategies.md",
+    "Approximate Nearest Neighbors.md",
     "XAttention.md",
-    "Sparse Attention/MoBA.md",
-    "ETC Encoding Long and Structured Inputs in Transformers.md",
-    "LNS-Madam.md",
-    "Matrix Calculus.md",
-    "Relational inductive biases, deep learning, and graph networks.md",
-    "Classic Papers/The New Riddle of Induction.md",
-    "Graph Neural Networks/Hyperbolic Attention Networks.md",
-    "Classic Papers/Deep Stack.md",
-    "Classic Papers/The Nature of Explanation.md",
-    "Classic Papers/On Language.md",
-    "Classic Papers/Aspects of the Theory of Syntax.md",
-    "Chinchilla.md",
-    "Sparse Attention/Generating Long Sequences with Sparse Transformers.md",
-    "GeneralML/Image Transformer.md",
-    "GPT-3.md",
-    "GPT-4.md",
-    "GeneralML/GPT-1.md",
-    "GPT-1.md",
+    "SLIDE.md",
+    "Navigating with Graph Representations for fast and scalable decoding of neural language models.md",
+    "Error Bounds for Convolutional Codes and an Asymptotically Optimum Decoding Algorithm.md",
+    "An Explanation of In-context Learning as Implicit Bayesian Inference.md",
     "Algorithmic Reasoning",
     "Graph Neural Networks",
     "Classic Papers",

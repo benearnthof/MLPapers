@@ -1430,10 +1430,80 @@ This section deals with collections of random variables that in some sense *unif
 Let $X \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$ and put $\nu(F):=\mathbb{E}|X| \mathbf{1}_F, F \in \mathcal{F}$. Then for all $\varepsilon>0$ there exists $\delta>0$, such that $\nu(F)<\varepsilon$, if $\mathbb{P}(F)<\delta$.
 This essentially justifies what we previously called *absolute continuity* of $\nu$ w.r.t. $\mathbb{P}$.
 
+The following corollary characterizes integrability of a random variable. It explains the concept of *uniform integrability* to be introduced in Definition 7.11.
 
+
+### Corollary 7.10 Tail Criterion for Uniform Integrability
+Let $X$ be a random variable. Then $X \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$ iff 
+$$
+\lim _{K \rightarrow \infty} \mathbb{E}|X| \mathbf{1}_{\{|X| \geq K\}}=0 .
+$$
+So for any K arbitrarily large, the expected value of X over the sets |X| > K approaches zero. 
+This is very similar to the notion of L1 integrability we discussed earlier. 
+Basically, the contribution to the expectation coming from the "tail regions" |X| >K approaches zero as the cutoff K grows. 
+We will prove this tail criterion in Exercise 7.4.
+
+### Definition 7.11 Uniform Integrability
+Let $\mathcal{C}$ be a collection of random variables defined on a common probability space $(\Omega, \mathcal{F}, \mathbb{P})$.
+This collection is called *uniformly integrable* (UI) if 
+$$
+\lim _{K \rightarrow \infty} \sup \left\{\mathbb{E}|X| \mathbf{1}_{\{|X|>K\}}: X \in \mathcal{C}\right\}=0 .
+$$
+Once again we employ the supremum to generalize the notion of UI from 7.10 to a collection of objects. 
+### Proposition 7.14
+If $\mathcal{C}$ is a finite collection of random variables in $\mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$, then $\mathcal{C}$ is UI. Also the union of two UI collections of RVs  is UI.
+**Proof outline:** The pointwise limits over the tail condition for L1 RVs are zero and the supremum over a finite set is a maximum, so the maximum of finitely many functions that vanish at $\infty$ also vanishes at $\infty$. The union of two such maxima is still zero.
+
+The importance of th econcept of uniform integrability is a consequence of the following theorem, which contains a converse to Proposition 7.3 (iii) for p=1. 
+
+### Theorem 7.15 Converse to 7.3 (iii) for p=1
+Let $\left(X_n\right)$ be a sequence in $\mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$ and $X \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$. Then $X_n \xrightarrow{\mathcal{L}^1} X$ (so $\mathbb{E}\left|X_n-X\right| \rightarrow 0$ ) iff
+(i) $X_n \xrightarrow{\mathbb{P}} X$ and
+(ii) ( $X_n$ ) is uniformly integrable.
 
 # 8 Conditional Expectation
-## asdf
+
+## 8.1 A simple, finite case
+Let $X$ be a random variable with values in $\{x_1, ..., x_n\}$ and $Y$ be a random variable with values in $\{y_1, ..., y_m\}$. The conditional probability 
+$$
+\mathbb{P}\left(X=x_i \mid Y=y_j\right):=\frac{\mathbb{P}\left(X=x_i, Y=y_j\right)}{\mathbb{P}\left(Y=y_j\right)}
+$$
+is well defined if P(Y=y_j)>0, otherwise we define it to be zero. 
+We write $E_j$ for ${Y=y_j}$. The conditional expectation $\hat{x}_j:=\mathbb{E}\left[X \mid E_j\right]$ is then defined as 
+$$
+\hat{x}_j=\sum_i x_i \mathbb{P}\left(X=x_i \mid E_j\right)
+$$
+We can now define a new random variable $\hat{X}$ by 
+$$
+\hat{X}=\sum_j \hat{x}_j \mathbf{1}_{E_j}.
+$$
+Since $\hat{X} = \hat{x_j}$ on each event ${Y = y_j}$, we call $\hat{X}$ the conditional expectation of $X$ given $Y$. It has two remarkable properties. First, we observe that $\hat{X}$ is $\sigma(Y)$-measurable. The second property is: 
+$$
+\mathbb{E} \hat{X} 1_{E_j}=\mathbb{E} X 1_{E_j}
+$$
+The expectation of $\hat{X}$ over the set $E_j$ is the same as the expectation of $X$ over that set. 
+These two properties of conditional expectation will lie at the heart of the more general concept of cnoditional expectation of a random variable given a $\sigma$-Algebra. 
+
+## 8.2 Conditional Expectation for $X\in\mathcal{L^1}(\Omega, \mathcal{F}, \mathbb{P})$ 
+Let $(\Omega, \mathcal{F}, \mathbb{P})$ be a probability space and $\mathcal{G}$ a sub- $\sigma$-algebra of $\mathcal{F}$. Assume that $X \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$. Inspired by the results of the previous section we adopt the following definition.
+### Definition 8.1 Version of Conditional Expectation
+A random variable $\hat{X}$ is called a version of the conditional expectation $\mathbb{E}[X \mid \mathcal{G}]$, if it is $\mathcal{G}$-measurable and if
+$$
+\mathbb{E} \hat{X} \mathbf{1}_G=\mathbb{E} X \mathbf{1}_G, \forall G \in \mathcal{G} .
+$$
+If $\mathcal{G}=\sigma(Y)$, where $Y$ is a random variable, then we usually write $\mathbb{E}[X \mid Y]$ instead of $\mathbb{E}[X \mid \sigma(Y)]$.
+### Theorem 8.2 Uniqueness of Conditional Expectation
+2 If $X \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$, then a version of the conditional expectation $\mathbb{E}[X \mid \mathcal{G}]$ exists and moreover, any two versions are a.s. equal.
+
+### Remark 8.4
+It is common to call a given version of $\mathbb{E}[X \mid \mathcal{G}]$ the conditional expectation of $X$ given $\mathcal{G}$, but one should take care with this custom. In fact one should consider $\mathbb{E}[X \mid \mathcal{G}]$ as an equivalence class of random variables, where equivalence $Y_1 \sim Y_2$ for $\mathcal{G}$-measurable functions means that $\mathbb{P}\left(Y_1=Y_2\right)=1$. As such one can consider $\mathbb{E}[X \mid \mathcal{G}]$ as an element of $L^1(\Omega, \mathcal{G}, \mathbb{P})$. Later on we will often identify a version $\hat{X}$ of $\mathbb{E}[X \mid \mathcal{G}]$ with $\mathbb{E}[X \mid \mathcal{G}]$.
+
+### 8.6 Properties of Conditional Expectation
+The following elementary properties hold: 
+
+
+(Example for Tower property to underscore that we're dealing with sigma algebras not events)
+
 
 
 # 9 Martingales and their Relatives
