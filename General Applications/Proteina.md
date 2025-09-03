@@ -20,7 +20,7 @@ Cited works:
 [[500 Million Years of Evolution]]
 [[Classifier-Free Diffusion Guidance]]
 [[DDPM]]
-[[LoRA]]
+[[GeneralML/LoRA]]
 [[Attention Sinks]]
 [[Scaling Vision Transformers]]
 [[ProtTrans]]

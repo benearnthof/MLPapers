@@ -59,12 +59,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technological folie à deux.md",
+                "file": "General CS/Rematerialization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Technological folie à deux"
+              "title": "Rematerialization"
             }
           }
         ],
@@ -189,13 +189,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technological folie à deux.md",
+                "file": "General CS/Rematerialization.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Technological folie à deux"
+              "title": "Outline of Rematerialization"
             }
           }
         ],
@@ -218,8 +218,15 @@
   },
   "active": "135be7a1f4466220",
   "lastOpenFiles": [
-    "Mixture-of-Recursions.md",
+    "General CS/Register Allocation via Coloring.md",
+    "General CS/Computer Architecture A Quantitative Approach.md",
+    "General CS/Rematerialization.md",
+    "Misc/Dynadiff.md",
+    "Why Transformers Are Sparse and What to Do About It.md",
     "Technological folie à deux.md",
+    "Positional Encoding.md",
+    "LoRA.md",
+    "Mixture-of-Recursions.md",
     "Mathematics/Entropy of a Zipfian Distributed Lexicon.md",
     "Shannon Entropy as a Robust Estimator of Zipf's Law in Animal Vocal Communication Repertoires.md",
     "Training data-efficient image transformers.md",
@@ -237,13 +244,6 @@
     "GPTQ.md",
     "LLM.int8().md",
     "ZeroQuant.md",
-    "Improving Neural Network Quantization without Retraining.md",
-    "Data-Free Quantization.md",
-    "Quantization and Training of Neural Networks.md",
-    "Deep Compression.md",
-    "A Study of Branch Prediction Strategies.md",
-    "Approximate Nearest Neighbors.md",
-    "XAttention.md",
     "Algorithmic Reasoning",
     "Graph Neural Networks",
     "Classic Papers",

@@ -16,8 +16,7 @@ Archive preprint dataset:
 
 CIFAR-10 trained with full attention
 	Passing in image data should be straight forward. 
-	We flatten images into sequences of 1024 pixels
-	The only tricky part is dealing with 3 color channels per pixel
+	We flatten images into sequences of 3072 bytes
 	https://github.com/kentaroy47/vision-transformers-cifar10
 	Modern Vision Transformers use Patch embeddings of course
 	Sparse Transformers Paper trains a 128 layer network with full attention with autoregressive masking. 
