@@ -1,0 +1,2 @@
+https://arxiv.org/pdf/2203.09795
+Presents experiments and conclusions about (1) Parallel processing of residual layers in ViT, (2) Fine-tuning attention weights is sufficient to adapt pre-trained ViTs to higher resolutions, (3) Adding MLP-based patch pre-processing layers improves Bert-like self-supervised training based on patch-masking. 

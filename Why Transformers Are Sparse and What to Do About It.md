@@ -48,3 +48,6 @@ On the Statistics of Block Sparse Attention
 Very nice resource on Vision Transformers and Autoregressive Image Models
 	https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial15/Vision_Transformer.html
 
+Very useful paper that implements GPT-2 Style image transformers like our repo: 
+	[[Generative Pretraining from Pixels]]
+	We use the same model code as GPT-2, except that we initialize weights in the layer-dependent fashion as in Sparse Transformer (Child et al., 2019) and zero-initialize all projections producing logits
