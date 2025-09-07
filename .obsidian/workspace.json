@@ -30,27 +30,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Training data-efficient image transformers.md",
+                "file": "Scaling/Training data-efficient image transformers.md",
                 "mode": "source",
                 "source": false
               },
               "pinned": true,
               "icon": "lucide-file",
               "title": "Training data-efficient image transformers"
-            }
-          },
-          {
-            "id": "135be7a1f4466220",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "General CS/Rematerialization.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Rematerialization"
             }
           }
         ],
@@ -175,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Training data-efficient image transformers.md",
+                "file": "Scaling/Training data-efficient image transformers.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -204,41 +190,41 @@
   },
   "active": "c45d36e8d12f8336",
   "lastOpenFiles": [
-    "Accurate Large Minibatch SGD.md",
-    "Training data-efficient image transformers.md",
-    "RandAugment.md",
-    "How to Start Training.md",
-    "Deep Networks with Stochastic Depth.md",
-    "Fixing the Train-test resolution discrepancy.md",
-    "Revisiting Knowledge Distillation via Label Smoothing Regularization.md",
-    "Squeeze-and-Excitation Networks.md",
-    "General CS/Rematerialization.md",
-    "Bag of Tricks for Image Classification with Convolutional Neural Networks.md",
-    "Generative Pretraining from Pixels.md",
-    "Why Transformers Are Sparse and What to Do About It.md",
-    "An image is worth 16x16 words.md",
-    "DETR End-to-End Object Detection with Transformers.md",
-    "Cosub - Co-training 2L Submodels for Visual Recognition.md",
-    "DeiT III  Revenge of the ViT.md",
-    "GeneralML/Identity Mappings in Deep Residual Networks.md",
-    "Three things everyone should know about Vision Transformers.md",
-    "PatchConvnet.md",
-    "ResMLP.md",
-    "Going Deeper with Image Transformers.md",
-    "Network In Network.md",
-    "Training Very Deep Networks.md",
-    "Highway Networks.md",
-    "Long Short-Term Memory.md",
-    "Mathematics/Entropy of a Zipfian Distributed Lexicon.md",
+    "Scaling/Generative Pretraining from Pixels.md",
+    "Scaling/Training data-efficient image transformers.md",
+    "GeneralML/How to Start Training.md",
+    "Scaling/Deep Networks with Stochastic Depth.md",
+    "Scaling/Accurate Large Minibatch SGD.md",
+    "Scaling/RandAugment.md",
+    "Scaling/A Hybrid Tensor-Expert-Data Parallelism Approach to Optimize Mixture-of-Experts Training.md",
+    "Scaling/Zero Bubble Pipeline Parallelism.md",
+    "Scaling/From Sparse to Soft Mixtures of Experts.md",
+    "Sparse Attention/ZeRO.md",
+    "Scaling/The Llama 3 Herd of Models.md",
+    "Scaling/FLUX.md",
+    "Scaling/Sparse Universal Transformer.md",
+    "Scaling/Scaling and evaluating sparse autoencoders.md",
+    "Scaling/Hardware Scaling Trends and Diminishing Returns in Large-Scale Distributed Training.md",
+    "Scaling/Ring Attention with Blockwise Transformers for Near-Infinite Context.md",
+    "Optimization/Muon is Scalable for LLM Training.md",
+    "Relational inductive biases, deep learning, and graph networks.md",
+    "Quantization/ZeroQuant.md",
+    "Sparse Attention/XAttention.md",
+    "Transformers are Graph Neural Networks.md",
+    "Classic Papers/Training Very Deep Networks.md",
+    "Scaling/Three things everyone should know about Vision Transformers.md",
+    "Classic Papers/The Neural Autoregressive Distribution Estimator.md",
+    "Sparse Attention/The Lazy Neuron Phenomenon.md",
+    "Misc/Technological folie à deux.md",
+    "Optimization",
+    "Quantization",
+    "Scaling",
     "Algorithmic Reasoning",
     "Graph Neural Networks",
     "Classic Papers",
     "General CS",
     "Sparse Attention/Untitled",
     "Sparse Attention",
-    "Misc",
-    "$",
-    "GeneralML",
-    "Proteomics"
+    "Misc"
   ]
 }
