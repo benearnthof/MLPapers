@@ -42,6 +42,22 @@
           {
             "id": "681a989840759695",
             "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Generative Models/Contrastive Flow Matching.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Contrastive Flow Matching"
+            }
+          },
+          {
+            "id": "2b0385f74001af92",
+            "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
@@ -54,7 +70,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -202,14 +218,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "681a989840759695",
+  "active": "2b0385f74001af92",
   "lastOpenFiles": [
-    "An Empirical Model of Large-Batch Training.md",
-    "Scaling/The Ultra-Scale Playbook.md",
+    "Why Transformers Are Sparse and What to Do About It.md",
     "Scaling/Training data-efficient image transformers.md",
+    "Scaling/The Ultra-Scale Playbook.md",
+    "Transformers are Graph Neural Networks.md",
+    "Sparse Attention/ZeRO.md",
+    "PyTorch Distributed.md",
+    "Generative Models/Contrastive Flow Matching.md",
+    "An Empirical Model of Large-Batch Training.md",
     "Scaling/Streaming DiLoCo with overlapping communication.md",
     "Scaling/DiLoCo.md",
-    "Why Transformers Are Sparse and What to Do About It.md",
     "Spartan.md",
     "Scaling/Generative Pretraining from Pixels.md",
     "GeneralML/How to Start Training.md",
@@ -219,7 +239,6 @@
     "Scaling/A Hybrid Tensor-Expert-Data Parallelism Approach to Optimize Mixture-of-Experts Training.md",
     "Scaling/Zero Bubble Pipeline Parallelism.md",
     "Scaling/From Sparse to Soft Mixtures of Experts.md",
-    "Sparse Attention/ZeRO.md",
     "Scaling/The Llama 3 Herd of Models.md",
     "Scaling/FLUX.md",
     "Scaling/Sparse Universal Transformer.md",
@@ -227,9 +246,6 @@
     "Scaling/Hardware Scaling Trends and Diminishing Returns in Large-Scale Distributed Training.md",
     "Scaling/Ring Attention with Blockwise Transformers for Near-Infinite Context.md",
     "Optimization/Muon is Scalable for LLM Training.md",
-    "Relational inductive biases, deep learning, and graph networks.md",
-    "Quantization/ZeroQuant.md",
-    "Sparse Attention/XAttention.md",
     "Optimization",
     "Quantization",
     "Scaling",

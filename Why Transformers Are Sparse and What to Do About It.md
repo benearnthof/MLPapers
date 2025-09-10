@@ -63,3 +63,5 @@ Semi sparse linear layers for 6% training speedup
 N:M structured sparsity
 	https://pytorch.org/blog/accelerating-neural-network-training/
 
+Nice summary slides on slaying OOMs
+	https://christianjmills.com/posts/mastering-llms-course-notes/conference-talk-012/
