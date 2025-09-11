@@ -101,3 +101,38 @@ This results in $2 * num_{layers}-1$ additional all-gather operations per traini
 Disregarding communication overhead, this could in theory allow us to drive memory usage down indefinitely, as long as we're able to scale up the number of GPUs we're using. In practice though, one starts to run into diminishing returns in throughput at around 64 nodes / 512 GPUs. 
 
 ## Tensor Parallelism
+This form of parallelism leverages the structure of the matrix operations performed in deep learning themselves. We can split matrix-matrix products into chunks/shards then **broadcast** these shards to individual GPUs, perform operations on them and finally, **all-gather** the results. 
+
+Here we have the choice of either splitting operations by column or by row, the only difference being that row-wise splitting requires a **scatter** operation instead of a **broadcast** operation, with an **all-reduce** operation to calculate the final sum. 
+
+### Tensor Parallelism in a Transformer Block
+We split the feedforward layer into a column linear and row linear pipeline that chunks operations appropriately. The Multi-Head Attention operation can also make efficient use of these ideas.
+
+In general, we can split the QKV matrices in a column-parallel fashion, again considering the output projection in a row-linear way. This has a natural interpretation for MHA: The column-parallel splitting can be thought of as splitting the MHA layer across heads, where each GPU in turn computes the attention operation for an individual (or a subset of) head(s). Similar approaches work well for [[MQA Fast Transformer Decoding]] and [[GQA Generalized Multi Query Attention]], where keys and values are shared between queries. 
+This is one of the main reasons why Transformers scale so exceptionally well on modern GPU hardware, Multihead Attention can be split along the $num_{heads}$ dimension and makes extremely good use of parallel hardware. Of course one should also note that modern GPU developments (https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/) are also very much focused on aligning architecture with the requirements for Attention operations. (Softmax for Blackwell Ultra etc.) 
+Specialized architectures like MQA and GQA can also make use of this paradigm easily, but require a couple of tweaks to make sure that the KQ heads stay synchronized across GPUs.
+
+Of course TP is not a Free Lunch, we still incur communication overhead that cannot be overlapped with computation as we have to combine partial results across tensor-parallel ranks before the final LayerNorm can be applied. 
+TP reduces activation memory per GPU but still requires us to gather the full activations for LayerNorm, which means we're not getting 100% of the theoretical benefits. 
+Communication overhead for TP is minimal, as long as we're keeping everything in one node (typically 8 GPUs) since we can leverage fast NVLink interconnects for inter node communication. But we observe sharp declines in per GPU throughput when scaling up TP to more than one node, as this requires us to utilize slower infiniband or network interfaces. 
+## Sequence Parallelism
+[[Sequence Parallelism]]
+In the previous section we outlined how to efficiently split MHA and Feedforward layers across devices. Tensor Parallelism works well in these cases, since matrix multiplication operations parallelize natively across both row and column dimensions. This does not generalize to operations like LayerNorm, that require access to the full hidden dimension: 
+$$
+\operatorname{LayerNorm}(x)=\gamma \cdot \frac{x-\mu}{\sqrt{\sigma^2+\epsilon}}+\beta
+$$
+Where $\mu=\operatorname{mean}(x)$ and $\sigma^2=\operatorname{var}(x)$ are computed across hidden dimensions $h$. While these operations are computationally cheap, they still require significant activation memory. Can we somehow split them along the sequence dimension? Intuition from [[FlashAttention]], in particular the way the Softmax operation is handled, gives us a hint that maybe, through storing and communication of some additional normalization factors, this should be feasible. 
+
+We an imagine grouping operations like so: 
+TensorParallel(SelfAttention -> Linear) -> SequenceParallel(Dropout -> LayerNorm) -> TensorParallel(Linear -> GeLU -> Linear) -> ...
+
+Nice blogpost detailing how [[Ring Attention with Blockwise Transformers for Near-Infinite Context]] helps address the communication operations for Sequence Parallelism: https://insujang.github.io/2024-01-11/tensor-parallelism-and-sequence-parallelism-detailed-analysis/#sequence-parallelism
+Another nice extension that helps distribute compute load evenly:
+[[Infinite-LLM - DistAttention]]
+
+For SP, much like for TP, communication cannot be overlapped trivially with computation, leading to drastic decreases in per GPU throughput when scaling above a single node. 
+ 
+If we scale the sequence length the activation memory requirements will still eventually outpace the tensor parallel blocks. If, in turn, the model becomes too big to fit on a single node, we will see a massive performance drop due to the required inter node communication. 
+We can address these issues with *Context*- and *Pipeline*-Parallelism.
+
+## Context Parallelism
