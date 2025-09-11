@@ -136,3 +136,13 @@ If we scale the sequence length the activation memory requirements will still ev
 We can address these issues with *Context*- and *Pipeline*-Parallelism.
 
 ## Context Parallelism
+In the previous setting we split the full model into chunks where each chunk was either Tensor Parallel (Feedforward, Attention) or Sequence Parallel (LayerNorm, Dropout, ...). Context parallelism aims to reduce the memory requirements for the Tensor Parallel blocks. In the Feedforward case this is trivial, since each token is processed independently, but each token in the Attention computation requires access to the QKV-entries of at least the preceding tokens if not those of the entire sequence. This leads us to **Ring Attention**.
+
+### Ring Attention 
+[[Ring Attention with Blockwise Transformers for Near-Infinite Context]]
+Ring Attention begins with each GPU initiating an asynchronous communication operation to send KV-pairs to other GPUs. While each GPU is waiting for the data from the other GPUs to arrive it computes the attention scores for the parts of the data that are already complete in memory. Ideally the next parts are received while this computation is running, again making use of communication/computation overlap. To illustrate why this works we recall that we can always execute matrix operation blockwise and, in the case of causal self attention, we can optimize the way KV-pairs are exchanged even more aggressively, since we're only interested in the bottom triangle of the attention matrix at all. 
+[[Striped Attention]] adjusts this implementation a bit to balance compute load between GPUs.
+[[The Llama 3 Herd of Models]] also uses zig-zag load balancing aka Striped Attention (Page 11, section on Context Parallelism).
+
+## Pipeline Parallelism
+We've seen that we can combat the memory explosion brought upon us by very long sequence lengths effectively with Tensor, Sequence, and Context Parallelism. But all of these approaches suffer from large decreases in throughput once we're forced to employ multiple nodes. How can we avoid bottlenecks in cases where models don't fit into a single node anymore? With Pipeline Parallelism!

@@ -61,12 +61,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Scaling/The Ultra-Scale Playbook.md",
+                "file": "An Empirical Model of Large-Batch Training.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Ultra-Scale Playbook"
+              "title": "An Empirical Model of Large-Batch Training"
             }
           }
         ],
@@ -191,13 +191,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Scaling/The Ultra-Scale Playbook.md",
+                "file": "An Empirical Model of Large-Batch Training.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Ultra-Scale Playbook"
+              "title": "Outline of An Empirical Model of Large-Batch Training"
             }
           }
         ],
@@ -220,8 +220,9 @@
   },
   "active": "2b0385f74001af92",
   "lastOpenFiles": [
-    "Infinite-LLM - DistAttention.md",
     "Scaling/The Ultra-Scale Playbook.md",
+    "Striped Attention.md",
+    "Infinite-LLM - DistAttention.md",
     "Sequence Parallelism.md",
     "Sparse Attention/MegatronLM.md",
     "Sparse Attention/GQA Generalized Multi Query Attention.md",
@@ -245,7 +246,6 @@
     "Scaling/Zero Bubble Pipeline Parallelism.md",
     "Scaling/From Sparse to Soft Mixtures of Experts.md",
     "Scaling/The Llama 3 Herd of Models.md",
-    "Scaling/FLUX.md",
     "Optimization",
     "Quantization",
     "Scaling",
