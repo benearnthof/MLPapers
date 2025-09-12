@@ -1,4 +1,5 @@
 https://huggingface.co/spaces/nanotron/ultrascale-playbook?section=high-level_overview
+https://lilianweng.github.io/posts/2021-09-25-train-large/
 
 Rough overview of techniques: 
 * Data Parallelism
@@ -47,6 +48,7 @@ Selective Activation Recomputation is they key:
 Gradient accumulation linearly decreases the activation memory footprint but also scales the time required to compute gradients for each batch linearly.
 
 ## Data Parallelism
+[[GeePS]]
 (Gradient accumulation across multiple GPUs)
 
 Because we dispatch different micro batches to each respective GPU we cannot just update the copies of the model on each of them separately. We use **all-reduce** to average the gradients from the model instances before the optimizer step.
@@ -76,7 +78,10 @@ Parameter-to-Bucket Mapping has considerable impact on DDP speed. Buckets are al
 ### Interplay with Gradient Accumulation
 If we're utilizing gradient accumulation to increase batch size we perform multiple forward and backward passes before updating the parameters. In a naïve implementation one might trigger an allreduce after each backward pass during the accumulation, we can prevent this by adding a model.no_sync() decorator that disables gradient sync during the backward passes that don't need reduction. 
 
-## Zero Redundancy Optimizer [[ZeRO]]
+## Zero Redundancy Optimizer
+[[ZeRO]]
+[[Adafactor]]
+[[Memory-Efficient Adaptive Optimization]]
 Data parallelism introduces significant memory redundancy since, at least for a basic implementation, we keep the full optimizer state and model parameters in each GPU. The three levels of ZeRO will introduce Optimizer State Partitioning, Gradient Partitioning, and Parameter Partitioning.
 
 In vanilla DP, all ranks gather the same gradients after the backward pass and simultaneously perform identical optimizer steps. It seems like a natural idea to offload this with the help of some slight additional communication overhead which, again, we might overlap with computation to further decrease impedance on throughput while drastically cutting down on memory usage.
@@ -106,6 +111,7 @@ This form of parallelism leverages the structure of the matrix operations perfor
 Here we have the choice of either splitting operations by column or by row, the only difference being that row-wise splitting requires a **scatter** operation instead of a **broadcast** operation, with an **all-reduce** operation to calculate the final sum. 
 
 ### Tensor Parallelism in a Transformer Block
+[[MegatronLM]], [[Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM]]
 We split the feedforward layer into a column linear and row linear pipeline that chunks operations appropriately. The Multi-Head Attention operation can also make efficient use of these ideas.
 
 In general, we can split the QKV matrices in a column-parallel fashion, again considering the output projection in a row-linear way. This has a natural interpretation for MHA: The column-parallel splitting can be thought of as splitting the MHA layer across heads, where each GPU in turn computes the attention operation for an individual (or a subset of) head(s). Similar approaches work well for [[MQA Fast Transformer Decoding]] and [[GQA Generalized Multi Query Attention]], where keys and values are shared between queries. 
@@ -145,7 +151,7 @@ Ring Attention begins with each GPU initiating an asynchronous communication ope
 [[The Llama 3 Herd of Models]] also uses zig-zag load balancing aka Striped Attention (Page 11, section on Context Parallelism).
 
 ## Pipeline Parallelism
-[[GPipe]]
+[[GPipe]], [[PipeDream]], [[Memory-Efficient Pipeline-Parallel DNN Training]]
 We've seen that we can combat the memory explosion brought upon us by very long sequence lengths effectively with Tensor, Sequence, and Context Parallelism. But all of these approaches suffer from large decreases in throughput once we're forced to employ multiple nodes. How can we avoid bottlenecks in cases where models don't fit into a single node anymore? With Pipeline Parallelism!
 
 The core idea is simple: For models that are exceedingly large we simply split its layers across multiple GPUs. Naively one might split a model into 8 chunks and fit each of them into a separate GPU, but that would lead to massive downtime if we're not carefully thinking about how to execute forward and backward passes efficiently. 
@@ -179,6 +185,8 @@ DualPipe further extends this by interleaving from two directions, basically "br
 [[Switch Transformers]]
 [[GShard]]
 [[A survey on Mixture of Experts in Large Language Models]]
+[[Outrageously Large Neural Networks]]
+[[Mixture-of-Experts with Expert Choice Routing]]
 The basic idea is that instead of having a single feedforward module per layer, we can have several parallel modules and route tokens through them to be processed differently.
 This makes it easy to design efficient implementations and exploit data parallelism at the same time. 
 
@@ -186,3 +194,17 @@ This makes it easy to design efficient implementations and exploit data parallel
 In practice we cannot combine every form of parallelism efficiently, refer to the literature and this chapter in the book for insights into which techniques complement one another.
 
 ## GPUs: Fusing, Threading and Mixing
+
+### Mixed Precision Training
+[[Mixed Precision Training]]
+
+## CPU Offloading
+[[vDNN Virtualized Deep Neural Networks for Scalable, Memory-Efficient Neural Network Design]]
+
+## Recomputation
+[[Training Deep Nets with Sublinear Memory Cost]]
+
+## Compression
+[[Gist]]
+
+## Quantization
