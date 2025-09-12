@@ -145,4 +145,44 @@ Ring Attention begins with each GPU initiating an asynchronous communication ope
 [[The Llama 3 Herd of Models]] also uses zig-zag load balancing aka Striped Attention (Page 11, section on Context Parallelism).
 
 ## Pipeline Parallelism
+[[GPipe]]
 We've seen that we can combat the memory explosion brought upon us by very long sequence lengths effectively with Tensor, Sequence, and Context Parallelism. But all of these approaches suffer from large decreases in throughput once we're forced to employ multiple nodes. How can we avoid bottlenecks in cases where models don't fit into a single node anymore? With Pipeline Parallelism!
+
+The core idea is simple: For models that are exceedingly large we simply split its layers across multiple GPUs. Naively one might split a model into 8 chunks and fit each of them into a separate GPU, but that would lead to massive downtime if we're not carefully thinking about how to execute forward and backward passes efficiently. 
+
+Note: This technique may seem like a two birds one stone approach but we cannot actually decrease both the parameter and activation memory requirements with pipeline parallelism, since each GPU performs several micro forward passes before being able to free up memory during the backward passes. We could in theory do GPU1 Forward -> GPU2 Forward -> ... -> GPU8 Forward -> GPU8 Backward -> ... -> GPU1 Backward, which would cut down activation memory usage, but would incur massive downtimes while each GPU is waiting for the results of the computation from those in prior pipeline steps. 
+### All forward, all backward
+This is the simplest approach mentioned in the previous paragraph. Conceptually simple but very throughput inefficient.
+When keeping the activation tensors of multiple micro batches to stage computations and decrease the egregious bubble times of the simplest approach we quickly run out of device memory again. One forward one backward alleviates this somewhat.
+
+### One forward, one backward 
+[[The Llama 3 Herd of Models]]
+After the first batch in the last forward stage gets processed by the designated GPU we perform a backward pass directly, instead of waiting for the next batches to finish their forward passes. This "propagates" backwards through the pipeline, effectively alternating forward and backward operations, cutting down on memory requirements. In turn one may therefore increase the number of microbatches processed per pipeline cycle, thus also cutting down bubble downtime.
+
+### Interleaving Stages
+Interleaving approaches add another communication step to shuffle activations back and forth in a looping pipeline where, for example, GPU1 contains layers 1, 3, 5, 7, and GPU2 contains layers 2, 4, 6, 8. Each micro batch moves in circles from one GPU to the next until the full pass has been completed. ![[Pasted image 20250912163625.png]]
+The exact performance of this very much depends on finding an efficient "shuffling" schedule, in the example above each micro batch is distributed across GPUs and incurs a bit of waiting time as the backward pass for the first micro batch is computed on GPU4. 
+
+### Zero Bubble & DualPipe
+Introducing ZeroBubble: [[Zero Bubble Pipeline Parallelism]]
+Introducing DualPipe: [[DeepSeek-V3 Technical Report]]
+Interesting Blogpost that outlines DualPipe-V/Cut-in-half DualPipe
+https://hackmd.io/@ufotalent/r1lVXsa9Jg
+
+The core observation of ZeroBubble is that one can split up the backward pass operation for MLPs into the parts required for weights updates in the optimizer step, and the parts required for the downstream, or rather upstream, backward pass computations of the preceding layers. With that in mind one may "hand craft" pipeline schedules that would incur basically zero bubble downtime. In practice this is a bit more tricky to implement since we're not only doing matrix multiplications but they still make up the overwhelming majority of operations during neural network training. 
+
+DualPipe further extends this by interleaving from two directions, basically "braiding" together a sophisticated pipeline schedule. Refer to the paper for more. 
+
+## Expert Parallelism
+[[GPT-4]]
+[[Mixtral of Experts]]
+[[Switch Transformers]]
+[[GShard]]
+[[A survey on Mixture of Experts in Large Language Models]]
+The basic idea is that instead of having a single feedforward module per layer, we can have several parallel modules and route tokens through them to be processed differently.
+This makes it easy to design efficient implementations and exploit data parallelism at the same time. 
+
+### 5D Parallelism in a Nutshell
+In practice we cannot combine every form of parallelism efficiently, refer to the literature and this chapter in the book for insights into which techniques complement one another.
+
+## GPUs: Fusing, Threading and Mixing
