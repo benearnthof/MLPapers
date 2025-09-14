@@ -83,6 +83,12 @@ If we're utilizing gradient accumulation to increase batch size we perform multi
 [[ZeRO]]
 [[Adafactor]]
 [[Memory-Efficient Adaptive Optimization]]
+[[ZeRO-Infinity]]
+[[ZeRO-Offload]]
+[[DeepSpeed]]
+[[1-bit Adam]]
+[[ZeRO++]]
+
 Data parallelism introduces significant memory redundancy since, at least for a basic implementation, we keep the full optimizer state and model parameters in each GPU. The three levels of ZeRO will introduce Optimizer State Partitioning, Gradient Partitioning, and Parameter Partitioning.
 
 In vanilla DP, all ranks gather the same gradients after the backward pass and simultaneously perform identical optimizer steps. It seems like a natural idea to offload this with the help of some slight additional communication overhead which, again, we might overlap with computation to further decrease impedance on throughput while drastically cutting down on memory usage.
@@ -143,6 +149,7 @@ If we scale the sequence length the activation memory requirements will still ev
 We can address these issues with *Context*- and *Pipeline*-Parallelism.
 
 ## Context Parallelism
+[[DeepSpeed Ulysses]]
 In the previous setting we split the full model into chunks where each chunk was either Tensor Parallel (Feedforward, Attention) or Sequence Parallel (LayerNorm, Dropout, ...). Context parallelism aims to reduce the memory requirements for the Tensor Parallel blocks. In the Feedforward case this is trivial, since each token is processed independently, but each token in the Attention computation requires access to the QKV-entries of at least the preceding tokens if not those of the entire sequence. This leads us to **Ring Attention**.
 
 ### Ring Attention 
@@ -224,6 +231,7 @@ This can further be enhanced with Tiling & Thread Coarsening, as well as the min
 
 ## CPU Offloading
 [[vDNN Virtualized Deep Neural Networks for Scalable, Memory-Efficient Neural Network Design]]
+[[ZenFlow]]
 
 ## Recomputation
 [[Training Deep Nets with Sublinear Memory Cost]]
@@ -232,3 +240,6 @@ This can further be enhanced with Tiling & Thread Coarsening, as well as the min
 [[Gist]]
 
 ## Quantization
+[[ZeroQuant]]
+[[ZeroQuant-V2]]
+[[Understanding INT4 Quantization for Language Models]]

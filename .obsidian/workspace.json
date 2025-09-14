@@ -61,12 +61,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Scaling/The Ultra-Scale Playbook.md",
+                "file": "_misc.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Ultra-Scale Playbook"
+              "title": "_misc"
+            }
+          },
+          {
+            "id": "2c91b2a8fdcbe0c9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Large Batch Optimization for Deep Learning.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Large Batch Optimization for Deep Learning"
             }
           }
         ],
@@ -191,13 +205,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Scaling/The Ultra-Scale Playbook.md",
+                "file": "_misc.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Ultra-Scale Playbook"
+              "title": "Outline of _misc"
             }
           }
         ],
@@ -220,34 +234,35 @@
   },
   "active": "2b0385f74001af92",
   "lastOpenFiles": [
-    "Spartan.md",
-    "Scaling/Sequence Parallelism.md",
-    "Scaling/Mixture-of-Experts with Expert Choice Routing.md",
-    "Scaling/GeePS.md",
-    "Scaling/Striped Attention.md",
-    "Scaling/Memory-Efficient Pipeline-Parallel DNN Training.md",
-    "Assets",
+    "Positional Encoding.md",
+    "Generative Models/RoFormer.md",
+    "_misc.md",
+    "The Era of 1-bit LLMs.md",
+    "Sparse Attention/FP4 All the Way.md",
+    "Large Batch Optimization for Deep Learning.md",
+    "Optimization/Memory Efficient Optimizers with 4-bit States.md",
     "Scaling/The Ultra-Scale Playbook.md",
-    "Datasets/A Downsampled Variant of ImageNet as an Alternative to the CIFAR datasets.md",
-    "Datasets",
-    "Scaling/Fast Inference from Transformers via Speculative Decoding.md",
-    "GeneralML/Training Deep Nets with Sublinear Memory Cost.md",
-    "Scaling/Memory-Efficient Adaptive Optimization.md",
-    "GeneralML/Gist.md",
-    "Why Transformers Are Sparse and What to Do About It.md",
-    "Scaling/A survey on Mixture of Experts in Large Language Models.md",
-    "Scaling/MoNTA.md",
+    "FlexAttention.md",
+    "GeneralML/Mixed Precision Training.md",
+    "Scaling/ZenFlow.md",
+    "Quantization/ZeroQuant-V2.md",
+    "Quantization/Understanding INT4 Quantization for Language Models.md",
+    "Sparse Attention/Spartan.md",
+    "Efficient Streaming Language Models with Attention Sinks.md",
+    "When Attention Sink Emerges in Language Models.md",
+    "Vision Transformers Don't Need Trained Registers.md",
+    "Vision Transformers Need Registers.md",
+    "DeepSpeed Ulysses.md",
+    "Scaling/ZeRO++.md",
+    "Scaling/Maximizing Communication Efficiency for Large-Scale Training via 0-1 Adam.md",
     "Generative Models/Contrastive Flow Matching.md",
-    "Scaling/GPipe.md",
-    "Scaling/GShard.md",
-    "Scaling/Chinchilla.md",
-    "GeneralML/Harnessing the Universal Geometry of Embeddings.md",
-    "Scaling/Mixtral of Experts.md",
+    "Scaling/1-bit Adam.md",
+    "Scaling/DeepSpeed.md",
+    "Sparse Attention/ZeRO.md",
+    "Scaling/ZeRO-Offload.md",
+    "Assets",
+    "Datasets",
     "Assets/Pasted image 20250912163625.png",
-    "Classic Papers/Learning to Tell Two Spirals Apart.md",
-    "Scaling/An Empirical Model of Large-Batch Training.md",
-    "Scaling/Infinite-LLM - DistAttention.md",
-    "Sparse Attention/MegatronLM.md",
     "Optimization",
     "Quantization",
     "Scaling",
