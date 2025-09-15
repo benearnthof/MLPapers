@@ -65,3 +65,34 @@ N:M structured sparsity
 
 Nice summary slides on slaying OOMs
 	https://christianjmills.com/posts/mastering-llms-course-notes/conference-talk-012/
+
+DeepSpeed Features:
+* Automatic DDP with Mixed Precision
+* Activation Checkpointing (same as in torch, we skip it for the most part)
+* Smart Gradient Accumulation: For DDP we set it in yaml, for DeepSpeed we set it in json
+* ZeRO [[Turing-NLG]]
+* ZeRO offloader (will probably not use CPU offloading)
+* Tensor Parallelism
+* Pipeline Parallelism
+* Random Layerwise token dropping (?) https://www.deepspeed.ai/tutorials/data-efficiency/
+* LAMB, 1-bit ADAM, 0/1 Adam, 1-bit LAMB
+* Sparse Attention Kernels https://www.deepspeed.ai/tutorials/sparse-attention/
+* Simplified Data Loader (Should look into this for Imagenet)
+* Progressive Layer Dropping (Up to 2.5x convergence speedup for pre-training) [[Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping]]
+* Mixture of Experts
+* Flops Profiler
+* Wandb monitoring
+
+https://docs.runpod.io/instant-clusters/pytorch
+```bash
+export NCCL_DEBUG=INFO
+export NCCL_SOCKET_IFNAME=ens1
+torchrun \
+  --nproc_per_node=$NUM_TRAINERS \
+  --nnodes=$NUM_NODES \
+  --node_rank=$NODE_RANK \
+  --master_addr=$MASTER_ADDR \
+  --master_port=$MASTER_PORT \
+torch-demo/main.py
+```
+

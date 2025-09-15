@@ -61,12 +61,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_misc.md",
+                "file": "Why Transformers Are Sparse and What to Do About It.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_misc"
+              "title": "Why Transformers Are Sparse and What to Do About It"
             }
           },
           {
@@ -205,13 +205,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_misc.md",
+                "file": "Why Transformers Are Sparse and What to Do About It.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of _misc"
+              "title": "Outline of Why Transformers Are Sparse and What to Do About It"
             }
           }
         ],
@@ -234,14 +234,20 @@
   },
   "active": "2b0385f74001af92",
   "lastOpenFiles": [
+    "Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping.md",
+    "Why Transformers Are Sparse and What to Do About It.md",
+    "Scaling/Towards Crowdsoured Training of Large Neural Networks using Decentralized Mixture-of-Experts.md",
+    "Turing-NLG.md",
+    "Scaling/The Ultra-Scale Playbook.md",
+    "Generative Models/Contrastive Flow Matching.md",
+    "Large Batch Optimization for Deep Learning.md",
+    "Scaling/An Empirical Model of Large-Batch Training.md",
+    "_misc.md",
     "Positional Encoding.md",
     "Generative Models/RoFormer.md",
-    "_misc.md",
     "The Era of 1-bit LLMs.md",
     "Sparse Attention/FP4 All the Way.md",
-    "Large Batch Optimization for Deep Learning.md",
     "Optimization/Memory Efficient Optimizers with 4-bit States.md",
-    "Scaling/The Ultra-Scale Playbook.md",
     "FlexAttention.md",
     "GeneralML/Mixed Precision Training.md",
     "Scaling/ZenFlow.md",
@@ -254,12 +260,6 @@
     "Vision Transformers Need Registers.md",
     "DeepSpeed Ulysses.md",
     "Scaling/ZeRO++.md",
-    "Scaling/Maximizing Communication Efficiency for Large-Scale Training via 0-1 Adam.md",
-    "Generative Models/Contrastive Flow Matching.md",
-    "Scaling/1-bit Adam.md",
-    "Scaling/DeepSpeed.md",
-    "Sparse Attention/ZeRO.md",
-    "Scaling/ZeRO-Offload.md",
     "Assets",
     "Datasets",
     "Assets/Pasted image 20250912163625.png",
