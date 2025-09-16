@@ -56,7 +56,7 @@
             }
           },
           {
-            "id": "2b0385f74001af92",
+            "id": "2188a69cd0f04bbe",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -70,21 +70,21 @@
             }
           },
           {
-            "id": "2c91b2a8fdcbe0c9",
+            "id": "c3b5b6151b5c301a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Large Batch Optimization for Deep Learning.md",
+                "file": "Scaling/Accurate Large Minibatch SGD.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Large Batch Optimization for Deep Learning"
+              "title": "Accurate Large Minibatch SGD"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -205,13 +205,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Why Transformers Are Sparse and What to Do About It.md",
+                "file": "Scaling/Accurate Large Minibatch SGD.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Why Transformers Are Sparse and What to Do About It"
+              "title": "Outline of Accurate Large Minibatch SGD"
             }
           }
         ],
@@ -232,34 +232,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2b0385f74001af92",
+  "active": "c3b5b6151b5c301a",
   "lastOpenFiles": [
-    "Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping.md",
+    "Quantized Neural Networks.md",
+    "Scaling/Accurate Large Minibatch SGD.md",
+    "MPI Message Passing Interface (Textbook).md",
+    "Optimization Methods for Large-Scale Machine Learning.md",
+    "Revisiting Distributed Synchronous SGD.md",
+    "SGD A Stochastic Approximation Method.md",
+    "One Weird Trick for Parallelizing Convolutional Neural Networks.md",
+    "Large Batch Optimization for Deep Learning.md",
     "Why Transformers Are Sparse and What to Do About It.md",
+    "Generative Models/Contrastive Flow Matching.md",
+    "Sparse Attention/Saliency-driven Dynamic Token Pruning for Large Language Models.md",
+    "Sparse Attention/Learned Token Pruning for Transformers.md",
+    "Sparse Attention/LazyLLM.md",
+    "Scaling/The Ultra-Scale Playbook.md",
+    "DeepSpeed Ulysses.md",
+    "Random-LTD.md",
+    "Optimization/How to set AdamW's weight decay as you scale model and dataset size.md",
+    "Optimization/AdamW - Decoupled Weight Decay Regularization.md",
+    "Adam - A Method for Stochastic Optimization.md",
+    "Optimization/Old Optimizer, New Norm.md",
+    "Optimization/In Search of Adam's Secret Sauce.md",
+    "Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping.md",
     "Scaling/Towards Crowdsoured Training of Large Neural Networks using Decentralized Mixture-of-Experts.md",
     "Turing-NLG.md",
-    "Scaling/The Ultra-Scale Playbook.md",
-    "Generative Models/Contrastive Flow Matching.md",
-    "Large Batch Optimization for Deep Learning.md",
     "Scaling/An Empirical Model of Large-Batch Training.md",
     "_misc.md",
-    "Positional Encoding.md",
-    "Generative Models/RoFormer.md",
-    "The Era of 1-bit LLMs.md",
-    "Sparse Attention/FP4 All the Way.md",
-    "Optimization/Memory Efficient Optimizers with 4-bit States.md",
-    "FlexAttention.md",
-    "GeneralML/Mixed Precision Training.md",
-    "Scaling/ZenFlow.md",
-    "Quantization/ZeroQuant-V2.md",
-    "Quantization/Understanding INT4 Quantization for Language Models.md",
-    "Sparse Attention/Spartan.md",
-    "Efficient Streaming Language Models with Attention Sinks.md",
-    "When Attention Sink Emerges in Language Models.md",
-    "Vision Transformers Don't Need Trained Registers.md",
-    "Vision Transformers Need Registers.md",
-    "DeepSpeed Ulysses.md",
-    "Scaling/ZeRO++.md",
     "Assets",
     "Datasets",
     "Assets/Pasted image 20250912163625.png",

@@ -1,0 +1,2 @@
+2016 Paper that discusses asynchronous vs synchronous SGD, introduces the idea of Backup workers, very similar to the communication/computation overlap found in modern distributed training algorithms 
+https://arxiv.org/pdf/1604.00981

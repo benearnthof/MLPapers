@@ -66,22 +66,6 @@ N:M structured sparsity
 Nice summary slides on slaying OOMs
 	https://christianjmills.com/posts/mastering-llms-course-notes/conference-talk-012/
 
-DeepSpeed Features:
-* Automatic DDP with Mixed Precision
-* Activation Checkpointing (same as in torch, we skip it for the most part)
-* Smart Gradient Accumulation: For DDP we set it in yaml, for DeepSpeed we set it in json
-* ZeRO [[Turing-NLG]]
-* ZeRO offloader (will probably not use CPU offloading)
-* Tensor Parallelism
-* Pipeline Parallelism
-* Random Layerwise token dropping (?) https://www.deepspeed.ai/tutorials/data-efficiency/
-* LAMB, 1-bit ADAM, 0/1 Adam, 1-bit LAMB
-* Sparse Attention Kernels https://www.deepspeed.ai/tutorials/sparse-attention/
-* Simplified Data Loader (Should look into this for Imagenet)
-* Progressive Layer Dropping (Up to 2.5x convergence speedup for pre-training) [[Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping]]
-* Mixture of Experts
-* Flops Profiler
-* Wandb monitoring
 
 https://docs.runpod.io/instant-clusters/pytorch
 ```bash
@@ -95,4 +79,30 @@ torchrun \
   --master_port=$MASTER_PORT \
 torch-demo/main.py
 ```
+### DeepSpeed Features
 
+Drop-in replacement via config:
+* Flops Profiler
+* Wandb monitoring
+* Simplified Data Loader (Should look into this for Imagenet)
+*  Random Layerwise token dropping https://www.deepspeed.ai/tutorials/data-efficiency/  [[Random-LTD]]
+* Progressive Layer Dropping (Up to 2.5x convergence speedup for pre-training) [[Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping]]; https://www.deepspeed.ai/tutorials/progressive_layer_dropping/
+* Automatic DDP with Mixed Precision
+* Activation Checkpointing (same as in torch, we skip it for the most part)
+* Gradient Accumulation (May increase throughput slightly via reduction of communication)
+* CPU/NVMe offloading
+* ZeRO: Easy to set up wtih config, various optimizers are supported [[Turing-NLG]]; LAMB, 1-bit ADAM, 0/1 Adam, 1-bit LAMB https://deepspeed.readthedocs.io/en/latest/optimizers.html
+* Data Parallelism: Given by default with more than 1 GPU
+
+Straightforward to implement:
+* Pipeline Parallelism: https://www.deepspeed.ai/tutorials/pipeline/ Needs tweaks in nn Modules and training loop, pretty customizable with custom schedules etc.
+* Context Parallelism: Via Ring Attention/DeepSpeed Ulysses. https://www.deepspeed.ai/tutorials/ds-sequence/ (maybe for imagenet 12288 sequence length; 4x sequence parallelism would let us keep the training config from cifar-10) Does integrate with sparse attention out of the box
+* Sparse Attention: Drop in kernels supported by all of the above https://www.deepspeed.ai/tutorials/sparse-attention/
+* MoE: Should require only a few tweaks to nn Modules 
+
+Requires major adjustments:
+* Tensor Parallelism / Model Parallelism: Maybe config argument works ? https://github.com/deepspeedai/DeepSpeed/blob/master/blogs/huggingface-tp/README.md Large memory reduction, large communication overhead
+
+### Large Batch Training
+
+[[Accurate Large Minibatch SGD]]
