@@ -106,3 +106,5 @@ Requires major adjustments:
 ### Large Batch Training
 
 [[Accurate Large Minibatch SGD]]
+[[ImageNet Training in Minutes]]
+[[ResNet-50 Training in 224 Seconds]]

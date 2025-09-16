@@ -70,17 +70,17 @@
             }
           },
           {
-            "id": "c3b5b6151b5c301a",
+            "id": "76a6adfb8c861cc2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Scaling/Accurate Large Minibatch SGD.md",
+                "file": "ImageNet Training in Minutes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Accurate Large Minibatch SGD"
+              "title": "ImageNet Training in Minutes"
             }
           }
         ],
@@ -205,13 +205,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Scaling/Accurate Large Minibatch SGD.md",
+                "file": "ImageNet Training in Minutes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Accurate Large Minibatch SGD"
+              "title": "Outline of ImageNet Training in Minutes"
             }
           }
         ],
@@ -232,17 +232,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c3b5b6151b5c301a",
+  "active": "76a6adfb8c861cc2",
   "lastOpenFiles": [
-    "Quantized Neural Networks.md",
+    "LARS Large Batch Training of Convolutional Networks.md",
+    "ImageNet Training in Minutes.md",
+    "Why Transformers Are Sparse and What to Do About It.md",
+    "Scaling/ResNet-50 Training in 224 Seconds.md",
+    "ImageNet",
+    "Scaling/Untitled.md",
+    "Train Longer Generalize Better.md",
     "Scaling/Accurate Large Minibatch SGD.md",
     "MPI Message Passing Interface (Textbook).md",
+    "Quantized Neural Networks.md",
     "Optimization Methods for Large-Scale Machine Learning.md",
     "Revisiting Distributed Synchronous SGD.md",
     "SGD A Stochastic Approximation Method.md",
     "One Weird Trick for Parallelizing Convolutional Neural Networks.md",
     "Large Batch Optimization for Deep Learning.md",
-    "Why Transformers Are Sparse and What to Do About It.md",
     "Generative Models/Contrastive Flow Matching.md",
     "Sparse Attention/Saliency-driven Dynamic Token Pruning for Large Language Models.md",
     "Sparse Attention/Learned Token Pruning for Transformers.md",
@@ -255,11 +261,6 @@
     "Adam - A Method for Stochastic Optimization.md",
     "Optimization/Old Optimizer, New Norm.md",
     "Optimization/In Search of Adam's Secret Sauce.md",
-    "Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping.md",
-    "Scaling/Towards Crowdsoured Training of Large Neural Networks using Decentralized Mixture-of-Experts.md",
-    "Turing-NLG.md",
-    "Scaling/An Empirical Model of Large-Batch Training.md",
-    "_misc.md",
     "Assets",
     "Datasets",
     "Assets/Pasted image 20250912163625.png",
@@ -269,7 +270,6 @@
     "Algorithmic Reasoning",
     "Graph Neural Networks",
     "Classic Papers",
-    "General CS",
-    "Sparse Attention/Untitled"
+    "General CS"
   ]
 }

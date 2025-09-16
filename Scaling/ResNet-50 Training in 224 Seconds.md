@@ -1,0 +1,1 @@
+https://nnabla.org/paper/imagenet_in_224sec.pdf
