@@ -82,17 +82,17 @@ torch-demo/main.py
 ### DeepSpeed Features
 
 Drop-in replacement via config:
-* Flops Profiler
-* Wandb monitoring
+* Flops Profiler✔
+* Wandb monitoring (Nice to have may implement later)✔
 * Simplified Data Loader (Should look into this for Imagenet)
 *  Random Layerwise token dropping https://www.deepspeed.ai/tutorials/data-efficiency/  [[Random-LTD]]
 * Progressive Layer Dropping (Up to 2.5x convergence speedup for pre-training) [[Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping]]; https://www.deepspeed.ai/tutorials/progressive_layer_dropping/
-* Automatic DDP with Mixed Precision
-* Activation Checkpointing (same as in torch, we skip it for the most part)
+* Automatic DDP with Mixed Precision✔
+* Activation Checkpointing (same as in torch, we skip it for the most part) (not used for performance reasons)✔
 * Gradient Accumulation (May increase throughput slightly via reduction of communication)
-* CPU/NVMe offloading
-* ZeRO: Easy to set up wtih config, various optimizers are supported [[Turing-NLG]]; LAMB, 1-bit ADAM, 0/1 Adam, 1-bit LAMB https://deepspeed.readthedocs.io/en/latest/optimizers.html
-* Data Parallelism: Given by default with more than 1 GPU
+* CPU/NVMe offloading✔
+* ZeRO: Easy to set up wtih config, various optimizers are supported [[Turing-NLG]]; LAMB, 1-bit ADAM, 0/1 Adam, 1-bit LAMB https://deepspeed.readthedocs.io/en/latest/optimizers.html✔
+* Data Parallelism: Given by default with more than 1 GPU✔
 
 Straightforward to implement:
 * Pipeline Parallelism: https://www.deepspeed.ai/tutorials/pipeline/ Needs tweaks in nn Modules and training loop, pretty customizable with custom schedules etc.
@@ -101,7 +101,7 @@ Straightforward to implement:
 * MoE: Should require only a few tweaks to nn Modules 
 
 Requires major adjustments:
-* Tensor Parallelism / Model Parallelism: Maybe config argument works ? https://github.com/deepspeedai/DeepSpeed/blob/master/blogs/huggingface-tp/README.md Large memory reduction, large communication overhead
+* Tensor Parallelism / Model Parallelism: Maybe config argument works ? https://github.com/deepspeedai/DeepSpeed/blob/master/blogs/huggingface-tp/README.md Large memory reduction, large communication overhead TODO: Try auto_tp on modern GPUs
 
 ### Large Batch Training
 

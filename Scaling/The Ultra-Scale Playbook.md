@@ -227,6 +227,15 @@ This can further be enhanced with Tiling & Thread Coarsening, as well as the min
 
 ### Mixed Precision Training
 [[Mixed Precision Training]]
+Let's assume that we have achieved 100% of the theoretical maximum throughput of our available hardware for a full precision baseline. Where can we go from here? For starters, casting the entire model (data, parameters, gradients, activations, optimizer) to half precision would drastically increase throughput since lower precision formats require less GPU instructions, and can thus be executed at dramatically higher rates. But this leads to problems such as underflow during training, since we perform a lot of normalization and tiny optimization steps to make training converge in the first place. There are three techniques we can use to make training at lower precision feasible: 
+
+1. FP32 Master copy of weights: Keeping a separate full precision copy can help avoid underflow errors
+2. Loss Scaling: Similar idea; we perform scaled loss calculation to avoid underflow of the gradients then rescale for correct gradient updates
+3. FP32 Accumulation: Similar idea; we accumulate intermediate results in full precision and only cast the final result to half precision
+
+Recent research for even lower precision training to maximize throughput includes: 
+[[FP8-LM]]; [[FP4 All the Way]]; [[Training LLMs with MXFP4]]; [[TorchAO]]; [[DeepSeek-V3 Technical Report]]
+Such techniques always feature a normalization step to equalize the resolution of lower precision formats with suitable quantization of some sort. So we basically do a little bit of extra computation to get away with lower precision and achieve higher arithmetic throughput. 
 
 
 ## CPU Offloading

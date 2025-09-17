@@ -4,6 +4,7 @@ https://arxiv.org/pdf/1706.02677
 Napkin math: (rounded up)
 1xP100: 18.7 TFLOPS Half Precision
 256xP100:  4787.2 TFLOPS Half Precision total
+RTX4000: 14.24 TFLOPS (Closest match on Runpod)
 1xA100: 312 TFLOPS bf16
 Equivalent A100: ~16
 1xH100 SXM: 1979 TFLOPS 
