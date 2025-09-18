@@ -108,3 +108,9 @@ Requires major adjustments:
 [[Accurate Large Minibatch SGD]]
 [[ImageNet Training in Minutes]]
 [[ResNet-50 Training in 224 Seconds]]
+[[On Large-Batch Training for Deep Learning]]
+
+### Data Efficiency
+[[Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping]]
+PLD is a technique that can be integrated easily into transformer training since all we need is a scheduler (DeepSeek already provides this) and a slightly modified transformer block. 
+

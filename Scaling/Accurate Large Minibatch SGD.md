@@ -9,10 +9,10 @@ RTX4000: 14.24 TFLOPS (Closest match on Runpod)
 Equivalent A100: ~16
 1xH100 SXM: 1979 TFLOPS 
 Equivalent H100: ~ 3
-1xB200: 4.5 PFLOPS
-Equivalent B200: ~ 1.07
+1xB200: 2.25 PFLOPS
+Equivalent B200: ~ 2.14
 
-So if throughput is absolutely maximal, which of course it usually is not during training, we could complete the 3600s x 4787.2 TFLOPS = 17233920 TFLOPs in about 17233920 / 4500 = ~3829 seconds or around 77 Minutes? Is that realistic? Probably not. 
+So if throughput is absolutely maximal, which of course it usually is not during training, we could complete the 3600s x 4787.2 TFLOPS = 17233920 TFLOPs in about 17233920 / 2250 = ~7660 seconds or around 144 Minutes? Is that realistic? Probably not. 
 
 Oh Imagenet the authors demonstrated no accuracy loss when training with minibatch sizes of up to 8192. By adopting a linear scaling rule for adjusting learning rates as a function of minibatch size, coupled with a new warmup scheme to overcome optimization challenges in early training. 
 
