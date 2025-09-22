@@ -86,19 +86,19 @@ Drop-in replacement via config:
 * Wandb monitoring (Nice to have may implement later)✔
 * Simplified Data Loader (Should look into this for Imagenet)
 *  Random Layerwise token dropping https://www.deepspeed.ai/tutorials/data-efficiency/  [[Random-LTD]]
-* Progressive Layer Dropping (Up to 2.5x convergence speedup for pre-training) [[Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping]]; https://www.deepspeed.ai/tutorials/progressive_layer_dropping/
+* Progressive Layer Dropping (Up to 2.5x convergence speedup for pre-training) [[Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping]]; https://www.deepspeed.ai/tutorials/progressive_layer_dropping/ ✔
 * Automatic DDP with Mixed Precision✔
 * Activation Checkpointing (same as in torch, we skip it for the most part) (not used for performance reasons)✔
 * Gradient Accumulation (May increase throughput slightly via reduction of communication)
 * CPU/NVMe offloading✔
-* ZeRO: Easy to set up wtih config, various optimizers are supported [[Turing-NLG]]; LAMB, 1-bit ADAM, 0/1 Adam, 1-bit LAMB https://deepspeed.readthedocs.io/en/latest/optimizers.html✔
+* ZeRO: Easy to set up with config, various optimizers are supported [[Turing-NLG]]; LAMB, 1-bit ADAM, 0/1 Adam, 1-bit LAMB Note on ZeRO, for extremely large models methods like [[ZeRO ]] and [[LoCo]], [[DiLoCo]], [[Streaming DiLoCo with overlapping communication]] also exist. https://deepspeed.readthedocs.io/en/latest/optimizers.html✔ 
 * Data Parallelism: Given by default with more than 1 GPU✔
 
 Straightforward to implement:
-* Pipeline Parallelism: https://www.deepspeed.ai/tutorials/pipeline/ Needs tweaks in nn Modules and training loop, pretty customizable with custom schedules etc.
-* Context Parallelism: Via Ring Attention/DeepSpeed Ulysses. https://www.deepspeed.ai/tutorials/ds-sequence/ (maybe for imagenet 12288 sequence length; 4x sequence parallelism would let us keep the training config from cifar-10) Does integrate with sparse attention out of the box
-* Sparse Attention: Drop in kernels supported by all of the above https://www.deepspeed.ai/tutorials/sparse-attention/
-* MoE: Should require only a few tweaks to nn Modules 
+* Pipeline Parallelism: https://www.deepspeed.ai/tutorials/pipeline/ Needs tweaks in nn Modules and training loop, pretty customizable with custom schedules etc. https://docs.pytorch.org/docs/stable/distributed.pipelining.html#module-torch.distributed.pipelining.schedules Good references for pipelining schedules already implemented in PyTorch, references [[MegatronLM]], [[Breadth-First Pipeline Parallelism]], [[Zero Bubble Pipeline Parallelism]]. DeepSpeed provides the 1F1B schedule, one can extend schedules https://deepspeed.readthedocs.io/en/latest/pipeline.html#module-deepspeed.runtime.pipe.schedule Zero Bubble PP is implemented here https://github.com/sail-sg/zero-bubble-megatron-deepspeed Really Good Repo https://github.com/sail-sg/zero-bubble-pipeline-parallelism; [[Pipeline Parallelism with Controllable Memory]]; [[Hanayo -- Harnessing Wave-like Pipeline Parallelism for Enhanced Large Model Training Efficiency]] We can enable an experimental implementation of Zero Bubble by using the changes here: https://github.com/deepspeedai/Megatron-DeepSpeed/pull/396/files#diff-9e743b7a21536cfa41d2f66bcfd56be33f04704a76220ae876a28a83d9e6b8f0
+* Context Parallelism: Via Ring Attention/DeepSpeed Ulysses. https://www.deepspeed.ai/tutorials/ds-sequence/ (maybe for imagenet 12288 sequence length; 4x sequence parallelism would let us keep the training config from cifar-10) Does integrate with sparse attention out of the box [[USP A Unified Sequence Parallelism Approach for Long Context Generative AI]]
+* Sparse Attention: Drop in kernels supported by all of the above https://www.deepspeed.ai/tutorials/sparse-attention/, https://github.com/feifeibear/long-context-attention
+* MoE: Should require only a few tweaks to nn Modules  https://arxiv.org/pdf/2201.05596 https://www.deepspeed.ai/tutorials/mixture-of-experts/
 
 Requires major adjustments:
 * Tensor Parallelism / Model Parallelism: Maybe config argument works ? https://github.com/deepspeedai/DeepSpeed/blob/master/blogs/huggingface-tp/README.md Large memory reduction, large communication overhead TODO: Try auto_tp on modern GPUs
@@ -114,3 +114,12 @@ Requires major adjustments:
 [[Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping]]
 PLD is a technique that can be integrated easily into transformer training since all we need is a scheduler (DeepSeek already provides this) and a slightly modified transformer block. 
 
+[[Domino -- Eliminating Communication in LLM Training via Generic Tensor Slicing and Overlapping]]
+
+### Low Precision Training: 
+https://github.com/huggingface/nanotron/pull/266
+https://x.com/xariusrke/status/1826669126955278401
+[[u $mu$ P -- The Unit-Scaled Maximal Update Parametrization]]
+
+
+### Muon? 
