@@ -7,5 +7,10 @@
 [[Large Batch Optimization for Deep Learning]]
 [[FP4 All the Way]]
 [[The Era of 1-bit LLMs]]
+[[Context Parallelism for Scalable Million-Token Inference]]
+[[Training Ultra Long Context Language Model With Fully Pipelined Distributed Transformer]]
+
+[[Model Cards for Model Reporting]]
 
 Write CLI for Connected Papers to Obsidian Import. Should have confirm/deny filter and display url for quick relevance check
+

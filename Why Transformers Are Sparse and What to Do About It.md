@@ -81,6 +81,12 @@ torch-demo/main.py
 ```
 ### DeepSpeed Features
 
+TODO: Try torchtitan/torchao maybe: 
+https://github.com/pytorch/torchtitan/tree/main
+https://openreview.net/pdf?id=SFN6Wm7YBI
+https://github.com/pytorch/torchtitan/issues/1682
+https://github.com/pytorch/ao
+
 Drop-in replacement via config:
 * Flops Profiler✔
 * Wandb monitoring (Nice to have may implement later)✔
@@ -91,7 +97,7 @@ Drop-in replacement via config:
 * Activation Checkpointing (same as in torch, we skip it for the most part) (not used for performance reasons)✔
 * Gradient Accumulation (May increase throughput slightly via reduction of communication)
 * CPU/NVMe offloading✔
-* ZeRO: Easy to set up with config, various optimizers are supported [[Turing-NLG]]; LAMB, 1-bit ADAM, 0/1 Adam, 1-bit LAMB Note on ZeRO, for extremely large models methods like [[ZeRO ]] and [[LoCo]], [[DiLoCo]], [[Streaming DiLoCo with overlapping communication]] also exist. https://deepspeed.readthedocs.io/en/latest/optimizers.html✔ 
+* ZeRO: Easy to set up with config, various optimizers are supported [[Turing-NLG]]; LAMB, 1-bit ADAM, 0/1 Adam, [[1-bit LAMB]] Note on ZeRO, for extremely large models methods like [[ZeRO ]] and [[LoCo]], [[DiLoCo]], [[Streaming DiLoCo with overlapping communication]] also exist. https://deepspeed.readthedocs.io/en/latest/optimizers.html✔ 
 * Data Parallelism: Given by default with more than 1 GPU✔
 
 Straightforward to implement:
@@ -109,6 +115,11 @@ Requires major adjustments:
 [[ImageNet Training in Minutes]]
 [[ResNet-50 Training in 224 Seconds]]
 [[On Large-Batch Training for Deep Learning]]
+[[Large Batch Optimization for Deep Learning]]
+
+For LARS/LAMB we should visualize learning rate across layers /averaged across layers during training like in [[LARS Large Batch Training of Convolutional Networks]] paper.
+
+
 
 ### Data Efficiency
 [[Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping]]
@@ -122,4 +133,14 @@ https://x.com/xariusrke/status/1826669126955278401
 [[u $mu$ P -- The Unit-Scaled Maximal Update Parametrization]]
 
 
+### Efficient Attention Implementations
+Most Ultra-Scale Frameworks implement attention wrappers that construct causal masks on the fly and manage dispatch for context & tensor parallel settings, as well as provide efficient kernels. 
+To generalize training to a wide array of architectures they split the num_heads argument into num_kv_heads and num_query_heads because techniques like [[MQA Fast Transformer Decoding]] & 
+[[GQA Generalized Multi Query Attention]] allow faster decoding at similar performance. 
+
+
 ### Muon? 
+[[Muon is Scalable for LLM Training]]
+
+### ZenFlow?
+[[ZenFlow]]

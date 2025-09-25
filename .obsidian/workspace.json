@@ -56,17 +56,17 @@
             }
           },
           {
-            "id": "2188a69cd0f04bbe",
+            "id": "10d4f31a263544d7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Why Transformers Are Sparse and What to Do About It.md",
+                "file": "Large Batch Optimization for Deep Learning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Why Transformers Are Sparse and What to Do About It"
+              "title": "Large Batch Optimization for Deep Learning"
             }
           }
         ],
@@ -191,13 +191,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Why Transformers Are Sparse and What to Do About It.md",
+                "file": "Large Batch Optimization for Deep Learning.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Why Transformers Are Sparse and What to Do About It"
+              "title": "Outline of Large Batch Optimization for Deep Learning"
             }
           }
         ],
@@ -218,10 +218,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2188a69cd0f04bbe",
+  "active": "10d4f31a263544d7",
   "lastOpenFiles": [
-    "Optimization/Fantastic Pretraining Optimizers and Where to Find Them.md",
+    "Generative Models/Contrastive Flow Matching.md",
+    "_misc.md",
+    "Model Cards for Model Reporting.md",
     "Why Transformers Are Sparse and What to Do About It.md",
+    "Large Batch Optimization for Deep Learning.md",
+    "Image Classification at Supercomputer Scale.md",
+    "Scaling/Accurate Large Minibatch SGD.md",
+    "Accurate.md",
+    "Scaling/GPT-2.md",
+    "1-bit LAMB.md",
+    "Sparse Attention/MQA Fast Transformer Decoding.md",
+    "Sparse Attention/GQA Generalized Multi Query Attention.md",
+    "Neural Machine Translation by Jointly Learning to Align and Translate.md",
+    "Training Ultra Long Context Language Model With Fully Pipelined Distributed Transformer.md",
+    "Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping.md",
+    "Context Parallelism for Scalable Million-Token Inference.md",
+    "Optimization/Fantastic Pretraining Optimizers and Where to Find Them.md",
     "u $mu$ P -- The Unit-Scaled Maximal Update Parametrization.md",
     "u $/mu$ P -- The Unit-Scaled Maximal Update Parametrization.md",
     "u $",
@@ -233,21 +248,6 @@
     "Pipeline Parallelism with Controllable Memory.md",
     "Scaling/The Ultra-Scale Playbook.md",
     "DeepSeek-V3 Technical Report.md",
-    "Breadth-First Pipeline Parallelism.md",
-    "Scaling/Streaming DiLoCo with overlapping communication.md",
-    "LoCo.md",
-    "Scaling/DiLoCo.md",
-    "USP A Unified Sequence Parallelism Approach for Long Context Generative AI.md",
-    "Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping.md",
-    "Curriculum Learning.md",
-    "On Large-Batch Training for Deep Learning.md",
-    "Accelerating.md",
-    "Sparse Attention/Generating Long Sequences with Sparse Transformers.md",
-    "Scaling/Accurate Large Minibatch SGD.md",
-    "DeepSeek.md",
-    "TorchAO.md",
-    "Sparse Attention/Training LLMs with MXFP4.md",
-    "Sparse Attention/FP4 All the Way.md",
     "ImageNet",
     "Assets",
     "Datasets",
