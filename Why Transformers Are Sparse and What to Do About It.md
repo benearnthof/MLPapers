@@ -34,7 +34,6 @@ CIFAR-10 trained with full attention
 
 In [[Image Transformer]] the authors mention that a context of 3000 would be prohibitive? 
 
-
 Transformer
 	Short Multihead Attention Explainer
 	Visualize KQV matrices at various stages during training
@@ -54,8 +53,8 @@ Very useful paper that implements GPT-2 Style image transformers like our repo:
 
 Blogpost exploring block sparsity
 	https://pytorch.org/blog/speeding-up-vits/
-
-[[Spartan]]
+	[[DRESS Dynamic Real Time Sparse Subnets]]
+	[[Spartan]]
 
 Semi sparse linear layers for 6% training speedup
 	https://github.com/pytorch/ao/tree/main/torchao/sparsity/training
@@ -81,12 +80,6 @@ torch-demo/main.py
 ```
 ### DeepSpeed Features
 
-TODO: Try torchtitan/torchao maybe: 
-https://github.com/pytorch/torchtitan/tree/main
-https://openreview.net/pdf?id=SFN6Wm7YBI
-https://github.com/pytorch/torchtitan/issues/1682
-https://github.com/pytorch/ao
-
 Drop-in replacement via config:
 * Flops Profiler✔
 * Wandb monitoring (Nice to have may implement later)✔
@@ -101,13 +94,13 @@ Drop-in replacement via config:
 * Data Parallelism: Given by default with more than 1 GPU✔
 
 Straightforward to implement:
-* Pipeline Parallelism: https://www.deepspeed.ai/tutorials/pipeline/ Needs tweaks in nn Modules and training loop, pretty customizable with custom schedules etc. https://docs.pytorch.org/docs/stable/distributed.pipelining.html#module-torch.distributed.pipelining.schedules Good references for pipelining schedules already implemented in PyTorch, references [[MegatronLM]], [[Breadth-First Pipeline Parallelism]], [[Zero Bubble Pipeline Parallelism]]. DeepSpeed provides the 1F1B schedule, one can extend schedules https://deepspeed.readthedocs.io/en/latest/pipeline.html#module-deepspeed.runtime.pipe.schedule Zero Bubble PP is implemented here https://github.com/sail-sg/zero-bubble-megatron-deepspeed Really Good Repo https://github.com/sail-sg/zero-bubble-pipeline-parallelism; [[Pipeline Parallelism with Controllable Memory]]; [[Hanayo -- Harnessing Wave-like Pipeline Parallelism for Enhanced Large Model Training Efficiency]] We can enable an experimental implementation of Zero Bubble by using the changes here: https://github.com/deepspeedai/Megatron-DeepSpeed/pull/396/files#diff-9e743b7a21536cfa41d2f66bcfd56be33f04704a76220ae876a28a83d9e6b8f0
-* Context Parallelism: Via Ring Attention/DeepSpeed Ulysses. https://www.deepspeed.ai/tutorials/ds-sequence/ (maybe for imagenet 12288 sequence length; 4x sequence parallelism would let us keep the training config from cifar-10) Does integrate with sparse attention out of the box [[USP A Unified Sequence Parallelism Approach for Long Context Generative AI]]
+* Pipeline Parallelism: https://www.deepspeed.ai/tutorials/pipeline/ Needs tweaks in nn Modules and training loop, pretty customizable with custom schedules etc. https://docs.pytorch.org/docs/stable/distributed.pipelining.html#module-torch.distributed.pipelining.schedules Good references for pipelining schedules already implemented in PyTorch, references [[MegatronLM]], [[Breadth-First Pipeline Parallelism]], [[Zero Bubble Pipeline Parallelism]]. DeepSpeed provides the 1F1B schedule, one can extend schedules https://deepspeed.readthedocs.io/en/latest/pipeline.html#module-deepspeed.runtime.pipe.schedule Zero Bubble PP is implemented here https://github.com/sail-sg/zero-bubble-megatron-deepspeed Really Good Repo https://github.com/sail-sg/zero-bubble-pipeline-parallelism; [[Pipeline Parallelism with Controllable Memory]]; [[Hanayo -- Harnessing Wave-like Pipeline Parallelism for Enhanced Large Model Training Efficiency]] We can enable an experimental implementation of Zero Bubble by using the changes here: https://github.com/deepspeedai/Megatron-DeepSpeed/pull/396/files#diff-9e743b7a21536cfa41d2f66bcfd56be33f04704a76220ae876a28a83d9e6b8f0 ✔ https://discuss.pytorch.org/t/distributed-w-torchtitan-training-with-zero-bubble-pipeline-parallelism/214420
+* Context Parallelism: Via Ring Attention/DeepSpeed Ulysses. https://www.deepspeed.ai/tutorials/ds-sequence/ (maybe for imagenet 12288 sequence length; 4x sequence parallelism would let us keep the training config from cifar-10) Does integrate with sparse attention out of the box [[USP A Unified Sequence Parallelism Approach for Long Context Generative AI]], [[Ring Attention with Blockwise Transformers for Near-Infinite Context]]; [[Striped Attention Faster Ring Attention for Causal Transformers]]; [[DeepSpeed Ulysses]]; [[Arctic Long Sequence Training]]
 * Sparse Attention: Drop in kernels supported by all of the above https://www.deepspeed.ai/tutorials/sparse-attention/, https://github.com/feifeibear/long-context-attention
 * MoE: Should require only a few tweaks to nn Modules  https://arxiv.org/pdf/2201.05596 https://www.deepspeed.ai/tutorials/mixture-of-experts/
 
 Requires major adjustments:
-* Tensor Parallelism / Model Parallelism: Maybe config argument works ? https://github.com/deepspeedai/DeepSpeed/blob/master/blogs/huggingface-tp/README.md Large memory reduction, large communication overhead TODO: Try auto_tp on modern GPUs
+* Tensor Parallelism / Model Parallelism: Maybe config argument works ? https://github.com/deepspeedai/DeepSpeed/blob/master/blogs/huggingface-tp/README.md Large memory reduction, large communication overhead TODO: Try auto_tp on modern GPUs, TODO: Will do in torchtitan refactor
 
 ### Large Batch Training
 
@@ -139,8 +132,37 @@ To generalize training to a wide array of architectures they split the num_heads
 [[GQA Generalized Multi Query Attention]] allow faster decoding at similar performance. 
 
 
-### Muon? 
+### Optimizers 
 [[Muon is Scalable for LLM Training]]
+[[Scalable Optimization in the Modular Norm]]
+[[SCION Training Deep Learning Models with Norm-Constrained LMOs]]
+[[A Spectral Condition for Feature Learning]]
 
 ### ZenFlow?
 [[ZenFlow]]
+
+Maybe fuck with mixed embeddings/test rotary embeddings [[RoFormer]]
+Misc: [[RMSNorm Root Mean Square Layer Normalization]]
+[[Language Modeling with Gated Convolutional Networks]]
+[[GLU Variants Improve Transformer]]
+[[Gated Attention for Large Language Models]]
+
+[[Query-Key Normalization for Transformers]]
+[[WSM Decay-Free Learning Rate Schedule via Checkpoint Merging for LLM Pre-Training]]
+[[Understanding Transformers from the Perspective of Associative Memory]]
+[[Training Dynamics Underlying Language Model Scaling Laws]]
+
+### Torchtitan
+https://github.com/pytorch/torchtitan/tree/main
+https://openreview.net/pdf?id=SFN6Wm7YBI
+https://github.com/pytorch/torchtitan/issues/1682
+https://github.com/pytorch/ao
+Torchtitan is still in active development but seems insane from a feature perspective.
+[[TorchTitan One-stop PyTorch Native Solution for Production Ready LLM Pretraining]]
+
+## Float8
+[[FP8 Formats for Deep Learning]]
+https://github.com/pytorch/ao/tree/main/torchao/float8
+
+### Misc
+QLoRA & KV-Norm & MoE: https://github.com/prajjwal1/baselines/blob/30b_config/torchtitan/models/deepseek_v3/model/model.py

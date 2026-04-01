@@ -155,7 +155,7 @@ In the previous setting we split the full model into chunks where each chunk was
 ### Ring Attention 
 [[Ring Attention with Blockwise Transformers for Near-Infinite Context]]
 Ring Attention begins with each GPU initiating an asynchronous communication operation to send KV-pairs to other GPUs. While each GPU is waiting for the data from the other GPUs to arrive it computes the attention scores for the parts of the data that are already complete in memory. Ideally the next parts are received while this computation is running, again making use of communication/computation overlap. To illustrate why this works we recall that we can always execute matrix operation blockwise and, in the case of causal self attention, we can optimize the way KV-pairs are exchanged even more aggressively, since we're only interested in the bottom triangle of the attention matrix at all. 
-[[Striped Attention]] adjusts this implementation a bit to balance compute load between GPUs.
+[[Striped Attention Faster Ring Attention for Causal Transformers]] adjusts this implementation a bit to balance compute load between GPUs.
 [[The Llama 3 Herd of Models]] also uses zig-zag load balancing aka Striped Attention (Page 11, section on Context Parallelism).
 
 ## Pipeline Parallelism

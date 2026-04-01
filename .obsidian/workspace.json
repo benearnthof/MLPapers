@@ -61,16 +61,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Large Batch Optimization for Deep Learning.md",
+                "file": "Why Transformers Are Sparse and What to Do About It.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Large Batch Optimization for Deep Learning"
+              "title": "Why Transformers Are Sparse and What to Do About It"
+            }
+          },
+          {
+            "id": "46e3827049c700f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "General Applications/Falcon Perception.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Falcon Perception"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -191,13 +205,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Large Batch Optimization for Deep Learning.md",
+                "file": "General Applications/Falcon Perception.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Large Batch Optimization for Deep Learning"
+              "title": "Outline of Falcon Perception"
             }
           }
         ],
@@ -218,36 +232,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "10d4f31a263544d7",
+  "active": "46e3827049c700f3",
   "lastOpenFiles": [
-    "Generative Models/Contrastive Flow Matching.md",
-    "_misc.md",
-    "Model Cards for Model Reporting.md",
+    "Scaling/LoRA.md",
+    "General Applications/Falcon Perception.md",
+    "DeBERTa.md",
+    "RoBERTa.md",
     "Why Transformers Are Sparse and What to Do About It.md",
+    "Scaling/Generative Pretraining from Pixels.md",
+    "FP8 Formats for Deep Learning.md",
+    "A Spectral Condition for Feature Learning.md",
+    "SCION Training Deep Learning Models with Norm-Constrained LMOs.md",
+    "Scalable Optimization in the Modular Norm.md",
+    "TorchTitan One-stop PyTorch Native Solution for Production Ready LLM Pretraining.md",
+    "Gated Attention for Large Language Models.md",
+    "Query-Key Normalization for Transformers.md",
+    "GLU Variants Improve Transformer.md",
+    "Language Modeling with Gated Convolutional Networks.md",
+    "Language Modeling with Gated Convolutional Networks.md",
+    "Scaling/ZenFlow.md",
+    "DRESS Dynamic Real Time Sparse Subnets.md",
+    "Training Dynamics Underlying Language Model Scaling Laws.md",
+    "Scaling Laws from the Data Manifold Dimension.md",
+    "The Quantization Model of Neural Scaling.md",
+    "Explaining Neural Scaling Laws.md",
+    "Learning Curve Theory.md",
+    "Scaling Laws for Neural Language Models.md",
+    "_misc.md",
     "Large Batch Optimization for Deep Learning.md",
-    "Image Classification at Supercomputer Scale.md",
-    "Scaling/Accurate Large Minibatch SGD.md",
-    "Accurate.md",
-    "Scaling/GPT-2.md",
-    "1-bit LAMB.md",
-    "Sparse Attention/MQA Fast Transformer Decoding.md",
-    "Sparse Attention/GQA Generalized Multi Query Attention.md",
-    "Neural Machine Translation by Jointly Learning to Align and Translate.md",
-    "Training Ultra Long Context Language Model With Fully Pipelined Distributed Transformer.md",
-    "Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping.md",
-    "Context Parallelism for Scalable Million-Token Inference.md",
-    "Optimization/Fantastic Pretraining Optimizers and Where to Find Them.md",
-    "u $mu$ P -- The Unit-Scaled Maximal Update Parametrization.md",
-    "u $/mu$ P -- The Unit-Scaled Maximal Update Parametrization.md",
     "u $",
-    "u-$/mu$P -- The Unit-Scaled Maximal Update Parametrization.md",
     "u-$",
-    "u-$/mu$P -- The Unit-Scaled Maximal Update Parametrization 1.md",
-    "Domino -- Eliminating Communication in LLM Training via Generic Tensor Slicing and Overlapping.md",
-    "Hanayo -- Harnessing Wave-like Pipeline Parallelism for Enhanced Large Model Training Efficiency.md",
-    "Pipeline Parallelism with Controllable Memory.md",
-    "Scaling/The Ultra-Scale Playbook.md",
-    "DeepSeek-V3 Technical Report.md",
     "ImageNet",
     "Assets",
     "Datasets",
